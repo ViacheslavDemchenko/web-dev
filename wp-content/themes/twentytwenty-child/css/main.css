@@ -2576,6 +2576,7 @@ input[type="checkbox"]:hover {
 
 @media (min-width: 1024px) {
   .price-cards {
+    width: 90%;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
@@ -2982,6 +2983,8 @@ input[type="checkbox"]:hover {
   }
 
   .price-cards {
+    width: 100%;
+    flex-wrap: nowrap;
     margin-bottom: 4.9rem;
   }
 
@@ -3129,6 +3132,10 @@ input[type="checkbox"]:hover {
     bottom: -9rem;
     width: 28.5rem;
     height: 28.5rem;
+  }
+
+  .about__left .about__img::before {
+    top: 38rem;
   }
 }
 
