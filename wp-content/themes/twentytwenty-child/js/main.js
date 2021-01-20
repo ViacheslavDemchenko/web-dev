@@ -1,5 +1,75 @@
 "use strict";
 
+;
+
+(function () {
+  var hamburger = document.getElementById('menu__button');
+  var body = document.getElementsByTagName('body')[0];
+  var menuLinks = document.querySelectorAll('.nav__link');
+  var menu = document.querySelector('.header-top');
+  var screenWidth = window.screen.availWidth;
+  hamburger.addEventListener('click', mobileMenu);
+
+  function mobileMenuLinkClick() {
+    menuLinks.forEach(function (link) {
+      link.addEventListener('click', function () {
+        mobileMenuHide();
+      });
+    });
+  }
+
+  mobileMenuLinkClick();
+
+  function mobileMenu() {
+    window.addEventListener('resize', function () {
+      screenWidth = window.screen.availWidth;
+      hamburger.classList.remove('active');
+      menu.classList.remove('header-top--open');
+      body.classList.remove('no-scroll');
+    });
+
+    if (!hamburger.classList.contains('active')) {
+      hamburger.classList.add('active');
+      menu.classList.add('header-top--open');
+      body.classList.add('no-scroll');
+    } else {
+      hamburger.classList.remove('active');
+      menu.classList.remove('header-top--open');
+      body.classList.remove('no-scroll');
+    }
+  }
+
+  function mobileMenuHide() {
+    hamburger.classList.remove('active');
+    menu.classList.remove('header-top--open');
+    body.classList.remove('no-scroll');
+  }
+
+  window.addEventListener('resize', function () {
+    screenWidth = window.screen.availWidth;
+
+    if (screenWidth > 1024) {
+      hamburger.classList.remove('active');
+      menu.classList.remove('header-top--open');
+      body.classList.remove('no-scroll');
+    }
+  });
+})();
+"use strict";
+
+;
+
+(function () {
+  var range = document.getElementById('range-slider');
+  var cardsList = document.querySelector('.cards-list');
+  range.addEventListener('input', rangeChange);
+
+  function rangeChange() {
+    cardsList.style.transform = "translateX(".concat(-range.value, "%)");
+  }
+})();
+"use strict";
+
 /*!
  * @copyright Copyright (c) 2017 IcoMoon.io
  * @license   Licensed under MIT license
