@@ -126,27 +126,27 @@
               <p class="work-scheme__text">Мы создаем креативные сайты с уникальным дизайном, удобным интерфейсом и функциональной версткой. Помогаем развитию вашего бизнеса.</p>
             </div>
           </div>
-          <div class="work-scheme-cards">
-            <div class="cards-list">
-              <div class="card__item">
-                <h3 class="item__title">Аналитика</h3>
-                <p class="item__text">Включает в себя анализ конкурентов, создание структуры сайта, создание прототипа</p>
-              </div>
-              <div class="card__item">
-                <h3 class="item__title">Креатив</h3>
-                <p class="item__text">Разработка дизайна сайта с соблюдением современных трендов и стилей</p>
-              </div>
-              <div class="card__item">
-                <h3 class="item__title">Разработка</h3>
-                <p class="item__text">Верстка и анимация на сайте. Адаптивный дизайн под все современные устройства.</p>
-              </div>
-              <div class="card__item">
-                <h3 class="item__title">Развитие</h3>
-                <p class="item__text">После запуска сайта организуем эффективное продвижение в поисковых системах и будем сопровождать контентное наполнение сайта.</p>
-              </div>
+        </div>
+        <div class="work-scheme-cards">
+          <div class="cards-list">
+            <div class="card__item">
+              <h3 class="item__title">Аналитика</h3>
+              <p class="item__text">Включает в себя анализ конкурентов, создание структуры сайта, создание прототипа</p>
             </div>
-            <input class="range-slider" type="range" min="0" max="100" step="1" value="0" id="range-slider">
+            <div class="card__item">
+              <h3 class="item__title">Креатив</h3>
+              <p class="item__text">Разработка дизайна сайта с соблюдением современных трендов и стилей</p>
+            </div>
+            <div class="card__item">
+              <h3 class="item__title">Разработка</h3>
+              <p class="item__text">Верстка и анимация на сайте. Адаптивный дизайн под все современные устройства.</p>
+            </div>
+            <div class="card__item">
+              <h3 class="item__title">Развитие</h3>
+              <p class="item__text">После запуска сайта организуем эффективное продвижение в поисковых системах и будем сопровождать контентное наполнение сайта.</p>
+            </div>
           </div>
+          <input class="range-slider" type="range" min="0" max="140" step="1" value="0" id="range-slider">
         </div>
       </section>
       <section class="services">
@@ -195,14 +195,13 @@
                 <div class="item__title">Разработка уникального сайта с дизайном с нуля</div>
                 <div class="item__text">Выделитесь среди ваших конкурентов!</div>
               </div>
-            </div>
-            <button class="btn">Узнать подробнее</button>
+            </div><a class="btn" href="#!">Узнать подробнее</a>
           </div>
           <div class="price__bottom">
             <div class="ball ball--eighth"></div>
             <h2 class="section__title section__title--price-bottom">Подскажем оптимальный вариант</h2>
             <p class="price__text">Свяжитесь с нами и мы проконсультируем вас</p>
-            <button class="btn">Отправить заявку</button>
+            <button class="btn btn--application">Отправить заявку</button>
           </div>
         </div>
       </section>
@@ -264,6 +263,29 @@
           </div>
         </div>
       </footer>
+      <div class="overlay"></div>
+      <div class="modal">
+        <div class="modal__close"></div>
+        <form class="form-call" id="form-call" method="post" action="#">
+          <div class="form__title"></div>
+          <div class="form__subtitle"></div>
+          <input class="form__input-name" type="text" id="modal__input-name" name="user-name" placeholder="Ваше имя">
+          <input class="form__input-phone" type="text" id="modal__input-phone" name="user-phone" placeholder="+7 (___) ___-__-__">
+          <div class="feedback">Введите правильный номер телефона</div>
+          <input class="btn form-call__submit" type="submit" id="form-call__submit" value="Отправить заявку">
+          <div class="form__policy">
+            <input class="form__checkbox" type="checkbox" id="modal__checkbox" checked>
+            <label class="form__policy" for="modal__checkbox">Вы соглашаетесь с &#160;<a class="form__policy-link" href="#!">условиями обработки персональных данных</a></label>
+          </div>
+        </form>
+      </div>
+      <div class="modal modal--thanks">
+        <div class="modal__close"></div>
+        <div class="modal--thanks-content">
+          <div class="form__title form__title--thanks">Спасибо за заявку!</div>
+          <div class="form__subtitle form__subtitle--thanks">Мы свяжемся с вами в самое ближайшее время, в рабочие часы</div>
+        </div>
+      </div>
     </div>
     <script src="./wp-content/themes/twentytwenty-child/js/main.js"></script>
   </body>
