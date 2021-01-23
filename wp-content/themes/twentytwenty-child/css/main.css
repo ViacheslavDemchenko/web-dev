@@ -484,7 +484,6 @@ template {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 2.1rem;
   line-height: 2.4rem;
   color: #333333;
@@ -511,7 +510,6 @@ template {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 1.6rem;
   line-height: 2.2rem;
   color: #4F4F4F;
@@ -539,7 +537,6 @@ template {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 2.2rem;
   color: #4F4F4F;
@@ -553,7 +550,6 @@ template {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 2.2rem;
   color: #4F4F4F;
@@ -563,7 +559,6 @@ template {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 1.8rem;
   line-height: 2.5rem;
   color: #333333;
@@ -591,7 +586,6 @@ template {
   font-family: "GothamProLight";
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.3rem;
   color: #F2F2F2;
@@ -630,7 +624,6 @@ template {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 2rem;
   color: #fff;
@@ -681,7 +674,6 @@ input:not([type="checkbox"]) {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 2rem;
   letter-spacing: 0.05em;
@@ -1043,7 +1035,6 @@ input[type="submit"] {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.3rem;
   color: #333333;
@@ -1063,7 +1054,6 @@ input[type="submit"] {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 2.4rem;
   line-height: 2.3rem;
   color: #F2F2F2;
@@ -1086,7 +1076,6 @@ input[type="submit"] {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 1.4rem;
   line-height: 1.3rem;
   color: #7F91BE;
@@ -1097,7 +1086,6 @@ input[type="submit"] {
   font-family: "GothamProLight";
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
   line-height: 1.1rem;
   color: #828282;
@@ -1129,7 +1117,6 @@ input[type="submit"] {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 2rem;
   line-height: 3rem;
   color: #4F4F4F;
@@ -1296,7 +1283,6 @@ input[type="submit"] {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
 }
 
 .devices-img {
@@ -1611,7 +1597,7 @@ input[type="submit"] {
 .cmn-toggle-switch__htx.active span::before,
 .cmn-toggle-switch__htx.active span::after {
   background: rgba(130, 130, 130, 0.5);
-  transition-delay: 0, .3s;
+  transition-delay: .3s;
 }
 
 .cmn-toggle-switch__htx.active span::before {
@@ -1767,7 +1753,6 @@ input[type="submit"] {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-display: swap;
   font-size: 2.7rem;
   line-height: 3rem;
   color: #7F91BE;
@@ -1780,7 +1765,6 @@ input[type="submit"] {
   font-family: "GothamProRegular";
   font-weight: 400;
   font-style: normal;
-  font-display: swap;
   font-size: 1.3rem;
   line-height: 2rem;
   color: #4F4F4F;
@@ -1804,7 +1788,6 @@ input[type="submit"] {
   font-family: "GothamProLight";
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
   font-weight: 300;
   font-size: 1rem;
   line-height: 1.5rem;
@@ -1843,9 +1826,8 @@ input[type="submit"] {
   font-family: "GothamProLight";
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
   font-size: 1.2rem;
-  font-weight: 1.4rem;
+  line-height: 1.4rem;
   color: #FF0000;
 }
 
