@@ -31,7 +31,23 @@
   var body = document.getElementsByTagName('body')[0];
   var menuLinks = document.querySelectorAll('.nav__link');
   var menu = document.querySelector('.header-top');
+  var headerInner = document.querySelector('.header__inner');
   var screenWidth = window.screen.availWidth;
+
+  function mobileMenuHide() {
+    hamburger.classList.remove('active');
+    menu.classList.remove('header-top--open');
+    headerInner.classList.remove('header__inner--active');
+    body.classList.remove('no-scroll');
+  }
+
+  function mobileMenuShow() {
+    hamburger.classList.add('active');
+    menu.classList.add('header-top--open');
+    headerInner.classList.add('header__inner--active');
+    body.classList.add('no-scroll');
+  }
+
   hamburger.addEventListener('click', mobileMenu);
 
   function mobileMenuLinkClick() {
@@ -45,37 +61,22 @@
   mobileMenuLinkClick();
 
   function mobileMenu() {
-    window.addEventListener('resize', function () {
-      screenWidth = window.screen.availWidth;
-      hamburger.classList.remove('active');
-      menu.classList.remove('header-top--open');
-      body.classList.remove('no-scroll');
-    });
+    if (screenWidth >= 1200) {
+      mobileMenuHide();
+    }
 
     if (!hamburger.classList.contains('active')) {
-      hamburger.classList.add('active');
-      menu.classList.add('header-top--open');
-      body.classList.add('no-scroll');
+      mobileMenuShow();
     } else {
-      hamburger.classList.remove('active');
-      menu.classList.remove('header-top--open');
-      body.classList.remove('no-scroll');
+      mobileMenuHide();
     }
-  }
-
-  function mobileMenuHide() {
-    hamburger.classList.remove('active');
-    menu.classList.remove('header-top--open');
-    body.classList.remove('no-scroll');
   }
 
   window.addEventListener('resize', function () {
     screenWidth = window.screen.availWidth;
 
-    if (screenWidth > 1024) {
-      hamburger.classList.remove('active');
-      menu.classList.remove('header-top--open');
-      body.classList.remove('no-scroll');
+    if (screenWidth >= 1200) {
+      mobileMenuHide();
     }
   });
 })();
