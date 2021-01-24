@@ -207,19 +207,28 @@
     var item;
 
     if (screenWidth < 414) {
-      elem.setAttribute('max', 50);
+      elem.setAttribute('max', 64);
       item = elem.max;
-    } else if (screenWidth >= 414 && screenWidth < 768) {
+    } else if (screenWidth >= 414 && screenWidth < 560) {
       elem.setAttribute('max', 85);
+      item = elem.max;
+    } else if (screenWidth >= 560 && screenWidth < 768) {
+      elem.setAttribute('max', 72);
       item = elem.max;
     } else if (screenWidth >= 768 && screenWidth < 1024) {
       elem.setAttribute('max', 152);
       item = elem.max;
-    } else if (screenWidth >= 1024 && screenWidth < 1440) {
-      elem.setAttribute('max', 125);
+    } else if (screenWidth >= 1024 && screenWidth < 1200) {
+      elem.setAttribute('max', 126);
+      item = elem.max;
+    } else if (screenWidth >= 1200 && screenWidth < 1440) {
+      elem.setAttribute('max', 111);
       item = elem.max;
     } else if (screenWidth >= 1440 && screenWidth < 1920) {
       elem.setAttribute('max', 83);
+      item = elem.max;
+    } else if (screenWidth >= 1920) {
+      elem.setAttribute('max', 60);
       item = elem.max;
     }
   }
