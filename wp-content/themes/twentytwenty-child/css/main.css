@@ -785,15 +785,17 @@ input[type="submit"] {
 
 .design__inner {
   height: 100%;
-  display: flex;
-  padding: 4rem 0 23rem 0;
-  background: url(../img/paper-mockup-sm@1x.png) 100% 166%/30.9rem 28.6rem;
-  background-repeat: no-repeat !important;
+  padding-bottom: 24.1rem;
+  background: url(../img/paper-mockup-sm@1x.png) 100% 107%/28rem 22rem;
+  background-repeat: no-repeat;
 }
 
-.design__inner .design__left {
+.design__inner .design__right {
   width: 100%;
-  padding-left: 1.5rem;
+}
+
+.design__left {
+  padding: 4rem 0 0 1.5rem;
 }
 
 .section__title--design {
@@ -806,18 +808,14 @@ input[type="submit"] {
 
 .content {
   width: 100%;
-  padding-top: 4rem;
   background: radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
 }
 
 .content__inner {
   position: relative;
   height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-bottom: 28rem;
-  background: url(../img/smartphone_in_hand-sm@1x.png) 100% 100%/30.9rem 28.6rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
+  padding-bottom: 32.3rem;
+  background: url(../img/smartphone_in_hand-sm@1x.png) 67% 100%/30.9rem 28.6rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
   background-repeat: no-repeat !important;
 }
 
@@ -829,7 +827,7 @@ input[type="submit"] {
 .content__inner .content__right {
   order: -1;
   margin-bottom: 0.6rem;
-  padding-left: 1.5rem;
+  padding: 4rem 0 0 1.5rem;
 }
 
 .section__title--content {
@@ -1207,16 +1205,9 @@ input[type="submit"] {
 
 .ball--twelveth {
   right: -4.6rem;
-  bottom: 22rem;
+  bottom: 8rem;
   width: 13.8rem;
   height: 13.8rem;
-}
-
-.ball--thirteenth {
-  left: 15vw;
-  bottom: 3.9rem;
-  width: 7.6rem;
-  height: 7.6rem;
 }
 
 .ball--fourteenth {
@@ -1961,30 +1952,6 @@ input[type="submit"] {
     line-height: 2rem;
   }
 
-  .design__inner {
-    padding: 4rem 0 30rem 0;
-    background: url(../img/paper-mockup-sm@1x.png) 100% 133%/38.2rem 30.9rem;
-    background-repeat: no-repeat;
-  }
-
-  .design__inner .design__left {
-    padding: 0 1.5rem;
-  }
-
-  .content__inner {
-    padding: 4rem 0 31rem 0;
-    background: url(../img/smartphone_in_hand-sm@1x.png) 100% 100%/38.2rem 30.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
-    background-repeat: no-repeat;
-  }
-
-  .content__inner .content__right {
-    padding: 0 1.5rem;
-  }
-
-  .content__text p:not(:last-child) {
-    margin-bottom: 3rem;
-  }
-
   .content__text {
     width: 32.5rem;
   }
@@ -2085,13 +2052,6 @@ input[type="submit"] {
 
   .ball--twelveth {
     bottom: 24rem;
-  }
-
-  .ball--thirteenth {
-    left: 20vw;
-    bottom: 6.3rem;
-    width: 8.7rem;
-    height: 8.7rem;
   }
 
   .header-center-inner {
@@ -2239,16 +2199,6 @@ input[type="submit"] {
 }
 
 @media (min-width: 414px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 414px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 414px) and (min-resolution: 192dpi) {
-  .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png) 100% 100%/38.2rem 30.9rem;
-    background-repeat: no-repeat;
-  }
-
-  .content__inner {
-    background: url(../img/smartphone_in_hand-sm@2x.png) 100% 100%/38.2rem 30.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
-    background-repeat: no-repeat;
-  }
-
   .card__item:nth-child(1) {
     background: url(../img/analytics-lg@2x.png) 12% 533%/80%, #F2F2F2;
     background-repeat: no-repeat;
@@ -2283,8 +2233,26 @@ input[type="submit"] {
 }
 
 @media (min-width: 560px) {
-  .ball--thirteenth {
-    left: 40vw;
+  .design__inner {
+    background: url(../img/paper-mockup-lg@1x.png) 100% 100%/35rem 27.5rem;
+    background-repeat: no-repeat;
+  }
+
+  .content__inner {
+    background: url(../img/smartphone_in_hand-sm@1x.png) 90% 100%/38.2rem 30.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
+    background-repeat: no-repeat;
+  }
+}
+
+@media (min-width: 560px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 560px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 560px) and (min-resolution: 192dpi) {
+  .design__inner {
+    background: url(../img/paper-mockup-lg@2x.png) 100% 100%/35rem 27.5rem;
+    background-repeat: no-repeat;
+  }
+
+  .content__inner {
+    background: url(../img/smartphone_in_hand-sm@2x.png) 100% 100%/38.2rem 30.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
+    background-repeat: no-repeat;
   }
 }
 
@@ -2360,13 +2328,13 @@ input[type="submit"] {
   }
 
   .design__inner {
-    padding: 5.8rem 0 21.5rem 0;
-    background: url(../img/paper-mockup-md@1x.png) 100% 119px/38.2rem 47.8rem;
+    padding-bottom: 18.2rem;
+    background: url(../img/paper-mockup-md@1x.png) right 100%/34rem 31.9rem;
     background-repeat: no-repeat;
   }
 
-  .design__inner .design__left {
-    padding: 0 3.1rem;
+  .design__left {
+    padding: 4rem 0 0 3.1rem;
   }
 
   .section__title--design {
@@ -2382,21 +2350,17 @@ input[type="submit"] {
   }
 
   .content__inner {
-    padding: 5.8rem 0 21.5rem 0;
+    padding-bottom: 25.7rem;
     background: url(../img/smartphone_in_hand-lg@1x.png) 97% 100%/49.7rem 42.7rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
     background-repeat: no-repeat;
   }
 
   .content__inner .content__right {
-    padding: 0 3.1rem;
+    padding: 4rem 0 0 3.1rem;
   }
 
   .section__title--content {
     margin-bottom: 1.5rem;
-  }
-
-  .content__text p:not(:last-child) {
-    margin-bottom: 3.8rem;
   }
 
   .content__text {
@@ -2552,10 +2516,6 @@ input[type="submit"] {
 
   .ball--twelveth {
     bottom: 15rem;
-  }
-
-  .ball--thirteenth {
-    display: none;
   }
 
   .header-center__left {
@@ -2811,7 +2771,7 @@ input[type="submit"] {
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 97% 100%/49.7rem 42.7rem;
+    background: url(../img/paper-mockup-md@2x.png) -4% -33%/54.5rem 42.9rem;
     background-repeat: no-repeat;
   }
 
@@ -2847,6 +2807,41 @@ input[type="submit"] {
 }
 
 @media (min-width: 1024px) {
+  .design__inner {
+    background: url(../img/paper-mockup-lg@1x.png) right 100%/54.5rem 42.9rem;
+    background-repeat: no-repeat !important;
+  }
+
+  .design__inner .design__right {
+    width: calc(100% / 12 * 6);
+  }
+
+  .design__left {
+    order: 0;
+    margin: 0 0 0 auto;
+  }
+
+  .content__inner {
+    padding-bottom: 26.3rem;
+    background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/48.3rem 41.6rem;
+    background-repeat: no-repeat;
+  }
+
+  .content__inner .content__left,
+  .content__inner .content__right {
+    width: calc(100% / 12 * 6);
+  }
+
+  .content__inner .content__right {
+    order: 0;
+    padding: 4rem 3.1rem 0 0;
+    margin: 0 0 0 auto;
+  }
+
+  .content__text {
+    width: 43.9rem;
+  }
+
   .price-cards {
     width: 90%;
     flex-direction: row;
@@ -2862,6 +2857,13 @@ input[type="submit"] {
   .nav-list--footer,
   .nav-list-bottom--footer {
     justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
+  .content__inner {
+    background: url(../img/smartphone_in_hand-lg@2x.png) 0% 100%/41%;
+    background-repeat: no-repeat;
   }
 }
 
@@ -2941,6 +2943,18 @@ input[type="submit"] {
   }
 }
 
+@media (min-width: 1365px) {
+  .design__inner {
+    padding-bottom: 30.7rem;
+    background: url(../img/paper-mockup-lg@1x.png) right 100%/69.9rem 55rem;
+    background-repeat: no-repeat;
+  }
+
+  .content__inner {
+    background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/56.8rem 48.9rem;
+  }
+}
+
 @media (min-width: 1440px) {
   .section__title,
   .main-title {
@@ -3003,13 +3017,7 @@ input[type="submit"] {
   }
 
   .design__inner {
-    padding: 9rem 0 22rem 0;
-    background: url(../img/paper-mockup-lg@1x.png) 124% -37%/88.8rem 66.7rem;
-    background-repeat: no-repeat;
-  }
-
-  .design__inner .design__left {
-    padding: 0 1.5rem;
+    padding-bottom: 27rem;
   }
 
   .section__title--design {
@@ -3020,38 +3028,20 @@ input[type="submit"] {
     width: 60rem;
   }
 
-  .content {
-    padding-top: 0;
-  }
-
   .content__inner {
-    flex-direction: row;
-    padding: 9rem 0 11.1rem 0;
-    background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/56.8rem 48.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
-    background-repeat: no-repeat;
-  }
-
-  .content__inner .content__left,
-  .content__inner .content__right {
-    width: calc(100% / 12 * 6);
+    padding-bottom: 12.9rem;
   }
 
   .content__inner .content__right {
-    order: 0;
-    padding: 0 1.5rem;
-    margin: 0 0 0 auto;
+    padding-top: 9rem;
   }
 
   .section__title--content {
     margin-bottom: 3rem;
   }
 
-  .content__text p:not(:last-child) {
-    margin-bottom: 5rem;
-  }
-
   .content__text {
-    width: 60rem;
+    width: 58.4rem;
   }
 
   .work-scheme {
@@ -3425,16 +3415,6 @@ input[type="submit"] {
     background: url(../img/header-bg@2x.jpg) center/cover, no-repeat;
   }
 
-  .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png) 100% 14%/88.8rem 66.7rem;
-    background-repeat: no-repeat;
-  }
-
-  .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.png) 0% 100%/56.8rem 48.9rem, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
-    background-repeat: no-repeat;
-  }
-
   .work-scheme::after {
     background: url(../img/gear-big@2x.png) 100% 75%/50%;
     background-repeat: no-repeat;
@@ -3534,8 +3514,8 @@ input[type="submit"] {
 
 @media (-webkit-min-device-pixel-ratio: 1.5), (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
   .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png) 100% 166%/30.9rem 28.6rem;
-    background-repeat: no-repeat !important;
+    background: url(../img/paper-mockup-sm@2x.png) 100% 107%/28rem 22rem;
+    background-repeat: no-repeat;
   }
 
   .content__inner {
