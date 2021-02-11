@@ -3,25 +3,71 @@
 ;
 
 (function () {
-  var inputPhone = document.getElementById('modal__input-phone');
-  var inputName = document.getElementById('modal__input-name');
-  var feedback = document.querySelector('.feedback'); // const form = document.getElementById('form-call');
-  // const formSubmit = document.getElementById('form-call__submit');
+  window.onload = function () {
+    var lastScrollTop = window.pageYOffset;
+    var ballFirst = document.querySelector('.ball--fourth');
+    var ballFirstPos = window.getComputedStyle(ballFirst).left;
+    var start = false;
+    var width = window.innerWidth;
+    width = window.innerWidth - 143;
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
 
-  inputPhone.addEventListener('input', validatePhone);
+      if (st > lastScrollTop) {
+        // console.log('Вниз');
+        if (start) {
+          // console.log('Видно');
+          ballFirstPos = parseInt(ballFirstPos) + 25;
 
-  function validatePhone() {
-    var regEx = /^\+7\ \(?\d{3}\)?\ [-]?\d{3}[-]?\d{2}[-]?\d{2}$/;
+          if (ballFirstPos < width && ballFirstPos > 385) {
+            ballFirst.style.left = ballFirstPos + 'px';
+          }
+        }
+      } else {
+        // console.log('Вверх');
+        if (start) {
+          // console.log('Видно');
+          ballFirstPos = parseInt(ballFirstPos) - 30;
 
-    if (!regEx.test(inputPhone.value)) {
-      feedback.classList.add('feedback--invalid');
-      return false;
-    } else {
-      feedback.classList.remove('feedback--invalid');
-      return true;
-    }
-  }
+          if (ballFirstPos > 385 && ballFirstPos < width) {
+            ballFirst.style.left = ballFirstPos + 'px';
+          }
+        }
+      }
+
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting === true) {
+          // console.log('Видно');
+          start = true;
+        } else if (entry.isIntersecting === false) {// console.log('Не видно');
+        }
+      });
+    });
+    observer.observe(ballFirst);
+  };
 })();
+// ;(function() {
+//     const inputPhone = document.getElementById('modal__input-phone');
+//     const inputName = document.getElementById('modal__input-name');
+//     const feedback = document.querySelector('.feedback');
+//     // const form = document.getElementById('form-call');
+//     // const formSubmit = document.getElementById('form-call__submit');
+//     inputPhone.addEventListener('input', validatePhone);
+//     function validatePhone() {
+//         const regEx = /^\+7\ \(?\d{3}\)?\ [-]?\d{3}[-]?\d{2}[-]?\d{2}$/;
+//         if(!regEx.test(inputPhone.value)) {
+//             feedback.classList.add('feedback--invalid');
+//             return false;
+//         } else {
+//             feedback.classList.remove('feedback--invalid');
+//             return true;
+//         }
+//     }
+// })();
+"use strict";
 "use strict";
 
 ;
@@ -130,114 +176,165 @@
     modalShow();
   });
 })();
+// ;(function() {
+// //Задаем инпут
+// const input = document.getElementById('modal__input-phone');
+// //Функция маски инпута
+//     function setMask(event) {
+// //Задаем в переменную нажатую клавишу
+//         let pressedKey;
+// //Условие, проверяющее нажатую клавишу
+//         event.keyCode && (pressedKey === event.keyCode);
+// //Задаем в переменную позицию в инпуте, с которой будет доступен ввод цифр
+//         let numberPos = this.selectionStart;
+// //Устанавливаем возможность ввода цифр с третьей позиции       
+//         if (numberPos < 3) {
+//             event.preventDefault();
+//         } 
+// //Задаем внешний вид маски инпута
+//         let maskType = '+7 (___) ___-__-__',
+//             i = 0,
+// //Проверка и замена value инпута по буквенно
+//             replaceValue = maskType.replace(/\D/g, ''),
+//             prevValue = this.value.replace(/\D/g, ''),
+//             currentValue = maskType.replace(/[_\d]/g, (a) => {
+//                 return i < prevValue.length ? prevValue.charAt(i++) || replaceValue.charAt(i) : a;
+//             });
+// //Защита от стирания первых двух цифр (+7)            
+//         i = currentValue.indexOf('_');
+//         if (i != -1) {
+//             i < 5 && (i = 3);
+//             currentValue = currentValue.slice(0, i);
+//         }
+// //Регулярное выражение для проверки value инпута        
+//         let reg = maskType.substr(0, this.value.length).replace(/_+/g,
+//             function(a) {
+//                 return '\\d{1,' + a.length + '}';
+//             }).replace(/[+()]/g, '\\$&');
+//         reg = new RegExp('^' + reg + '$');
+// //Проверка содержимого инпута на регулярное выражение, длинну и нажимаемые клавиши
+//         if (!reg.test(this.value) || this.value.length < 5 || pressedKey > 47 && pressedKey < 58) {
+//             this.value = currentValue;
+//         } else if (event.type === 'blur' && this.value.length < 5) {
+//             this.value = '';
+//         }
+// // Устанавливаем курсор в конец строки в инпуте, если при нажатии кнопки он стоит не в конце
+//         input.setSelectionRange(input.value.length, input.value.length);
+//     }
+// //Запуск функции setMask через обработчик событий
+// input.addEventListener('input', setMask, false);
+// input.addEventListener('focus', setMask, false);
+// input.addEventListener('blur', setMask, false);
+// input.addEventListener('keydown', setMask, false);
+// })();
+"use strict";
+// ;(function() {
+//     const range = document.getElementById('range-slider');
+//     const cardsList = document.querySelector('.cards-list');
+//     let screenWidth = window.innerWidth;
+//     range.addEventListener('input', rangeChange);
+//     function rangeChange() {
+//         cardsList.style.transform = `translateX(${-range.value}rem)`;
+//     }
+//     function screenWidthCalc(elem) {
+//         let item;
+//         if (screenWidth < 414) {
+//             elem.setAttribute('max', 64);
+//             item = elem.max;
+//         } else if (screenWidth >= 414 && screenWidth < 560) {
+//             elem.setAttribute('max', 85);
+//             item = elem.max;
+//         } else if (screenWidth >= 560 && screenWidth < 768) {
+//             elem.setAttribute('max', 72);
+//             item = elem.max;
+//         } else if (screenWidth >= 768 && screenWidth < 1024) {
+//             elem.setAttribute('max', 152);
+//             item = elem.max;
+//         } else if (screenWidth >= 1024 && screenWidth < 1200) {
+//             elem.setAttribute('max', 126);
+//             item = elem.max;
+//         } else if (screenWidth >= 1200 && screenWidth < 1440) {
+//             elem.setAttribute('max', 111);
+//             item = elem.max;
+//         } else if (screenWidth >= 1440 && screenWidth < 1920) {
+//             elem.setAttribute('max', 83);
+//             item = elem.max;
+//         } else if (screenWidth >= 1920) {
+//             elem.setAttribute('max', 60);
+//             item = elem.max;
+//         }
+//     }
+//     screenWidthCalc(range);
+//     window.addEventListener('resize', () => {
+//         screenWidth = window.innerWidth;
+//         screenWidthCalc(range);
+//     });
+// })();
+"use strict";
 "use strict";
 
 ;
 
 (function () {
-  //Задаем инпут
-  var input = document.getElementById('modal__input-phone'); //Функция маски инпута
+  // var swiper = new Swiper('.swiper-container', {
+  //     spaceBetween: 10,
+  //     loop: true,
+  //     centeredSlides: true,
+  //     slidesPerView:'auto',
+  //     loopedSlides: 1,
+  //     scrollbar: {
+  //       el: '.swiper-scrollbar',
+  //       hide: true,
+  //     },
+  //   });
+  if (document.querySelector('.gallery-top')) {
+    var mobileSlider = function mobileSlider() {
+      if (window.innerWidth < 1200 && slider.dataset.mobile == 'false') {
+        mySwiper = new Swiper(slider, {
+          spaceBetween: 10,
+          loop: true,
+          // centeredSlides: true,
+          slidesPerView: 1,
+          loopedSlides: 1,
+          // loopAdditionalSlides: 2,
+          scrollbar: {
+            el: '.swiper-scrollbar',
+            hide: true
+          },
+          breakpoints: {
+            320: {
+              slidesPerView: 1,
+              loopedSlides: 1,
+              loop: true // loopAdditionalSlides: 2,
 
-  function setMask(event) {
-    //Задаем в переменную нажатую клавишу
-    var pressedKey; //Условие, проверяющее нажатую клавишу
+            },
+            768: {
+              slidesPerView: 2,
+              loopedSlides: 1,
+              loop: true,
+              loopAdditionalSlides: 2
+            }
+          }
+        });
+        slider.dataset.mobile = 'true';
+      }
 
-    event.keyCode && pressedKey === event.keyCode; //Задаем в переменную позицию в инпуте, с которой будет доступен ввод цифр
+      if (window.innerWidth >= 1200) {
+        slider.dataset.mobile = 'false';
 
-    var numberPos = this.selectionStart; //Устанавливаем возможность ввода цифр с третьей позиции       
+        if (slider.classList.contains('swiper-container-initialized')) {
+          mySwiper.destroy();
+        }
+      }
+    };
 
-    if (numberPos < 3) {
-      event.preventDefault();
-    } //Задаем внешний вид маски инпута
-
-
-    var maskType = '+7 (___) ___-__-__',
-        i = 0,
-        //Проверка и замена value инпута по буквенно
-    replaceValue = maskType.replace(/\D/g, ''),
-        prevValue = this.value.replace(/\D/g, ''),
-        currentValue = maskType.replace(/[_\d]/g, function (a) {
-      return i < prevValue.length ? prevValue.charAt(i++) || replaceValue.charAt(i) : a;
-    }); //Защита от стирания первых двух цифр (+7)            
-
-    i = currentValue.indexOf('_');
-
-    if (i != -1) {
-      i < 5 && (i = 3);
-      currentValue = currentValue.slice(0, i);
-    } //Регулярное выражение для проверки value инпута        
-
-
-    var reg = maskType.substr(0, this.value.length).replace(/_+/g, function (a) {
-      return '\\d{1,' + a.length + '}';
-    }).replace(/[+()]/g, '\\$&');
-    reg = new RegExp('^' + reg + '$'); //Проверка содержимого инпута на регулярное выражение, длинну и нажимаемые клавиши
-
-    if (!reg.test(this.value) || this.value.length < 5 || pressedKey > 47 && pressedKey < 58) {
-      this.value = currentValue;
-    } else if (event.type === 'blur' && this.value.length < 5) {
-      this.value = '';
-    } // Устанавливаем курсор в конец строки в инпуте, если при нажатии кнопки он стоит не в конце
-
-
-    input.setSelectionRange(input.value.length, input.value.length);
-  } //Запуск функции setMask через обработчик событий
-
-
-  input.addEventListener('input', setMask, false);
-  input.addEventListener('focus', setMask, false);
-  input.addEventListener('blur', setMask, false);
-  input.addEventListener('keydown', setMask, false);
-})();
-"use strict";
-
-;
-
-(function () {
-  var range = document.getElementById('range-slider');
-  var cardsList = document.querySelector('.cards-list');
-  var screenWidth = window.innerWidth;
-  range.addEventListener('input', rangeChange);
-
-  function rangeChange() {
-    cardsList.style.transform = "translateX(".concat(-range.value, "rem)");
+    var slider = document.querySelector('.swiper-container');
+    var mySwiper;
+    mobileSlider();
+    window.addEventListener('resize', function () {
+      mobileSlider();
+    });
   }
-
-  function screenWidthCalc(elem) {
-    var item;
-
-    if (screenWidth < 414) {
-      elem.setAttribute('max', 64);
-      item = elem.max;
-    } else if (screenWidth >= 414 && screenWidth < 560) {
-      elem.setAttribute('max', 85);
-      item = elem.max;
-    } else if (screenWidth >= 560 && screenWidth < 768) {
-      elem.setAttribute('max', 72);
-      item = elem.max;
-    } else if (screenWidth >= 768 && screenWidth < 1024) {
-      elem.setAttribute('max', 152);
-      item = elem.max;
-    } else if (screenWidth >= 1024 && screenWidth < 1200) {
-      elem.setAttribute('max', 126);
-      item = elem.max;
-    } else if (screenWidth >= 1200 && screenWidth < 1440) {
-      elem.setAttribute('max', 111);
-      item = elem.max;
-    } else if (screenWidth >= 1440 && screenWidth < 1920) {
-      elem.setAttribute('max', 83);
-      item = elem.max;
-    } else if (screenWidth >= 1920) {
-      elem.setAttribute('max', 60);
-      item = elem.max;
-    }
-  }
-
-  screenWidthCalc(range);
-  window.addEventListener('resize', function () {
-    screenWidth = window.innerWidth;
-    screenWidthCalc(range);
-  });
 })();
 "use strict";
 
