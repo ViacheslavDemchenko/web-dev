@@ -1,54 +1,48 @@
+// ;(function() {
+//     // window.onload = () => {
+//         let lastScrollTop = window.pageYOffset;
+//         const ballFirst = document.querySelector('.ball--fourth');
+//         let ballFirstPos = window.getComputedStyle(ballFirst).left;
+//         let start = false;
+//         let width = window.innerWidth;
+//             width = window.innerWidth - 143; 
+//             window.addEventListener('scroll', () => { 
+//                 let st = window.pageYOffset || document.documentElement.scrollTop; 
+//                 if (st > lastScrollTop) {
+//                     // console.log('Вниз');
+//                     if (start) {
+//                         // console.log('Видно');
+//                         ballFirstPos = parseInt(ballFirstPos) + 25;
+//                         if (ballFirstPos < width && ballFirstPos > 385) {
+//                             ballFirst.style.left = ballFirstPos + 'px';
+//                         } 
+//                     } 
+//                 } else {
+//                     // console.log('Вверх');
+//                     if (start) {
+//                         // console.log('Видно');
+//                         ballFirstPos = parseInt(ballFirstPos) - 30;
+//                         if (ballFirstPos > 385 && ballFirstPos < width) {
+//                             ballFirst.style.left = ballFirstPos + 'px'; 
+//                         } 
+//                     }
+//                 }
+//                 lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+//             }, false);
+//         let observer = new IntersectionObserver(function (entries) {
+//             entries.forEach(function (entry) {
+//                 if (entry.isIntersecting === true) {
+//                     // console.log('Видно');
+//                     start = true;
+//                 } else if (entry.isIntersecting === false) {
+//                     // console.log('Не видно');
+//                 }
+//             });
+//         });
+//         observer.observe(ballFirst);
+//     // }
+// })();
 "use strict";
-
-;
-
-(function () {
-  window.onload = function () {
-    var lastScrollTop = window.pageYOffset;
-    var ballFirst = document.querySelector('.ball--fourth');
-    var ballFirstPos = window.getComputedStyle(ballFirst).left;
-    var start = false;
-    var width = window.innerWidth;
-    width = window.innerWidth - 143;
-    window.addEventListener('scroll', function () {
-      var st = window.pageYOffset || document.documentElement.scrollTop;
-
-      if (st > lastScrollTop) {
-        // console.log('Вниз');
-        if (start) {
-          // console.log('Видно');
-          ballFirstPos = parseInt(ballFirstPos) + 25;
-
-          if (ballFirstPos < width && ballFirstPos > 385) {
-            ballFirst.style.left = ballFirstPos + 'px';
-          }
-        }
-      } else {
-        // console.log('Вверх');
-        if (start) {
-          // console.log('Видно');
-          ballFirstPos = parseInt(ballFirstPos) - 30;
-
-          if (ballFirstPos > 385 && ballFirstPos < width) {
-            ballFirst.style.left = ballFirstPos + 'px';
-          }
-        }
-      }
-
-      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-    }, false);
-    var observer = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting === true) {
-          // console.log('Видно');
-          start = true;
-        } else if (entry.isIntersecting === false) {// console.log('Не видно');
-        }
-      });
-    });
-    observer.observe(ballFirst);
-  };
-})();
 // ;(function() {
 //     const inputPhone = document.getElementById('modal__input-phone');
 //     const inputName = document.getElementById('modal__input-name');
