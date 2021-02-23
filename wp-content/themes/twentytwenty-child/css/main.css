@@ -2448,9 +2448,9 @@ input:checked + label::after {
 .tariff__table {
   width: 100%;
   margin-bottom: 1rem;
+  table-layout: fixed;
   border-radius: .5rem;
   background: #F2F2F2;
-  table-layout: fixed;
 }
 
 .tariff__table td {
@@ -2471,6 +2471,17 @@ input:checked + label::after {
 .table-head__title:first-of-type,
 .table__text:first-of-type {
   text-align: left;
+}
+
+.table-head__title,
+.table__circle,
+.table__btn {
+  width: 25rem;
+}
+
+.table-head__title--long,
+.table__text--long {
+  width: 45rem;
 }
 
 .table__circle:last-of-type {
@@ -2528,7 +2539,7 @@ input:checked + label::after {
 
 .table-btns {
   height: 14rem;
-  margin-left: 91rem;
+  margin-left: 80rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -4376,6 +4387,21 @@ input:checked + label::after {
   }
 }
 
+@media (min-width: 1230px) {
+  .tariff__table-wrap {
+    max-width: 120rem;
+    overflow-x: auto;
+  }
+
+  .table__btn:not(:last-child) {
+    margin-right: 8.4rem;
+  }
+
+  .table-btns {
+    margin-left: 80rem;
+  }
+}
+
 @media (min-width: 1440px) {
   .main-title {
     font-size: 6.4rem;
@@ -5121,11 +5147,11 @@ input:checked + label::after {
   }
 
   .table__btn:not(:last-child) {
-    margin-right: 10.4rem;
+    margin-right: 12.5rem;
   }
 
   .table-btns {
-    margin-left: 98.5rem;
+    margin-left: 94rem;
   }
 
   .order-site__card:first-of-type {
