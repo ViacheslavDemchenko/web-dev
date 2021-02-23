@@ -71,21 +71,25 @@
   var body = document.getElementsByTagName('body')[0];
   var menuLinks = document.querySelectorAll('.nav__link');
   var menu = document.querySelector('.header-top');
-  var headerInner = document.querySelector('.header__inner');
+  var header = document.querySelector('.header');
   var screenWidth = window.screen.availWidth;
 
   function mobileMenuHide() {
     hamburger.classList.remove('active');
-    menu.classList.remove('header-top--open');
-    headerInner.classList.remove('header__inner--active');
+    header.classList.remove('header--open');
+    menu.classList.remove('header-top--open'); // body.removeChild(menu);
+
     body.classList.remove('no-scroll');
   }
 
   function mobileMenuShow() {
     hamburger.classList.add('active');
-    menu.classList.add('header-top--open');
-    headerInner.classList.add('header__inner--active');
+    header.classList.add('header--open');
+    body.appendChild(menu);
     body.classList.add('no-scroll');
+    setTimeout(function () {
+      menu.classList.add('header-top--open');
+    }, 500);
   }
 
   hamburger.addEventListener('click', mobileMenu);
@@ -120,56 +124,50 @@
     }
   });
 })();
+// ;(function() {
+//     const btnsCall = document.querySelectorAll('.btn--call');
+//     const btnApplication = document.querySelector('.btn--application');
+//     const btnBrief = document.querySelector('.btn--brief');
+//     const body = document.getElementsByTagName('body')[0];
+//     const html = body.parentNode;
+//     const overlay = document.querySelector('.overlay');
+//     const modal = document.querySelector('.modal');
+//     const modalThanks = document.querySelector('.modal--thanks');
+//     const modalClose = document.querySelector('.modal__close');
+//     const modalTitle = document.querySelector('.form__title');
+//     const modalSubtitle = document.querySelector('.form__subtitle');
+//     function modalShow() {
+//         overlay.classList.add('overlay--active');
+//         modal.classList.add('modal--active');
+//         body.classList.add('no-scroll');
+//         html.classList.add('html-overflow');
+//     }
+//     function modalHide() {
+//         overlay.classList.remove('overlay--active');
+//         modal.classList.remove('modal--active');
+//         body.classList.remove('no-scroll');
+//         html.classList.remove('html-overflow');
+//     }
+//     btnsCall.forEach(btn => {
+//         btn.addEventListener('click', () => {
+//             modalTitle.textContent = 'Перезвонить вам?';
+//             modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
+//             modalShow();
+//         });
+//     });
+//     modalClose.addEventListener('click', modalHide);
+//     btnApplication.addEventListener('click', () => {
+//         modalTitle.textContent = 'Отправьте заявку';
+//         modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
+//         modalShow();
+//     });
+//     btnBrief.addEventListener('click', () => {
+//         modalTitle.textContent = 'Отправьте заявку';
+//         modalSubtitle.textContent = 'Оставьте свои контактные данные и мы пришлём вам бриф в ближайшее время';
+//         modalShow();
+//     });
+// })();
 "use strict";
-
-;
-
-(function () {
-  var btnsCall = document.querySelectorAll('.btn--call');
-  var btnApplication = document.querySelector('.btn--application');
-  var btnBrief = document.querySelector('.btn--brief');
-  var body = document.getElementsByTagName('body')[0];
-  var html = body.parentNode;
-  var overlay = document.querySelector('.overlay');
-  var modal = document.querySelector('.modal');
-  var modalThanks = document.querySelector('.modal--thanks');
-  var modalClose = document.querySelector('.modal__close');
-  var modalTitle = document.querySelector('.form__title');
-  var modalSubtitle = document.querySelector('.form__subtitle');
-
-  function modalShow() {
-    overlay.classList.add('overlay--active');
-    modal.classList.add('modal--active');
-    body.classList.add('no-scroll');
-    html.classList.add('html-overflow');
-  }
-
-  function modalHide() {
-    overlay.classList.remove('overlay--active');
-    modal.classList.remove('modal--active');
-    body.classList.remove('no-scroll');
-    html.classList.remove('html-overflow');
-  }
-
-  btnsCall.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      modalTitle.textContent = 'Перезвонить вам?';
-      modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
-      modalShow();
-    });
-  });
-  modalClose.addEventListener('click', modalHide);
-  btnApplication.addEventListener('click', function () {
-    modalTitle.textContent = 'Отправьте заявку';
-    modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
-    modalShow();
-  });
-  btnBrief.addEventListener('click', function () {
-    modalTitle.textContent = 'Отправьте заявку';
-    modalSubtitle.textContent = 'Оставьте свои контактные данные и мы пришлём вам бриф в ближайшее время';
-    modalShow();
-  });
-})();
 // ;(function() {
 // //Задаем инпут
 // const input = document.getElementById('modal__input-phone');
@@ -180,11 +178,9 @@
 // //Условие, проверяющее нажатую клавишу
 //         event.keyCode && (pressedKey === event.keyCode);
 // //Задаем в переменную позицию в инпуте, с которой будет доступен ввод цифр
-//         let numberPos = this.selectionStart;
-// //Устанавливаем возможность ввода цифр с третьей позиции       
-//         if (numberPos < 3) {
-//             event.preventDefault();
-//         } 
+//         // let numberPos = this.selectionStart;
+// //Устанавливаем возможность ввода цифр только с последней позиции  
+//         input.setSelectionRange(input.value.length, input.value.length);      
 // //Задаем внешний вид маски инпута
 //         let maskType = '+7 (___) ___-__-__',
 //             i = 0,
@@ -270,43 +266,38 @@
 ;
 
 (function () {
-  // var swiper = new Swiper('.swiper-container', {
-  //     spaceBetween: 10,
-  //     loop: true,
-  //     centeredSlides: true,
-  //     slidesPerView:'auto',
-  //     loopedSlides: 1,
-  //     scrollbar: {
-  //       el: '.swiper-scrollbar',
-  //       hide: true,
-  //     },
-  //   });
   if (document.querySelector('.gallery-top')) {
     var mobileSlider = function mobileSlider() {
       if (window.innerWidth < 1200 && slider.dataset.mobile == 'false') {
         mySwiper = new Swiper(slider, {
           spaceBetween: 10,
-          loop: true,
-          // centeredSlides: true,
           slidesPerView: 1,
           loopedSlides: 1,
-          // loopAdditionalSlides: 2,
-          scrollbar: {
-            el: '.swiper-scrollbar',
-            hide: true
-          },
+          initialSlide: -1,
+          loop: true,
           breakpoints: {
             320: {
+              spaceBetween: 10,
               slidesPerView: 1,
               loopedSlides: 1,
-              loop: true // loopAdditionalSlides: 2,
-
+              initialSlide: -1,
+              // loopAdditionalSlides: 2,
+              loop: true,
+              scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false
+              }
             },
             768: {
               slidesPerView: 2,
               loopedSlides: 1,
+              initialSlide: -1,
+              // loopAdditionalSlides: 2,
               loop: true,
-              loopAdditionalSlides: 2
+              scrollbar: {
+                el: '.swiper-scrollbar',
+                hide: false
+              }
             }
           }
         });

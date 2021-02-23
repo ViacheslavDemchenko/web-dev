@@ -11,23 +11,21 @@
     <link rel="stylesheet" href="./wp-content/themes/twentytwenty-child/css/main.min.css">
     <link rel="stylesheet" href="./wp-content/themes/twentytwenty-child/fonts/fonts.css">
     <script src="./wp-content/themes/twentytwenty-child/js/swiper-bundle.min.js" defer></script>
-    <script src="./wp-content/themes/twentytwenty-child/js/main.min.js" defer></script>
+    <script src="./wp-content/themes/twentytwenty-child/js/main.js" defer></script>
     <link rel="icon" href="#!" type="image/x-icon">
     <link rel="shortcut icon" href="#!" type="image/x-icon">
     <link rel="apple-touch-icon" href="#!">
   </head>
   <body>
     <div class="container-fluid">
-      <div class="header">
-        <div class="ball ball--first"></div>
-        <div class="ball ball--third"></div>
-        <button class="cmn-toggle-switch cmn-toggle-switch__htx" id="menu__button"><span>toggle menu</span></button>
-        <div class="container">
+      <div class="header header--main">
+        <div class="container container--no-padding--mobile">
+          <div class="logo logo--mobile"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50"></a></div>
           <header class="header-top">
-            <div class="ball ball--tenth"></div>
             <nav class="nav">
-              <div class="logo logo--desktop"><a class="logo__link" href="index.html"><span>Prof</span><span class="logo--blue">Web</span><span>Studio</span><span class="logo--small">Разработка сайтов</span></a></div>
-              <div class="nav-list"><a class="nav__link" href="#!">О нас</a><a class="nav__link" href="#!">Услуги</a><a class="nav__link" href="#!">Портфолио</a><a class="nav__link" href="#!">Отзывы</a><a class="nav__link" href="#!">Контакты</a>
+              <div class="logo logo--desktop"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50"></a></div>
+              <div class="nav-list"><a class="nav__link" href="#!">О нас</a><a class="nav__link" href="services.html">Услуги</a><a class="nav__link" href="#!">Портфолио</a><a class="nav__link" href="#!">Отзывы</a><a class="nav__link" href="#!">Контакты</a>
+                <div class="ball ball--tenth"></div>
                 <div class="ball ball--eleventh"></div>
                 <div class="ball ball--twelveth"></div>
               </div>
@@ -35,69 +33,57 @@
               <div class="btn btn--call">Обратный звонок</div>
             </nav>
           </header>
-        </div>
-        <div class="header__inner">
-          <div class="container container--no-padding--mobile">
-            <div class="logo logo--mobile"><a class="logo__link" href="#!"><span>Prof</span><span class="logo--blue">Web</span><span>Studio</span><span class="logo--small">Разработка сайтов</span></a></div>
-            <div class="header__content">
-              <div class="header-center">
-                <h1 class="main-title"> <span class="main-title--blue">Комплексное </span><span>создание </span><br><span>и продвижение </span><span class="main-title--blue">сайтов</span></h1>
-                <div class="header-center-inner">
-                  <div class="header-center__left">
-                    <ul class="advantages-list">
-                      <li class="advantages__item">
-                        <div class="item__img">
-                          <div class="smartphone">
-                            <picture>
-                              <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/smartphone@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/smartphone@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/smartphone@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/smartphone@2x.png 2x" alt="" width="150" height="100">
-                            </picture>
-                          </div>
-                        </div>
-                        <p class="item__text">Создаем удобные ресурсы, которые решают задачи <span class="item__text--bold">Вашего бизнеса </span></p>
-                      </li>
-                      <li class="advantages__item">
-                        <div class="item__img">
-                          <div class="clock">
-                            <picture>
-                              <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/clock@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/clock@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/clock@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/clock@2x.png 2x" alt="" width="144" height="144">
-                            </picture>
-                          </div>
-                        </div>
-                        <p class="item__text">Избавим вас от неэффективного сайта <span class="item__text--bold"> <br><span>в срок и под ключ</span></span></p>
-                      </li>
-                      <li class="advantages__item">
-                        <div class="item__img">
-                          <div class="gear">
-                            <picture>
-                              <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/gear@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/gear@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/gear@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/gear@2x.png 2x" alt="" width="150" height="145">
-                            </picture>
-                          </div>
-                        </div>
-                        <p class="item__text"> <span class="item__text--bold">Полный цикл: </span><span>от анализа конкурентов до продвижения в поисковиках</span></p>
-                      </li>
-                    </ul>
-                  </div>
-                  <div class="header-center__right">
-                    <div class="devices-img">
-                      <picture>
-                        <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/devices-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/devices-lg@2x.webp 2x">
-                        <source media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/devices-lg@1x.png 1x, ./wp-content/themes/twentytwenty-child/img/devices-lg@1x.png 2x">
-                        <source type="image/webp" media="(min-width: 450px)" srcset="./wp-content/themes/twentytwenty-child/img/devices-md@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/devices-md@2x.webp 2x">
-                        <source media="(min-width: 450px)" srcset="./wp-content/themes/twentytwenty-child/img/devices-md@1x.png 1x, ./wp-content/themes/twentytwenty-child/img/devices-md@2x.png 2x">
-                        <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/devices-sm@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/devices-sm@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/devices-sm@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/devices-sm@2x.png 2x" alt="" width="1048" height="537">
-                      </picture>
+          <button class="cmn-toggle-switch cmn-toggle-switch__htx" id="menu__button"><span>toggle menu</span></button>
+          <div class="header-center">
+            <h1 class="main-title"> <span class="main-title--blue">Комплексное </span><span>создание </span><br><span>и продвижение </span><span class="main-title--blue">сайтов</span></h1>
+            <div class="header-center-inner">
+              <div class="header-center__left">
+                <ul class="advantages-list">
+                  <li class="advantages__item">
+                    <div class="item__img">
+                      <div class="smartphone">
+                        <picture>
+                          <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/smartphone@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/smartphone@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/smartphone@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/smartphone@2x.png 2x" alt="" width="150" height="100">
+                        </picture>
+                      </div>
                     </div>
-                  </div>
-                </div>
+                    <p class="advantages__text">Создаем удобные ресурсы, которые решают задачи <span class="advantages__text--bold">Вашего бизнеса </span></p>
+                  </li>
+                  <li class="advantages__item">
+                    <div class="item__img">
+                      <div class="clock">
+                        <picture>
+                          <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/clock@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/clock@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/clock@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/clock@2x.png 2x" alt="" width="144" height="144">
+                        </picture>
+                      </div>
+                    </div>
+                    <p class="advantages__text">Избавим вас от неэффективного сайта <span class="advantages__text--bold"> <br><span>в срок и под ключ</span></span></p>
+                  </li>
+                  <li class="advantages__item">
+                    <div class="item__img">
+                      <div class="gear">
+                        <picture>
+                          <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/gear@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/gear@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/gear@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/gear@2x.png 2x" alt="" width="150" height="145">
+                        </picture>
+                      </div>
+                    </div>
+                    <p class="advantages__text"><span class="advantages__text--bold">Полный цикл: </span><span>от анализа конкурентов до продвижения в поисковиках</span></p>
+                  </li>
+                </ul>
               </div>
-              <div class="header-bottom">
-                <h3 class="title--small title--small--header-bottom">Запустим ваш сайт в срок <span class="title--small--blue">от ХХ дней</span><span>!</span></h3>
-                <p class="header-bottom__subtitle">Для начала работы заполните короткий бриф:</p>
-                <button class="btn btn--brief">Заполнить бриф</button>
+              <div class="header-center__right">
+                <div class="devices-img"></div>
               </div>
             </div>
           </div>
+          <div class="header-bottom">
+            <h3 class="section__title--small section__title--small-header-bottom">Запустим ваш сайт в срок <span class="section__title--small-blue">от ХХ дней</span><span>!</span></h3>
+            <p class="subtitle subtitle--header-bottom">Для начала работы заполните короткий бриф:</p>
+            <button class="btn btn--brief">Заполнить бриф</button>
+          </div>
         </div>
+        <div class="ball ball--first"></div>
+        <div class="ball ball--third"></div>
       </div>
       <section class="design">
         <div class="ball ball--thirteenth"></div>
@@ -105,18 +91,18 @@
           <div class="design__inner">
             <div class="design__left">
               <h2 class="section__title section__title--design">Современный дизайн.</h2>
-              <p class="design__text">Эффективный вовлекающий дизайн для вашего бизнеса: разрабатываем архитектуру сайта, сценарии взаимодействия пользователем, качественную графику.</p>
+              <p class="page-text design__text">Эффективный вовлекающий дизайн для вашего бизнеса: разрабатываем архитектуру сайта, сценарии взаимодействия пользователем, качественную графику.</p>
             </div>
           </div>
         </div>
       </section>
       <section class="content">
-        <div class="ball ball--fourth"></div>
         <div class="container container--no-padding">
           <div class="content__inner">
+            <div class="ball ball--fourth"></div>
             <div class="content__right">
-              <h2 class="section__title section__title--content">Вовлекающий контент.</h2>
-              <div class="content__text"> 
+              <h2 class="section__title section__title--white section__title--content">Вовлекающий контент.</h2>
+              <div class="page-text page-text--white content__text"> 
                 <p>Контент - главная составляющая сайта. Наполним сайт качественными фотографиями, уникальными заголовками.</p>
                 <p>Сделаем информативную подачу материала и акцентируем  внимание пользователя на важных мелочах.</p>
               </div>
@@ -129,7 +115,7 @@
           <div class="work-scheme__inner">
             <div class="work-scheme__content">
               <h2 class="section__title section__title--work-scheme">Схема работы.</h2>
-              <p class="work-scheme__text">Мы создаем креативные сайты с уникальным дизайном, удобным интерфейсом и функциональной версткой. Помогаем развитию вашего бизнеса.</p>
+              <p class="page-text work-scheme__text">Мы создаем креативные сайты с уникальным дизайном, удобным интерфейсом и функциональной версткой. Помогаем развитию вашего бизнеса.</p>
             </div>
           </div>
           <div class="work-scheme-cards">
@@ -137,26 +123,26 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="slide__inner slide__inner--first">
-                    <h3 class="slide__title">Аналитика</h3>
-                    <p class="slide__text">Включает в себя анализ конкурентов, создание структуры сайта, создание прототипа</p>
+                    <h3 class="card__title card__title--slide">Аналитика</h3>
+                    <p class="card__text card__text--slide">Включает в себя анализ конкурентов, создание структуры сайта, создание прототипа</p>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="slide__inner slide__inner--second">
-                    <h3 class="slide__title">Креатив</h3>
-                    <p class="slide__text">Разработка дизайна сайта с соблюдением современных трендов и стилей</p>
+                    <h3 class="card__title card__title--slide">Креатив</h3>
+                    <p class="card__text card__text--slide">Разработка дизайна сайта с соблюдением современных трендов и стилей</p>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="slide__inner slide__inner--third">
-                    <h3 class="slide__title">Разработка</h3>
-                    <p class="slide__text">Верстка и анимация на сайте. Адаптивный дизайн под все современные устройства.</p>
+                    <h3 class="card__title card__title--slide">Разработка</h3>
+                    <p class="card__text card__text--slide">Верстка и анимация на сайте. Адаптивный дизайн под все современные устройства.</p>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="slide__inner slide__inner--fourth">
-                    <h3 class="slide__title">Развитие</h3>
-                    <p class="slide__text">После запуска сайта организуем эффективное продвижение в поисковых системах и будем сопровождать контентное наполнение сайта.</p>
+                    <h3 class="card__title card__title--slide">Развитие</h3>
+                    <p class="card__text card__text--slide">После запуска сайта организуем эффективное продвижение в поисковых системах и будем сопровождать контентное наполнение сайта.</p>
                   </div>
                 </div>
               </div>
@@ -167,30 +153,34 @@
       </section>
       <section class="services">
         <div class="ball ball--seventh"></div>
-        <div class="container">
+        <div class="container container--no-padding">
           <div class="services__inner">
             <div class="ball ball--sixth"></div>
             <h2 class="section__title section__title--services">Услуги.</h2>
-            <div class="services-row"><a class="services__item" href="#!"> 
-                <h3>Разработка сайтов и сервисов</h3></a><a class="services__item services__item--short" href="#!">
-                <h3>Графический и веб-дизайн</h3></a></div>
-            <div class="services-row"><a class="services__item" href="#!">
-                <h3>Комплексный маркетинг</h3></a><a class="services__item" href="#!">
-                <h3>SEO-продвижение</h3></a></div>
-            <div class="services-row"><a class="services__item" href="#!">
-                <h3>Комплексный маркетинг</h3></a><a class="services__item" href="#!">
-                <h3>Комплексный маркетинг</h3></a></div>
+            <ul class="services-list">
+              <li class="services__item"><a class="services__link" href="#!"> 
+                  <h3 class="service__title">Разработка сайтов и сервисов</h3></a></li>
+              <li class="services__item"><a class="services__link services__item--short" href="#!">
+                  <h3 class="service__title">Графический и веб-дизайн</h3></a></li>
+              <li class="services__item"><a class="services__link" href="#!"> 
+                  <h3 class="service__title">Комплексный маркетинг</h3></a></li>
+              <li class="services__item"><a class="services__link" href="#!"> 
+                  <h3 class="service__title">SEO-продвижение</h3></a></li>
+              <li class="services__item"><a class="services__link" href="#!"> 
+                  <h3 class="service__title">Комплексный маркетинг</h3></a></li>
+              <li class="services__item"><a class="services__link" href="#!"> 
+                  <h3 class="service__title">Комплексный маркетинг</h3></a></li>
+            </ul>
           </div>
         </div>
       </section>
       <section class="price">
-        <div class="ball ball--ninth"></div>
         <div class="container">
           <div class="price__top">
             <h2 class="section__title section__title--price">Цены.</h2>
             <div class="price-cards">
-              <div class="price-cards__item price-cards__item--grey">
-                <div class="item__price">От 15 000 р.</div>
+              <div class="price-cards__item price-cards__item--yellow">
+                <div class="card__price">От 15 000 р.</div>
                 <div class="item__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/price-check-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-check-lg@2x.webp 2x">
@@ -198,11 +188,11 @@
                     <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/price-check-sm@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-check-sm@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/price-check-sm@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/price-check-sm@2x.png 2x" alt="" width="349" height="250">
                   </picture>
                 </div>
-                <div class="item__title">Разработка сайтов с выбором из простых готовых решений</div>
-                <div class="item__text">Для быстрого старта с минимальным бюджетом</div>
+                <h3 class="price-cards__title">Разработка сайтов с выбором из простых готовых решений</h3>
+                <p class="price-cards__text">Для быстрого старта с минимальным бюджетом</p>
               </div>
-              <div class="price-cards__item price-cards__item--gold">
-                <div class="item__price">От 25 000 р.</div>
+              <div class="price-cards__item price-cards__item--blue">
+                <div class="card__price">От 25 000 р.</div>
                 <div class="item__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@2x.webp 2x">
@@ -210,11 +200,11 @@
                     <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/price-check-yellow-lg@2x.png 2x" alt="" width="349" height="250">
                   </picture>
                 </div>
-                <div class="item__title">Разработка сайтов с выбором из сложных готовых решений</div>
-                <div class="item__text">Быстрый запуск с максимальным эффектом</div>
+                <h3 class="price-cards__title price-cards__title--white">Разработка сайтов с выбором из сложных готовых решений</h3>
+                <p class="price-cards__text price-cards__text--white">Быстрый запуск с максимальным эффектом</p>
               </div>
-              <div class="price-cards__item price-cards__item--diamond"> 
-                <div class="item__price">От 45 000 р.</div>
+              <div class="price-cards__item price-cards__item--yellow"> 
+                <div class="card__price">От 45 000 р.</div>
                 <div class="item__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/price-diamond-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-diamond-lg@2x.webp 2x">
@@ -222,15 +212,16 @@
                     <source type="image/webp" srcset="./wp-content/themes/twentytwenty-child/img/price-diamond-sm@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/price-diamond-sm@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/price-diamond-sm@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/price-diamond-sm@2x.png 2x" alt="" width="349" height="250">
                   </picture>
                 </div>
-                <div class="item__title">Разработка уникального сайта с дизайном с нуля</div>
-                <div class="item__text">Выделитесь среди ваших конкурентов!</div>
+                <h3 class="price-cards__title">Разработка уникального сайта с дизайном с нуля</h3>
+                <p class="price-cards__text">Выделитесь среди ваших конкурентов!</p>
               </div>
             </div><a class="btn" href="#!">Узнать подробнее</a>
           </div>
           <div class="price__bottom">
+            <div class="ball ball--ninth"></div>
             <div class="ball ball--eighth"></div>
             <h2 class="section__title section__title--price-bottom">Подскажем оптимальный вариант</h2>
-            <p class="price__text">Свяжитесь с нами и мы проконсультируем вас</p>
+            <p class="page-text price__text">Свяжитесь с нами и мы проконсультируем вас</p>
             <button class="btn btn--application">Отправить заявку</button>
           </div>
         </div>
@@ -238,15 +229,15 @@
       <section class="about">
         <div class="container">
           <div class="about__content">
-            <h2 class="section__title section__title--about">О нас.</h2>
-            <div class="about__text">Мы занимаемся комплексным созданием и продвижением сайтов. Создаем удобные индивидуальные ресурсы, которые решают задачи Вашего бизнеса.</div>
+            <h2 class="section__title section__title--white section__title--about">О нас.</h2>
+            <div class="page-text page-text--white about__text">Мы занимаемся комплексным созданием и продвижением сайтов. Создаем удобные индивидуальные ресурсы, которые решают задачи Вашего бизнеса.</div>
           </div>
           <div class="about__inner">
             <div class="about__left">
               <div class="about__img">
                 <picture>
-                  <source type="image/webp" media="(min-width: 1920px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/laptop-lg@2x.webp 2x">
-                  <source media="(min-width: 1920px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.png 1x, ./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.png 2x">
+                  <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/laptop-lg@2x.webp 2x">
+                  <source media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.png 1x, ./wp-content/themes/twentytwenty-child/img/laptop-lg@1x.png 2x">
                   <source type="image/webp" media="(min-width: 768px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-md@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/laptop-md@2x.webp 2x">
                   <source media="(min-width: 768px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-md@1x.png 1x, ./wp-content/themes/twentytwenty-child/img/laptop-md@2x.png 2x">
                   <source type="image/webp" media="(min-width: 320px)" srcset="./wp-content/themes/twentytwenty-child/img/laptop-sm@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/laptop-sm@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/laptop-sm@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/laptop-sm@2x.png 2x" alt="" width="765" height="575">
@@ -254,40 +245,49 @@
               </div>
             </div>
             <div class="about__right">
-              <div class="team-row">
-                <div class="team__item">
-                  <h3 class="team__item-title">Вэб-дизайнеры</h3>
-                  <p class="team__item-text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
-                </div>
-                <div class="team__item">
-                  <h3 class="team__item-title">Верстальщики</h3>
-                  <p class="team__item-text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
-                </div>
-              </div>
-              <div class="team-row">
-                <div class="team__item">
-                  <h3 class="team__item-title">Программисты</h3>
-                  <p class="team__item-text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
-                </div>
-                <div class="team__item">
-                  <h3 class="team__item-title">SEO-специалисты</h3>
-                  <p class="team__item-text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
-                </div>
-              </div>
+              <ul class="about-cards-list">
+                <li class="team__item">
+                  <h3 class="team-member__title team__item-title">Вэб-дизайнеры</h3>
+                  <p class="team-member__text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
+                </li>
+                <li class="team__item">
+                  <h3 class="team-member__title team__item-title">Верстальщики</h3>
+                  <p class="team-member__text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
+                </li>
+                <li class="team__item">
+                  <h3 class="team-member__title team__item-title">Программисты</h3>
+                  <p class="team-member__text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
+                </li>
+                <li class="team__item">
+                  <h3 class="team-member__title team__item-title">SEO-специалисты</h3>
+                  <p class="team-member__text">Пара слов про опыт и чем занимается, какая выгода от работы для бизнеса</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
       <footer class="footer">
         <div class="container">
-          <nav class="nav nav--footer">
-            <div class="nav-list--footer"><a class="nav__link nav__link--footer" href="#!">О нас</a><a class="nav__link nav__link--footer" href="#!">Услуги</a><a class="nav__link nav__link--footer" href="#!">Портфолио</a><a class="nav__link nav__link--footer" href="#!">Отзывы</a><a class="nav__link nav__link--footer" href="#!">Контакты</a></div>
+          <nav class="nav">
+            <ul class="nav-list--footer">
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">О нас</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="services.html">Услуги</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Портфолио</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Отзывы</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Контакты</a></li>
+            </ul>
           </nav>
-          <nav class="nav nav-bottom--footer">
-            <div class="nav-list-bottom--footer"><a class="nav__link nav__link--footer" href="#!">Разработка сайтов</a><a class="nav__link nav__link--footer" href="#!">Графический и вэб-дизайн</a><a class="nav__link nav__link--footer" href="#!">SEO продвижение</a><a class="nav__link nav__link--footer" href="#!">Техническое сопровождение</a></div>
+          <nav class="nav">
+            <ul class="nav-list--footer-bottom">
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Разработка сайтов</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Графический и вэб-дизайн</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">SEO продвижение</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Техническое сопровождение</a></li>
+            </ul>
           </nav>
           <div class="footer__inner">
-            <div class="logo logo--footer"><a class="logo__link logo__link--footer" href="index.html"><span>Prof</span><span>Web</span><span>Studio</span><span class="logo--small logo--small--footer">Разработка сайтов</span></a></div>
+            <div class="logo logo--desktop logo--desktop-footer"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50"></a></div>
             <div class="policy">
               <div class="copyright">© 2020 «ProfWebStudio»</div><a class="policy__link" href="#!">Политика Конфиденциальности сайта</a>
             </div>
@@ -311,7 +311,7 @@
           <input class="btn form-call__submit" type="submit" id="form-call__submit" value="Отправить заявку">
           <div class="form__policy">
             <input class="form__checkbox" type="checkbox" id="modal__checkbox" checked>
-            <label class="form__policy" for="modal__checkbox">Вы соглашаетесь с &#160;<a class="form__policy-link" href="#!">условиями обработки персональных данных</a></label>
+            <label class="form__policy-text" for="modal__checkbox">Вы соглашаетесь с &#160;<a class="form__policy-link" href="#!">условиями обработки персональных данных</a></label>
           </div>
         </form>
       </div>
