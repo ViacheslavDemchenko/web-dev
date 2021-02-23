@@ -1218,7 +1218,6 @@ input:checked + label::after {
 
 .price {
   width: 100%;
-  min-height: 131.5rem;
   overflow: hidden;
   padding: 3rem 0;
   background: #F8F8F8;
