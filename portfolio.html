@@ -17,7 +17,7 @@
     <link rel="apple-touch-icon" href="#!">
   </head>
   <body>
-    <div class="container-fluid">
+    <div class="container-fluid container-fluid--portfolio">
       <div class="header header--portfolio">
         <div class="ball ball--first"></div>
         <button class="cmn-toggle-switch cmn-toggle-switch__htx" id="menu__button"><span>toggle menu</span></button>
@@ -39,7 +39,7 @@
           <div class="logo logo--mobile"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50" alt="Логотип компании DEX Development"></a></div>
           <div class="header__content header__content--portfolio">
             <div class="header-center header-center--portfolio">
-              <h1 class="main-title main-title--portfolio"><span>Наше </span><span class="main-title--blue">Портфолио </span></h1>
+              <h1 class="main-title main-title--portfolio"><span>Наше </span><span class="main-title--blue">портфолио </span></h1>
               <p class="page-text page-text--portfolio">Вместо тысячи слов о плюсах сотрудничества с нами — посмотрите наши последние проекты:</p>
             </div>
           </div>
@@ -48,10 +48,82 @@
       <section class="portfolio">
         <div class="container">
           <div class="portfolio-list">
-            <div class="portfolio-work"> 
-              <div class="portfolio__img"><img src="./wp-content/themes/twentytwenty-child/img/portfolio-img@1x.png" width="700" height="517" alt="Сайт детского садика"></div>
-              <div class="portfolio__decription"></div>
+            <div class="portfolio-project"> 
+              <div class="project__img"><img src="./wp-content/themes/twentytwenty-child/img/kindergarten@1x.png" width="700" height="503" alt="Сайт детского садика"></div>
+              <div class="project__decription">
+                <div class="project__tag">Разработка сайтов</div>
+                <h2 class="section__title project__title">Сайт детского сада</h2>
+                <div class="project__subtitle">Многостраничный сайт <span class="project__subtitle--black">включает в себя: </span></div>
+                <ul class="decription-list"> 
+                  <li class="decription__item">формы связи с продуманными триггерами, для генерации заявок</li>
+                  <li class="decription__item">много полезного контента, который расскрывает все плюсы для развития ребёнка</li>
+                  <li class="decription__item">сайт «упакован» в современный дизайн в нежных «детских» тонах, который выделяет среди конкурентов</li>
+                </ul><a class="btn btn--white project__link" href="#!">Посмотреть проект</a>
+              </div>
             </div>
+            <div class="portfolio-project"> 
+              <div class="project__img"><img src="./wp-content/themes/twentytwenty-child/img/psychologist@1x.png" width="700" height="503" alt="Сайт частного психолога"></div>
+              <div class="project__decription">
+                <div class="project__tag">Разработка сайтов</div>
+                <h2 class="section__title project__title">Сайт частного психолога</h2>
+                <div class="project__subtitle">Многостраничный сайт <span class="project__subtitle--black">включает в себя: </span></div>
+                <ul class="decription-list"> 
+                  <li class="decription__item">подробную информацию о профессионализме и опыте работы</li>
+                  <li class="decription__item">блог для полезных постов, и ещё что-то что ещё мы не знаем</li>
+                  <li class="decription__item">формы записи онлайн</li>
+                </ul><a class="btn btn--white project__link" href="#!">Посмотреть проект</a>
+              </div>
+            </div>
+          </div>
+          <button class="btn portfolio__btn">Показать ещё</button>
+        </div>
+      </section>
+      <section class="quiz">
+        <div class="container">
+          <div class="quiz__top">
+            <div class="quiz__top-img"></div>
+            <div class="quiz__top-content">
+              <h2 class="section__title section__title--quiz">Вам нужен <span class="section__title--blue">эффективный </span><span>сайт?</span></h2>
+              <p class="page-text quiz__top-text">Оставьте заявку, заполнив форму ниже - это займёт не более 5 минут. Или позвоните нам, мы зададим все необходимые вопросы по телефону: </p>
+              <p class="phone phone--quiz"><a class="phone__link phone__link--quiz" href="tel:+78001002030">+7 (800) 100-20-30</a></p>
+            </div>
+          </div>
+          <div class="quiz__center">
+            <h3 class="subtitle--large subtitle--large-quiz">Расскажите кратко о проекте:</h3>
+            <textarea class="quiz-message" id="quiz-message" name="quiz-message" placeholder="Описание проекта"></textarea>
+            <h3 class="subtitle--large subtitle--large-quiz">Ваш бюджет:</h3>
+            <ul class="quiz__budget-list"> 
+              <li class="budget-list__price budget-list__price--active">от <span class="budget__price">100 000&#160;</span><span>Р.</span></li>
+              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
+              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
+              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
+            </ul>
+            <h3 class="subtitle--large subtitle--large-quiz">Откуда вы о нас узнали?</h3>
+            <ul class="quiz__source-list"> 
+              <li class="budget-list__source budget-list__source--active">Рейтинги</li>
+              <li class="budget-list__source">Соц. сети</li>
+              <li class="budget-list__source">Рекомендации</li>
+              <li class="budget-list__source">СМИ</li>
+            </ul>
+            <h3 class="subtitle--large subtitle--large-quiz">Оставьте контактные данные для связи:</h3>
+            <form class="quiz__form" id="quiz-form" action="#" method="post">
+              <div class="inputs-wrap"> 
+                <input class="quiz__form-name" type="text" name="name" placeholder="Ваше имя">
+                <input class="quiz__form-phone" type="text" name="phone" placeholder="Телефон">
+                <input class="quiz__form-email" type="email" name="name" placeholder="E-mail">
+              </div>
+              <div class="quiz__form-bottom">
+                <div class="quiz__form-file__wrap">
+                  <input class="quiz__form-file" type="file" name="file" id="attach-file" multiple>
+                  <label class="quiz__form-file-button" for="attach-file"><span class="input__file-icon-wrapper"><img class="input__file-icon" src="./wp-content/themes/twentytwenty-child/img/icons/download.svg" alt="Прикрепить файл" width="25"></span><span class="input__file-button-text">Прикрепить файл</span></label>
+                </div>
+                <input class="btn quiz__form-submit" id="quiz-form__submit" type="submit" value="Отправить заявку">
+              </div>
+              <div class="checkbox-wrap"> 
+                <input class="form__checkbox" type="checkbox" id="quiz__checkbox" name="quiz__checkbox" checked>
+                <label class="form__policy-text" for="quiz__checkbox">Вы соглашаетесь с &#160;<a class="form__policy-link" href="#!">условиями обработки персональных данных</a></label>
+              </div>
+            </form>
           </div>
         </div>
       </section>
