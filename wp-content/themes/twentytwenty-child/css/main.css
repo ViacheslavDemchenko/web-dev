@@ -1633,6 +1633,9 @@ input:checked + label::after {
 
 .portfolio-list {
   margin-bottom: 4.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .portfolio__btn {
@@ -2672,6 +2675,22 @@ input:checked + label::after {
   justify-content: center;
 }
 
+.portfolio-project-wrap {
+  position: relative;
+  margin: 0 auto 5.5rem auto;
+}
+
+.portfolio-project-wrap:nth-child(even)::before,
+.portfolio-project-wrap:nth-child(even)::after,
+.portfolio-project-wrap:nth-child(odd)::before {
+  position: absolute;
+  content: "";
+  display: none;
+  border-radius: 50%;
+  background: radial-gradient(72.29% 72.29% at 21.69% 27.71%, #FFFFFF 0%, rgba(255, 255, 255, 0) 54.26%), radial-gradient(71.08% 71.08% at 32.53% 18.07%, #FBFFFF 0%, #E0E6EA 69.62%, #C8D0D5 100%);
+  box-shadow: 0 10rem 13rem rgba(172, 172, 172, 0.07), 0 4.17776rem 5.43109rem rgba(172, 172, 172, 0.0503198), 0 2.23363rem 2.90372rem rgba(172, 172, 172, 0.0417275), 0 1.25216rem 1.6278rem rgba(172, 172, 172, 0.035), 0 0.66501rem 0.86451rem rgba(172, 172, 172, 0.0282725), 0 0.27673rem 0.35974rem rgba(172, 172, 172, 0.0196802);
+}
+
 .portfolio-project {
   position: relative;
   max-width: 70rem;
@@ -2679,7 +2698,6 @@ input:checked + label::after {
   flex-direction: column;
   align-items: center;
   flex-wrap: wrap;
-  margin: 0 auto 2.5rem auto;
   padding-top: 2rem;
   background: #F2F2F2;
   border-radius: .5rem;
@@ -4371,6 +4389,11 @@ input:checked + label::after {
     max-width: 100rem;
   }
 
+  .portfolio-list {
+    max-width: 90%;
+    margin: 0 auto;
+  }
+
   .price-cards {
     margin-bottom: 2.3rem;
   }
@@ -4382,6 +4405,33 @@ input:checked + label::after {
   .nav-list--footer-bottom {
     width: 90%;
     margin: 0 auto 5rem auto;
+  }
+
+  .portfolio-project-wrap:nth-child(even)::before,
+  .portfolio-project-wrap:nth-child(even)::after,
+  .portfolio-project-wrap:nth-child(odd)::before {
+    display: block;
+  }
+
+  .portfolio-project-wrap:nth-child(even)::before {
+    top: 13rem;
+    right: -6rem;
+    width: 14rem;
+    height: 14rem;
+  }
+
+  .portfolio-project-wrap:nth-child(even)::after {
+    top: -2.7rem;
+    left: -1.6rem;
+    width: 9rem;
+    height: 9rem;
+  }
+
+  .portfolio-project-wrap:nth-child(odd)::before {
+    bottom: -3.6rem;
+    right: 25.5rem;
+    width: 14rem;
+    height: 14rem;
   }
 }
 
@@ -4464,6 +4514,7 @@ input:checked + label::after {
   }
 
   .portfolio-list {
+    max-width: 105.5rem;
     margin-bottom: 7.8rem;
   }
 
@@ -4568,9 +4619,16 @@ input:checked + label::after {
     margin-bottom: 3rem;
   }
 
+  .portfolio-project-wrap {
+    margin: 0 auto 10rem auto;
+  }
+
+  .portfolio-project-wrap:nth-child(odd)::before {
+    right: 26rem;
+  }
+
   .portfolio-project {
     max-width: 144rem;
-    margin: 0 auto 10rem auto;
     padding-top: 0;
     flex-direction: row;
   }
@@ -5114,6 +5172,11 @@ input:checked + label::after {
     max-width: 87rem;
   }
 
+  .portfolio-list {
+    max-width: 120rem;
+    margin-bottom: 7.8rem;
+  }
+
   .ball--first {
     right: -7.4rem;
     top: 10.9rem;
@@ -5473,6 +5536,10 @@ input:checked + label::after {
     width: 34.8rem;
   }
 
+  .portfolio-project-wrap:nth-child(odd)::before {
+    right: 30rem;
+  }
+
   .project__img {
     transform: translateY(6rem);
   }
@@ -5689,6 +5756,10 @@ input:checked + label::after {
 }
 
 @media (min-width: 1920px) {
+  .portfolio-list {
+    max-width: 100%;
+  }
+
   .ball--first {
     right: -8.4rem;
     top: 10.9rem;
@@ -5743,6 +5814,27 @@ input:checked + label::after {
     margin-bottom: 3rem;
     font-size: 2.4rem;
     line-height: 3.8rem;
+  }
+
+  .portfolio-project-wrap:nth-child(even)::before {
+    top: 10rem;
+    right: -9.5rem;
+    width: 19.1rem;
+    height: 19.1rem;
+  }
+
+  .portfolio-project-wrap:nth-child(even)::after {
+    top: -4.6rem;
+    left: -5rem;
+    width: 14.3rem;
+    height: 14.3rem;
+  }
+
+  .portfolio-project-wrap:nth-child(odd)::before {
+    bottom: -5rem;
+    right: 31.5rem;
+    width: 19.3rem;
+    height: 19.3rem;
   }
 }
 
