@@ -17,31 +17,34 @@
     <link rel="apple-touch-icon" href="#!">
   </head>
   <body>
-    <div class="container-fluid container-fluid--portfolio">
+    <div class="container-fluid container-fluid--stretched">
       <div class="header header--portfolio">
         <div class="ball ball--first"></div>
         <button class="cmn-toggle-switch cmn-toggle-switch__htx" id="menu__button"><span>toggle menu</span></button>
         <div class="container">
           <header class="header-top">
-            <div class="nav">
+            <nav class="nav">
               <div class="logo logo--desktop"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50" alt="Логотип компании DEX Development"></a></div>
-              <nav class="nav-list"><a class="nav__link" href="#!">О нас</a><a class="nav__link" href="services.html">Услуги</a><a class="nav__link" href="portfolio.html">Портфолио</a><a class="nav__link" href="#!">Отзывы</a><a class="nav__link" href="#!">Контакты</a>
+              <ul class="nav-list">
+                <li><a class="nav__link" href="about.html">О нас</a></li>
+                <li><a class="nav__link" href="services.html">Услуги</a></li>
+                <li><a class="nav__link" href="portfolio.html">Портфолио</a></li>
+                <li><a class="nav__link" href="reviews.html">Отзывы</a></li>
+                <li><a class="nav__link" href="contacts.html">Контакты</a></li>
                 <div class="ball ball--tenth"></div>
                 <div class="ball ball--eleventh"></div>
                 <div class="ball ball--twelveth"></div>
-              </nav>
+              </ul>
               <div class="phone"><a class="phone__link" href="tel:+78001002030">+7 (800) 100-20-30</a></div>
               <div class="btn btn--call">Обратный звонок</div>
-            </div>
+            </nav>
           </header>
         </div>
-        <div class="container container--no-padding--mobile">
+        <div class="container">
           <div class="logo logo--mobile"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50" alt="Логотип компании DEX Development"></a></div>
-          <div class="header__content header__content--portfolio">
-            <div class="header-center header-center--portfolio">
-              <h1 class="main-title main-title--portfolio"><span>Наше </span><span class="main-title--blue">портфолио </span></h1>
-              <p class="page-text page-text--portfolio">Вместо тысячи слов о плюсах сотрудничества с нами — посмотрите наши последние проекты:</p>
-            </div>
+          <div class="header__content">
+            <h1 class="main-title main-title--inner-page">Наше <i>портфолио</i></h1>
+            <p class="page-text page-text--header">Вместо тысячи слов о плюсах сотрудничества с нами — посмотрите наши последние проекты:</p>
           </div>
         </div>
       </div>
@@ -87,30 +90,54 @@
           <div class="quiz__top">
             <div class="quiz__top-img"></div>
             <div class="quiz__top-content">
-              <h2 class="section__title section__title--quiz">Вам нужен <span class="section__title--blue">эффективный </span><span>сайт?</span></h2>
+              <h2 class="section__title section__title--quiz">Вам нужен <i>эффективный</i> сайт?</h2>
               <p class="page-text quiz__top-text">Оставьте заявку, заполнив форму ниже - это займёт не более 5 минут. Или позвоните нам, мы зададим все необходимые вопросы по телефону: </p>
               <p class="phone phone--quiz"><a class="phone__link phone__link--quiz" href="tel:+78001002030">+7 (800) 100-20-30</a></p>
             </div>
           </div>
           <div class="quiz__center">
-            <h3 class="subtitle--large subtitle--large-quiz">Расскажите кратко о проекте:</h3>
-            <textarea class="quiz-message" id="quiz-message" name="quiz-message" placeholder="Описание проекта"></textarea>
-            <h3 class="subtitle--large subtitle--large-quiz">Ваш бюджет:</h3>
-            <ul class="quiz__budget-list"> 
-              <li class="budget-list__price budget-list__price--active">от <span class="budget__price">100 000&#160;</span><span>Р.</span></li>
-              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
-              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
-              <li class="budget-list__price">от <span class="budget__price">500 000&#160;</span><span>Р.</span></li>
-            </ul>
-            <h3 class="subtitle--large subtitle--large-quiz">Откуда вы о нас узнали?</h3>
-            <ul class="quiz__source-list"> 
-              <li class="budget-list__source budget-list__source--active">Рейтинги</li>
-              <li class="budget-list__source">Соц. сети</li>
-              <li class="budget-list__source">Рекомендации</li>
-              <li class="budget-list__source">СМИ</li>
-            </ul>
-            <h3 class="subtitle--large subtitle--large-quiz">Оставьте контактные данные для связи:</h3>
             <form class="quiz__form" id="quiz-form" action="#" method="post">
+              <h3 class="subtitle--large subtitle--large-quiz">Расскажите кратко о проекте:</h3>
+              <textarea class="quiz-message" id="quiz-message" name="quiz-message" placeholder="Описание проекта"></textarea>
+              <h3 class="subtitle--large subtitle--large-quiz">Ваш бюджет:</h3>
+              <div class="quiz__budget-list"> 
+                <div class="radio-wrap">
+                  <input id="price-1" type="radio" name="price" value="1" checked>
+                  <label for="price-1">от 100 000 Р.</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="price-2" type="radio" name="price" value="2">
+                  <label for="price-2">от 100 000 Р.</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="price-3" type="radio" name="price" value="3">
+                  <label for="price-3">от 100 000 Р.</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="price-4" type="radio" name="price" value="4">
+                  <label for="price-4">от 100 000 Р.</label>
+                </div>
+              </div>
+              <h3 class="subtitle--large subtitle--large-quiz">Откуда вы о нас узнали?</h3>
+              <div class="quiz__source-list">
+                <div class="radio-wrap">
+                  <input id="source-1" type="radio" name="source" value="1" checked>
+                  <label for="source-1">Рейтинги</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="source-2" type="radio" name="source" value="2">
+                  <label for="source-2">Соц. сети</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="source-3" type="radio" name="source" value="3">
+                  <label for="source-3">Рекомендации</label>
+                </div>
+                <div class="radio-wrap">
+                  <input id="source-4" type="radio" name="source" value="4">
+                  <label for="source-4">СМИ</label>
+                </div>
+              </div>
+              <h3 class="subtitle--large subtitle--large-quiz">Оставьте контактные данные для связи:</h3>
               <div class="inputs-wrap"> 
                 <input class="quiz__form-name" type="text" name="name" placeholder="Ваше имя">
                 <input class="quiz__form-phone" type="text" name="phone" placeholder="Телефон">
@@ -118,8 +145,8 @@
               </div>
               <div class="quiz__form-bottom">
                 <div class="quiz__form-file__wrap">
-                  <input class="quiz__form-file" type="file" name="file" id="attach-file" multiple>
-                  <label class="quiz__form-file-button" for="attach-file"><span class="input__file-icon-wrapper"><img class="input__file-icon" src="./wp-content/themes/twentytwenty-child/img/icons/download.svg" alt="Прикрепить файл" width="25"></span><span class="input__file-button-text">Прикрепить файл</span></label>
+                  <input class="quiz__form-file" type="file" name="quiz__file" id="quiz__file" multiple>
+                  <label class="quiz__form-file-button" for="quiz__file"><span class="input__file-icon-wrapper"><img class="input__file-icon" src="./wp-content/themes/twentytwenty-child/img/icons/download.svg" alt="Прикрепить файл" width="25"></span><span class="input__file-button-text">Прикрепить файл</span></label>
                 </div>
                 <input class="btn quiz__form-submit" id="quiz-form__submit" type="submit" value="Отправить заявку">
               </div>
@@ -131,6 +158,38 @@
           </div>
         </div>
       </section>
+      <footer class="footer">
+        <div class="container">
+          <nav class="nav">
+            <ul class="nav-list--footer">
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="about.html">О нас</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="services.html">Услуги</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="portfolio.html">Портфолио</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="reviews.html">Отзывы</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="contacts.html">Контакты</a></li>
+            </ul>
+          </nav>
+          <nav class="nav">
+            <ul class="nav-list--footer-bottom">
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="webdevelopment.html">Разработка сайтов</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Графический и вэб-дизайн</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">SEO продвижение</a></li>
+              <li class="nav__item"><a class="nav__link nav__link--footer" href="#!">Техническое сопровождение</a></li>
+            </ul>
+          </nav>
+          <div class="footer__inner">
+            <div class="logo logo--desktop logo--desktop-footer"><a class="logo__link" href="index.html"><img src="./wp-content/themes/twentytwenty-child/img/icons/logo.svg" width="174" height="50" alt="Логотип компании DEX Development"></a></div>
+            <div class="policy">
+              <div class="copyright">© 2020 «ProfWebStudio»</div><a class="policy__link" href="#!">Политика Конфиденциальности сайта</a>
+            </div>
+            <div class="phone phone--footer"><a class="phone__link phone__link--footer" href="tel:+78001002030">+7 (800) 100-20-30</a></div>
+            <div class="btn btn--call btn--call-footer">Обратный звонок</div>
+          </div>
+          <div class="policy policy--mobile">
+            <div class="copyright">© 2020 «ProfWebStudio»</div><a class="policy__link" href="#!">Политика Конфиденциальности сайта</a>
+          </div>
+        </div>
+      </footer>
     </div>
   </body>
 </html>

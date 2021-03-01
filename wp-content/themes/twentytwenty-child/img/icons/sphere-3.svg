@@ -1,19 +1,19 @@
-<svg width="456" height="456" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <g filter="url(#filter0_ddd)">
-        <circle cx="228" cy="128" r="98" fill="url(#paint0_radial)"/>
-        <circle cx="228" cy="128" r="98" fill="url(#paint1_radial)"/>
+<svg width="314" height="189" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g filter="url(#filter0_dddddd)">
+        <path d="M689 309.5C689 463.864 563.864 589 409.5 589S130 463.864 130 309.5 255.136 30 409.5 30 689 155.136 689 309.5z" fill="url(#paint0_radial)"/>
+        <path d="M689 309.5C689 463.864 563.864 589 409.5 589S130 463.864 130 309.5 255.136 30 409.5 30 689 155.136 689 309.5z" fill="url(#paint1_radial)"/>
     </g>
     <defs>
-        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(55.864 35.183 215.437) scale(168.327)">
+        <radialGradient id="paint0_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(55.864 172.108 623.184) scale(480.074)">
             <stop stop-color="#FBFFFF"/>
             <stop offset=".696" stop-color="#E0E6EA"/>
             <stop offset="1" stop-color="#C8D0D5"/>
         </radialGradient>
-        <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(68.611 24.467 168.572) scale(152.167)">
+        <radialGradient id="paint1_radial" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="rotate(68.611 129.864 481.379) scale(433.986)">
             <stop stop-color="#fff"/>
             <stop offset=".543" stop-color="#fff" stop-opacity="0"/>
         </radialGradient>
-        <filter id="filter0_ddd" x="0" y="0" width="456" height="456" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+        <filter id="filter0_dddddd" x="0" y="0" width="819" height="819" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
             <feFlood flood-opacity="0" result="BackgroundImageFix"/>
             <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
             <feOffset dy="2.767"/>
@@ -21,16 +21,31 @@
             <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.0196802 0"/>
             <feBlend in2="BackgroundImageFix" result="effect1_dropShadow"/>
             <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="6.65"/>
+            <feGaussianBlur stdDeviation="4.323"/>
+            <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.0282725 0"/>
+            <feBlend in2="effect1_dropShadow" result="effect2_dropShadow"/>
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="12.522"/>
+            <feGaussianBlur stdDeviation="8.139"/>
+            <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.035 0"/>
+            <feBlend in2="effect2_dropShadow" result="effect3_dropShadow"/>
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
+            <feOffset dy="22.336"/>
+            <feGaussianBlur stdDeviation="14.519"/>
+            <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.0417275 0"/>
+            <feBlend in2="effect3_dropShadow" result="effect4_dropShadow"/>
+            <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
             <feOffset dy="41.778"/>
             <feGaussianBlur stdDeviation="27.155"/>
             <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.0503198 0"/>
-            <feBlend in2="effect1_dropShadow" result="effect2_dropShadow"/>
+            <feBlend in2="effect4_dropShadow" result="effect5_dropShadow"/>
             <feColorMatrix in="SourceAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/>
             <feOffset dy="100"/>
             <feGaussianBlur stdDeviation="65"/>
             <feColorMatrix values="0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0 0.67451 0 0 0 0.07 0"/>
-            <feBlend in2="effect2_dropShadow" result="effect3_dropShadow"/>
-            <feBlend in="SourceGraphic" in2="effect3_dropShadow" result="shape"/>
+            <feBlend in2="effect5_dropShadow" result="effect6_dropShadow"/>
+            <feBlend in="SourceGraphic" in2="effect6_dropShadow" result="shape"/>
         </filter>
     </defs>
 </svg>
