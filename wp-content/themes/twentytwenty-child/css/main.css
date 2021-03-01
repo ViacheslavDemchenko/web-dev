@@ -1893,6 +1893,11 @@ input:checked + label::after {
   height: 6rem;
 }
 
+video {
+  width: 100%;
+  height: 100%;
+}
+
 .reviews__card-video {
   position: relative;
   margin-bottom: 1.5rem;
