@@ -510,6 +510,7 @@ template {
 }
 
 .main-title i {
+  white-space: nowrap;
   font-style: normal;
   color: #7F91BE;
 }
@@ -569,8 +570,8 @@ template {
   font-family: "GothamProBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.2rem;
-  line-height: 2rem;
+  font-size: 1.8rem;
+  line-height: 2.4rem;
   color: #4F4F4F;
 }
 
@@ -924,8 +925,8 @@ label {
   font-family: "RalewayBold";
   font-weight: 700;
   font-style: normal;
-  font-size: 1.8rem;
-  line-height: 2.9rem;
+  font-size: 1.2rem;
+  line-height: 2.3rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   font-feature-settings: 'pnum' on, 'lnum' on;
@@ -1031,6 +1032,11 @@ label {
 .btn--white {
   color: #4F4F4F;
   background: #fff;
+}
+
+.btn--white:hover {
+  color: #fff;
+  background: linear-gradient(90deg, #8E9FDF 0%, #3666AB 100%);
 }
 
 .btn--services {
@@ -1162,6 +1168,7 @@ input:checked + label::after {
 .main-title--inner-page {
   max-width: 28rem;
   margin-bottom: 1.5rem;
+  padding: 0 !important;
 }
 
 .header--about,
@@ -1545,7 +1552,7 @@ input:checked + label::after {
 .quiz__center {
   max-width: 144rem;
   width: 100%;
-  padding: 1rem 1.5rem;
+  padding: 5rem 1.5rem;
   border-radius: .5rem;
   background: url(../img/icons/sphere-1.svg), url(../img/icons/sphere-1.svg), url(../img/icons/sphere-1.svg) #F2F2F2;
   background-repeat: no-repeat, no-repeat, no-repeat, repeat;
@@ -1574,6 +1581,7 @@ input:checked + label::after {
   padding: 1.5rem 2rem;
   margin-bottom: 2rem;
   border: none;
+  border-radius: .5rem;
   outline: none;
 }
 
@@ -1691,11 +1699,17 @@ input:checked + label::after {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: .5rem;
+  background: #fff;
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
   cursor: pointer;
+}
+
+.radio-wrap label::after {
+  display: none;
 }
 
 .radio-wrap input[type=radio]:checked + label {
@@ -1756,7 +1770,7 @@ input:checked + label::after {
 .about-cards .about__card {
   width: 100%;
   max-width: 55rem;
-  padding: 1.5rem 1rem 2.5rem 1rem;
+  padding: 2.4rem;
   margin-bottom: 2.5rem;
   background: #F2F2F2;
   border-radius: .5rem;
@@ -1861,7 +1875,7 @@ input:checked + label::after {
   width: 100%;
   max-width: 71rem;
   text-align: center;
-  padding: .7rem 1.5rem .1rem 1.5rem;
+  padding: .7rem 2.4rem 1rem 2.4rem;
   background: #F2F2F2;
   border-radius: .5rem;
 }
@@ -1900,6 +1914,8 @@ video {
 
 .reviews__card-video {
   position: relative;
+  max-width: 62.4rem;
+  max-height: 25.4rem;
   margin-bottom: 1.5rem;
   cursor: pointer;
 }
@@ -1920,7 +1936,7 @@ video {
 }
 
 .reviews__card-author {
-  margin: 0 3.3rem 1.5rem 0;
+  margin: 0 1.3rem 1.5rem 0;
   text-align: right;
 }
 
@@ -1958,8 +1974,9 @@ video {
 .page-text--reviews {
   position: relative;
   z-index: 2;
-  max-width: 81.2rem;
+  max-width: 53rem;
   margin: 0 auto 3rem auto;
+  text-align: center;
 }
 
 .contact-form {
@@ -2482,13 +2499,13 @@ fieldset {
 .swiper-slide {
   width: 29rem;
   min-height: 30.5rem;
-  border-radius: 1rem;
 }
 
 .swiper-slide .slide__inner {
   width: 100%;
   min-height: 30.5rem;
   padding: 2rem 1rem 1rem 1.5rem;
+  border-radius: 1rem;
 }
 
 .swiper-slide .slide__inner--first {
@@ -3030,6 +3047,10 @@ fieldset {
   align-items: center;
 }
 
+.table-btns td {
+  border-bottom: none;
+}
+
 .order-site-cards {
   display: flex;
   justify-content: space-between;
@@ -3501,12 +3522,6 @@ fieldset {
     line-height: 2rem;
   }
 
-  .subtitle--large,
-  .project__link--large {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
-  }
-
   .page-text {
     font-size: 1.4rem;
     line-height: 2.2rem;
@@ -3641,6 +3656,10 @@ fieldset {
   .quiz__top-text {
     max-width: 52.2rem;
     margin: 0 auto;
+  }
+
+  .about-cards .about__card {
+    padding: 2.8rem;
   }
 
   .logo--mobile {
@@ -4146,6 +4165,10 @@ fieldset {
     margin: 0 1.5rem 2.9rem 1.5rem;
   }
 
+  .reviews__card {
+    padding: 2.3rem 2.8rem 3rem 2.8rem;
+  }
+
   .studio-services .studio-services__item {
     margin: 0 1rem 0 0;
   }
@@ -4486,7 +4509,7 @@ fieldset {
   }
 
   .reviews__card {
-    padding: 2.3rem 4.7rem 2.7rem 4.7rem;
+    padding: 2.3rem 3.2rem 2.7rem 3.2rem;
   }
 
   .reviews__card-top {
@@ -4517,6 +4540,10 @@ fieldset {
 
   .reviews__card-author {
     margin: 0 3.3rem 3.8rem 0;
+  }
+
+  .page-text--reviews {
+    max-width: 65rem;
   }
 
   .contact-form__inner .contacts .page-text--contact-form {
@@ -5739,6 +5766,11 @@ fieldset {
     line-height: 2.2rem;
   }
 
+  .radio-wrap label {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+  }
+
   .btn {
     font-size: 1.8rem;
     line-height: 2.5rem;
@@ -5768,7 +5800,7 @@ fieldset {
   }
 
   .main-title--inner-page {
-    max-width: 120rem;
+    max-width: 121rem;
     margin-bottom: 2.5rem;
   }
 
@@ -6153,7 +6185,7 @@ fieldset {
   .reviews__card {
     max-width: 65rem;
     margin-bottom: 2.1rem;
-    padding: .7rem 3.4rem .1rem 3.4rem;
+    padding: .7rem 3.4rem 2.1rem 3.4rem;
   }
 
   .reviews__card:not(:last-child) {
@@ -6173,6 +6205,10 @@ fieldset {
     height: 9.1rem;
   }
 
+  .reviews__card-video {
+    margin-bottom: 4rem;
+  }
+
   .video-play {
     width: 10rem;
     height: 10rem;
@@ -6185,6 +6221,7 @@ fieldset {
   }
 
   .page-text--reviews {
+    max-width: 93rem;
     margin: 0 auto 5.8rem auto !important;
   }
 
@@ -6944,7 +6981,7 @@ fieldset {
     width: calc(100% / 12 * 6);
     max-width: 71rem;
     margin-bottom: 2.1rem;
-    padding: .7rem 3.4rem .1rem 3.4rem;
+    padding: .7rem 4.3rem 2.1rem 4.3rem;
   }
 
   .ball--first {
