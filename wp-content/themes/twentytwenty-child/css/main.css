@@ -1263,7 +1263,9 @@ input:checked + label::after {
 }
 
 .section__title--contractors,
-.section__title--black-market {
+.section__title--black-market,
+.section__title--weapon,
+.section__title--team-work {
   margin-bottom: 1.5rem;
 }
 
@@ -1827,11 +1829,19 @@ input:checked + label::after {
   background: url(../img/icons/circle-plus.svg);
 }
 
+.about-cards-wrap,
+.about-cards-wrap--support {
+  max-width: 69rem;
+  margin: 0 auto;
+}
+
+.about-cards-wrap--support .about-cards {
+  padding: 0;
+}
+
 .about-cards-wrap {
   position: relative;
   z-index: 10;
-  max-width: 69rem;
-  margin: 0 auto;
 }
 
 .about-cards-wrap::after {
@@ -2330,6 +2340,78 @@ fieldset {
   margin-bottom: 4rem;
 }
 
+.design--weapon .section__title--weapon {
+  max-width: 30.5rem;
+}
+
+.design--weapon .design__inner {
+  position: relative;
+  min-height: 55rem;
+  background: url(../img/laptop-gear-sm@1x.png);
+  background-position: calc(50% - 0rem) calc(100% + 8rem);
+  background-size: 36.5rem 31.1rem;
+  background-repeat: no-repeat;
+}
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@1x.webp) 1x)) {
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-sm@1x.webp);
+    background-position: calc(50% - 0rem) calc(100% + 8rem);
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.content--team-work {
+  margin-bottom: 4rem;
+}
+
+.content--team-work .section__title--team-work {
+  max-width: 23.5rem;
+}
+
+.content__inner--team-work {
+  position: relative;
+  min-height: 55rem;
+  background: url(../img/laptop-girl-sm@1x.png);
+  background-position: calc(50% - 2rem) 128%;
+  background-size: 34.6rem 27.6rem;
+  background-repeat: no-repeat;
+}
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-sm@1x.webp) 1x)) {
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-sm@1x.webp);
+    background-position: calc(50% - 2rem) 128%;
+    background-size: 34.6rem 27.6rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.section__title--advantages {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.tariff--table-price {
+  padding-top: 0 !important;
+}
+
+.work-types--standarts {
+  margin-bottom: 4rem;
+}
+
+.price--standarts {
+  position: relative;
+  max-width: 136rem;
+  margin: 0 auto;
+  padding-bottom: 6rem;
+}
+
+.price--standarts::before {
+  display: none;
+}
+
 /* BLOCKS */
 
 .header-top {
@@ -2527,6 +2609,11 @@ fieldset {
   bottom: 5.3rem;
   width: 8.7rem;
   height: 8.7rem;
+}
+
+.work-types--ball {
+  position: relative;
+  overflow-x: hidden;
 }
 
 .header-center {
@@ -3512,6 +3599,10 @@ fieldset {
   margin-bottom: 1.5rem;
 }
 
+.work-types__card--standarts {
+  padding: 3.6rem 2.4rem 4.8rem 2.4rem !important;
+}
+
 @media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0), screen and (min-resolution: 192dpi) and (min-width: 0) {
   .container-fluid {
     background-image: url(../img/header-bg-xs@1x.jpg);
@@ -3623,6 +3714,38 @@ fieldset {
       background: url(../img/mask-black-sm@2x.webp);
       background-position: 67% 100%;
       background-size: 30.9rem 28.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-sm@2x.png);
+    background-position: calc(50% - 0rem) calc(100% + 8rem);
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@2x.webp) 2x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-sm@2x.webp);
+      background-position: calc(50% - 0rem) calc(100% + 8rem);
+      background-size: 36.5rem 31.1rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-sm@2x.png);
+    background-position: calc(50% - 2rem) 128%;
+    background-size: 34.6rem 27.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-sm@2x.webp) 2x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-sm@2x.webp);
+      background-position: calc(50% - 2rem) 128%;
+      background-size: 34.6rem 27.6rem;
       background-repeat: no-repeat;
     }
 }
@@ -3981,6 +4104,14 @@ fieldset {
 
   .content--black-market .section__title--black-market {
     max-width: 36.5rem;
+  }
+
+  .design--weapon .section__title--weapon {
+    max-width: 36.5rem;
+  }
+
+  .content--team-work .section__title--team-work {
+    max-width: 33.5rem;
   }
 
   .logo--mobile {
@@ -4547,6 +4678,38 @@ fieldset {
       background-repeat: no-repeat;
     }
 }
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-sm@1x.png);
+    background-position: calc(50% - 0rem) calc(100% + 8rem);
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@1x.webp) 1x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-sm@1x.webp);
+      background-position: calc(50% - 0rem) calc(100% + 8rem);
+      background-size: 36.5rem 31.1rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-sm@1x.png);
+    background-position: calc(50% - 2rem) calc(100% + 8.1rem);
+    background-size: 37.6rem 29.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-sm@1x.webp) 1x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-sm@1x.webp);
+      background-position: calc(50% - 2rem) calc(100% + 8.1rem);
+      background-size: 37.6rem 29.6rem;
+      background-repeat: no-repeat;
+    }
+}
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 560px), (min-resolution: 192dpi) and (min-width: 560px) {
@@ -4610,6 +4773,38 @@ fieldset {
       background: url(../img/mask-black-sm@2x.webp);
       background-position: 90% 100%;
       background-size: 38.2rem 30.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-sm@2x.png);
+    background-position: calc(50% - 0rem) calc(100% + 8rem);
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@2x.webp) 2x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-sm@2x.webp);
+      background-position: calc(50% - 0rem) calc(100% + 8rem);
+      background-size: 36.5rem 31.1rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-sm@2x.png);
+    background-position: calc(50% - 2rem) calc(100% + 8.1rem);
+    background-size: 37.6rem 29.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-sm@2x.webp) 2x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-sm@2x.webp);
+      background-position: calc(50% - 2rem) calc(100% + 8.1rem);
+      background-size: 37.6rem 29.6rem;
       background-repeat: no-repeat;
     }
 }
@@ -4808,7 +5003,9 @@ fieldset {
   }
 
   .section__title--contractors,
-  .section__title--black-market {
+  .section__title--black-market,
+  .section__title--weapon,
+  .section__title--team-work {
     margin-bottom: 2.5rem;
   }
 
@@ -5108,6 +5305,62 @@ fieldset {
 
   .text-block--long {
     margin-bottom: 6rem;
+  }
+
+  .design--weapon .section__title--weapon {
+    max-width: 55rem;
+  }
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-lg@1x.png);
+    background-position: calc(100% + 4rem) 132%;
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@1x.webp);
+      background-position: calc(100% + 4rem) 132%;
+      background-size: 36.5rem 31.1rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content--team-work {
+    margin-bottom: 6rem;
+  }
+
+  .content--team-work .section__title--team-work {
+    max-width: 47rem;
+  }
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-lg@1x.png);
+    background-position: calc(100% - 2rem) 132%;
+    background-size: 37.6rem 29.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@1x.webp) 1x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@1x.webp);
+      background-position: calc(100% - 2rem) 132%;
+      background-size: 37.6rem 29.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .section__title--advantages {
+    margin-bottom: 3rem;
+  }
+
+  .work-types--standarts {
+    margin-bottom: 5.5rem;
+  }
+
+  .price--standarts {
+    padding-bottom: 8rem;
   }
 
   .logo--desktop-footer {
@@ -5445,6 +5698,38 @@ fieldset {
     }
 }
 
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-lg@2x.png);
+    background-position: calc(100% + 4rem) 132%;
+    background-size: 36.5rem 31.1rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@2x.webp);
+      background-position: calc(100% + 4rem) 132%;
+      background-size: 36.5rem 31.1rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-lg@2x.png);
+    background-position: calc(100% - 2rem) 132%;
+    background-size: 37.6rem 29.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@2x.webp) 2x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@2x.webp);
+      background-position: calc(100% - 2rem) 132%;
+      background-size: 37.6rem 29.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
   .devices-img {
     background: url(../img/devices-lg@2x.png);
     background-repeat: no-repeat;
@@ -5661,7 +5946,8 @@ fieldset {
     margin: 0 auto;
   }
 
-  .about-cards-wrap {
+  .about-cards-wrap,
+  .about-cards-wrap--support {
     max-width: 90rem;
   }
 
@@ -5882,6 +6168,55 @@ fieldset {
     margin-bottom: 8rem;
   }
 
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-lg@1x.png);
+    background-position: calc(100% + 8rem) calc(100% + 16rem);
+    background-size: 69.4rem 57.8rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@1x.webp);
+      background-position: calc(100% + 8rem) calc(100% + 16rem);
+      background-size: 69.4rem 57.8rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content--team-work {
+    margin-bottom: 8rem;
+  }
+
+  .content__inner--team-work {
+    min-height: 43rem;
+    background: url(../img/laptop-girl-lg@1x.png);
+    background-position: -5rem calc(100% + 12rem);
+    background-size: 50.3rem 41.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@1x.webp) 1x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@1x.webp);
+      background-position: -5rem calc(100% + 12rem);
+      background-size: 50.3rem 41.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .section__title--advantages {
+    margin-bottom: 4rem;
+  }
+
+  .work-types--standarts {
+    margin-bottom: 6.5rem;
+  }
+
+  .price--standarts {
+    padding-bottom: 10rem;
+  }
+
   .price-cards {
     margin-bottom: 2.3rem;
   }
@@ -6008,6 +6343,38 @@ fieldset {
       background-repeat: no-repeat;
     }
 }
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-lg@2x.png);
+    background-position: calc(100% + 8rem) calc(100% + 16rem);
+    background-size: 69.4rem 57.8rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@2x.webp);
+      background-position: calc(100% + 8rem) calc(100% + 16rem);
+      background-size: 69.4rem 57.8rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-lg@2x.png);
+    background-position: -5rem calc(100% + 12rem);
+    background-size: 50.3rem 41.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@2x.webp) 2x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@2x.webp);
+      background-position: -5rem calc(100% + 12rem);
+      background-size: 50.3rem 41.6rem;
+      background-repeat: no-repeat;
+    }
+}
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
@@ -6073,7 +6440,8 @@ fieldset {
     left: calc(50% - 10.7rem);
   }
 
-  .about-cards-wrap {
+  .about-cards-wrap,
+  .about-cards-wrap--support {
     max-width: 118.6rem;
   }
 
@@ -6592,7 +6960,9 @@ fieldset {
   }
 
   .section__title--contractors,
-  .section__title--black-market {
+  .section__title--black-market,
+  .section__title--weapon,
+  .section__title--team-work {
     margin-bottom: 4.3rem;
   }
 
@@ -6904,7 +7274,8 @@ fieldset {
     max-width: 120rem;
   }
 
-  .about-cards-wrap {
+  .about-cards-wrap,
+  .about-cards-wrap--support {
     max-width: 130rem;
   }
 
@@ -7166,6 +7537,85 @@ fieldset {
     margin-bottom: 12rem;
   }
 
+  .design--weapon .section__title--weapon {
+    max-width: 75.1rem;
+  }
+
+  .design--weapon .design__left {
+    padding-top: 7.7rem;
+  }
+
+  .design--weapon .design__inner {
+    min-height: 55.1rem;
+    background: url(../img/laptop-gear-lg@1x.png);
+    background-position: calc(100% + 6rem) calc(100% + 18rem);
+    background-size: 56%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@1x.webp);
+      background-position: calc(100% + 6rem) calc(100% + 18rem);
+      background-size: 56%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content--team-work {
+    margin-bottom: 10.8em;
+  }
+
+  .content--team-work .section__title--team-work {
+    max-width: 75.1rem;
+  }
+
+  .content--team-work .content__right {
+    padding-top: 6.7rem;
+  }
+
+  .content__inner--team-work {
+    min-height: 56.7rem;
+    background: url(../img/laptop-girl-lg@1x.png);
+    background-position: -12rem calc(100% + 18rem);
+    background-size: 56%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@1x.webp) 1x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@1x.webp);
+      background-position: -12rem calc(100% + 18rem);
+      background-size: 56%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .section__title--advantages {
+    margin-bottom: 4.7rem;
+  }
+
+  .work-types--standarts {
+    margin-bottom: 8.3rem;
+  }
+
+  .price--standarts {
+    padding-bottom: 13.5rem;
+  }
+
+  .price--standarts::before {
+    position: absolute;
+    content: "";
+    bottom: 7.7rem;
+    right: -2.9rem;
+    width: 22.3rem;
+    height: 22.3rem;
+    display: block;
+    border-radius: 50%;
+    background: radial-gradient(72.29% 72.29% at 21.69% 27.71%, #FFFFFF 0%, rgba(255, 255, 255, 0) 54.26%), radial-gradient(71.08% 71.08% at 32.53% 18.07%, #FBFFFF 0%, #E0E6EA 69.62%, #C8D0D5 100%);
+    box-shadow: 0 10rem 13rem rgba(172, 172, 172, 0.07), 0 4.17776rem 5.43109rem rgba(172, 172, 172, 0.0503198), 0 2.23363rem 2.90372rem rgba(172, 172, 172, 0.0417275), 0 1.25216rem 1.6278rem rgba(172, 172, 172, 0.035), 0 0.66501rem 0.86451rem rgba(172, 172, 172, 0.0282725), 0 0.27673rem 0.35974rem rgba(172, 172, 172, 0.0196802);
+  }
+
   .ball--first {
     right: -7.4rem;
     top: 10.9rem;
@@ -7206,6 +7656,13 @@ fieldset {
     bottom: -13rem;
     width: 19.6rem;
     height: 19.6rem;
+  }
+
+  .work-types--ball .ball--first {
+    right: -5.4rem;
+    top: 6rem;
+    width: 20rem;
+    height: 20rem;
   }
 
   .header-center-inner {
@@ -7550,6 +8007,11 @@ fieldset {
   .work-types-cards .work-types__card .card__text {
     max-width: 100%;
   }
+
+  .work-types__card--standarts {
+    padding: 5.7rem 3.5rem 9.6rem 3.5rem !important;
+    margin: 0 1.1rem 2.3rem 1.1rem !important;
+  }
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px) {
@@ -7645,6 +8107,38 @@ fieldset {
       background: url(../img/mask-black-lg@2x.webp);
       background-position: 0% 100%;
       background-size: 56.8rem 48.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--weapon .design__inner {
+    background: url(../img/laptop-gear-lg@2x.png);
+    background-position: calc(100% + 6rem) calc(100% + 18rem);
+    background-size: 56%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
+    .design--weapon .design__inner {
+      background: url(../img/laptop-gear-lg@2x.webp);
+      background-position: calc(100% + 6rem) calc(100% + 18rem);
+      background-size: 56%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--team-work {
+    background: url(../img/laptop-girl-lg@2x.png);
+    background-position: -12rem calc(100% + 18rem);
+    background-size: 56%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/laptop-girl-lg@2x.webp) 2x)) {
+    .content__inner--team-work {
+      background: url(../img/laptop-girl-lg@2x.webp);
+      background-position: -12rem calc(100% + 18rem);
+      background-size: 56%;
       background-repeat: no-repeat;
     }
 }
@@ -7846,8 +8340,13 @@ fieldset {
     max-width: 100%;
   }
 
-  .about-cards-wrap {
+  .about-cards-wrap,
+  .about-cards-wrap--support {
     max-width: 100%;
+  }
+
+  .about-cards-wrap--support {
+    margin-bottom: 8.9rem;
   }
 
   .about-cards-wrap::after {
@@ -7970,6 +8469,13 @@ fieldset {
     height: 28.5rem;
   }
 
+  .work-types--ball .ball--first {
+    right: -6.4rem;
+    top: 6rem;
+    width: 25rem;
+    height: 25rem;
+  }
+
   .about__left .about__img::before {
     top: 36.9rem;
   }
@@ -8031,6 +8537,10 @@ fieldset {
     right: 31.5rem;
     width: 19.3rem;
     height: 19.3rem;
+  }
+
+  .work-types__card--standarts {
+    margin: 0 1.7rem 2.3rem 1.7rem !important;
   }
 }
 
