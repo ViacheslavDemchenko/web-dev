@@ -772,6 +772,12 @@ template {
   color: #333333;
 }
 
+.table__text--bold {
+  font-family: "RalewayBold";
+  font-weight: 700;
+  font-style: normal;
+}
+
 .quiz-message,
 .quiz__form-name,
 .quiz__form-phone,
@@ -1165,6 +1171,10 @@ input:checked + label::after {
   padding-top: 8.5rem;
 }
 
+.header__content--text-block {
+  padding-top: 0;
+}
+
 .page-text--header {
   max-width: 25.2rem;
   text-align: center;
@@ -1180,6 +1190,21 @@ input:checked + label::after {
   max-width: 28rem;
   margin-bottom: 1.5rem;
   padding: 0 !important;
+}
+
+.section__title--text-block {
+  max-width: 55rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.page-text--text-block-long {
+  margin-bottom: 3.6rem;
+}
+
+.page-text--text-block {
+  margin-bottom: 3rem;
+  text-align: center;
 }
 
 .header--about,
@@ -1237,8 +1262,17 @@ input:checked + label::after {
   margin-bottom: 1rem;
 }
 
+.section__title--contractors,
+.section__title--black-market {
+  margin-bottom: 1.5rem;
+}
+
 .design__text {
   width: 28rem;
+}
+
+.design__text:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .content {
@@ -1283,8 +1317,8 @@ input:checked + label::after {
   width: 28rem;
 }
 
-.content__text p:not(:last-child) {
-  margin-bottom: 1.5rem;
+.content__text:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .work-scheme {
@@ -1392,6 +1426,10 @@ input:checked + label::after {
 .price__bottom--services {
   max-width: 136rem;
   margin: 0 auto 10.2rem auto;
+}
+
+.price__bottom--seo {
+  margin: 0 auto 4rem auto;
 }
 
 .price__top {
@@ -1537,6 +1575,10 @@ input:checked + label::after {
 }
 
 .tariff__table-wrap--work-types {
+  margin-bottom: 4rem;
+}
+
+.tariff__table-wrap--seo {
   margin-bottom: 4rem;
 }
 
@@ -2234,6 +2276,58 @@ fieldset {
     background-size: 30.9rem 28.6rem;
     background-repeat: no-repeat;
   }
+}
+
+.design--contractors {
+  margin-bottom: 4rem;
+}
+
+.design--contractors .section__title--contractors {
+  max-width: 30.5rem;
+}
+
+.design--contractors .design__inner {
+  position: relative;
+  min-height: 55rem;
+  background: url(../img/mask-white-sm@1x.png);
+  background-position: 67% 100%;
+  background-size: 30.9rem 28.6rem;
+  background-repeat: no-repeat;
+}
+
+@supports (background: -webkit-image-set(url(../img/mask-white-sm@1x.webp) 1x)) {
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-sm@1x.webp);
+    background-position: 67% 100%;
+    background-size: 30.9rem 28.6rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.content--black-market .section__title--black-market {
+  max-width: 21.4rem;
+}
+
+.content__inner--black-market {
+  position: relative;
+  min-height: 55rem;
+  background: url(../img/mask-black-sm@1x.png);
+  background-position: 67% 100%;
+  background-size: 30.9rem 28.6rem;
+  background-repeat: no-repeat;
+}
+
+@supports (background: -webkit-image-set(url(../img/mask-black-sm@1x.webp) 1x)) {
+  .content__inner--black-market {
+    background: url(../img/mask-black-sm@1x.webp);
+    background-position: 67% 100%;
+    background-size: 30.9rem 28.6rem;
+    background-repeat: no-repeat;
+  }
+}
+
+.text-block--long {
+  margin-bottom: 4rem;
 }
 
 /* BLOCKS */
@@ -3501,6 +3595,38 @@ fieldset {
     }
 }
 
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-sm@2x.png);
+    background-position: 67% 100%;
+    background-size: 30.9rem 28.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-sm@2x.webp) 2x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-sm@2x.webp);
+      background-position: 67% 100%;
+      background-size: 30.9rem 28.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-sm@2x.png);
+    background-position: 67% 100%;
+    background-size: 30.9rem 28.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-sm@2x.webp) 2x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-sm@2x.webp);
+      background-position: 67% 100%;
+      background-size: 30.9rem 28.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
   .devices-img {
     background: url(../img/devices-sm@2x.png);
     background-repeat: no-repeat;
@@ -3743,6 +3869,10 @@ fieldset {
     max-width: 45rem;
   }
 
+  .page-text--text-block {
+    max-width: 47rem;
+  }
+
   .header--webdevelopment {
     height: 58rem;
   }
@@ -3842,6 +3972,14 @@ fieldset {
   }
 
   .design--webdesign .section__title--design {
+    max-width: 36.5rem;
+  }
+
+  .design--contractors .section__title--contractors {
+    max-width: 36.5rem;
+  }
+
+  .content--black-market .section__title--black-market {
     max-width: 36.5rem;
   }
 
@@ -4377,6 +4515,38 @@ fieldset {
       background-repeat: no-repeat;
     }
 }
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-sm@1x.png);
+    background-position: 90% 100%;
+    background-size: 38.2rem 30.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-sm@1x.webp) 1x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-sm@1x.webp);
+      background-position: 90% 100%;
+      background-size: 38.2rem 30.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-sm@1x.png);
+    background-position: 90% 100%;
+    background-size: 38.2rem 30.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-sm@1x.webp) 1x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-sm@1x.webp);
+      background-position: 90% 100%;
+      background-size: 38.2rem 30.9rem;
+      background-repeat: no-repeat;
+    }
+}
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 560px), (min-resolution: 192dpi) and (min-width: 560px) {
@@ -4406,6 +4576,38 @@ fieldset {
 @supports (background: -webkit-image-set(url(../img/smartphone_in_hand-sm@2x.webp) 2x)) {
     .design--webdesign .design__inner {
       background: url(../img/smartphone_in_hand-sm@2x.webp);
+      background-position: 90% 100%;
+      background-size: 38.2rem 30.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-sm@2x.png);
+    background-position: 90% 100%;
+    background-size: 38.2rem 30.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-sm@2x.webp) 2x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-sm@2x.webp);
+      background-position: 90% 100%;
+      background-size: 38.2rem 30.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-sm@2x.png);
+    background-position: 90% 100%;
+    background-size: 38.2rem 30.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-sm@2x.webp) 2x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-sm@2x.webp);
       background-position: 90% 100%;
       background-size: 38.2rem 30.9rem;
       background-repeat: no-repeat;
@@ -4560,6 +4762,15 @@ fieldset {
     max-width: 75rem;
   }
 
+  .section__title--text-block {
+    max-width: 77rem;
+  }
+
+  .page-text--text-block {
+    max-width: 60rem;
+    margin-bottom: 4.5rem;
+  }
+
   .header--webdevelopment {
     height: 62.5rem;
   }
@@ -4596,12 +4807,21 @@ fieldset {
     margin-bottom: 1.5rem;
   }
 
+  .section__title--contractors,
+  .section__title--black-market {
+    margin-bottom: 2.5rem;
+  }
+
   .design__text {
     width: 31.2rem;
   }
 
   .design__text {
     width: 34.9rem;
+  }
+
+  .design__text:not(:last-child) {
+    margin-bottom: 3rem;
   }
 
   .content__inner {
@@ -4630,6 +4850,10 @@ fieldset {
 
   .content__text {
     width: 41.9rem;
+  }
+
+  .content__text:not(:last-child) {
+    margin-bottom: 3rem;
   }
 
   .work-scheme {
@@ -4837,6 +5061,54 @@ fieldset {
       background-repeat: no-repeat;
     }
 }
+
+  .design--contractors {
+    margin-bottom: 6rem;
+  }
+
+  .design--contractors .section__title--contractors {
+    max-width: 55rem;
+  }
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-lg@1x.png);
+    background-position: 97% 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@1x.webp) 1x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@1x.webp);
+      background-position: 97% 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content--black-market .section__title--black-market {
+    max-width: 55rem;
+  }
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-lg@1x.png);
+    background-position: calc(100% + 11rem) 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@1x.webp) 1x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@1x.webp);
+      background-position: calc(100% + 11rem) 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .text-block--long {
+    margin-bottom: 6rem;
+  }
 
   .logo--desktop-footer {
     margin-bottom: 0;
@@ -5136,6 +5408,38 @@ fieldset {
     .design--webdesign .design__inner {
       background: url(../img/smartphone_in_hand-lg@2x.webp);
       background-position: 97% 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-lg@2x.png);
+    background-position: 97% 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@2x.webp) 2x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@2x.webp);
+      background-position: 97% 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-lg@2x.png);
+    background-position: calc(100% + 11rem) 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@2x.webp) 2x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@2x.webp);
+      background-position: calc(100% + 11rem) 100%;
       background-size: 49.7rem 42.7rem;
       background-repeat: no-repeat;
     }
@@ -5537,6 +5841,47 @@ fieldset {
     }
 }
 
+  .design--contractors {
+    margin-bottom: 8rem;
+  }
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-lg@1x.png);
+    background-position: 97% 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@1x.webp) 1x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@1x.webp);
+      background-position: 97% 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    min-height: 43rem;
+    background: url(../img/mask-black-lg@1x.png);
+    background-position: 0% 100%;
+    background-size: 48.3rem 41.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@1x.webp) 1x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@1x.webp);
+      background-position: 0% 100%;
+      background-size: 48.3rem 41.6rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .text-block--long {
+    margin-bottom: 8rem;
+  }
+
   .price-cards {
     margin-bottom: 2.3rem;
   }
@@ -5628,6 +5973,38 @@ fieldset {
       background: url(../img/smartphone_in_hand-lg@2x.webp);
       background-position: 97% 100%;
       background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-lg@2x.png);
+    background-position: 97% 100%;
+    background-size: 49.7rem 42.7rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@2x.webp) 2x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@2x.webp);
+      background-position: 97% 100%;
+      background-size: 49.7rem 42.7rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-lg@2x.png);
+    background-position: 0% 100%;
+    background-size: 48.3rem 41.6rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@2x.webp) 2x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@2x.webp);
+      background-position: 0% 100%;
+      background-size: 48.3rem 41.6rem;
       background-repeat: no-repeat;
     }
 }
@@ -6160,6 +6537,19 @@ fieldset {
     margin-bottom: 2.5rem;
   }
 
+  .section__title--text-block {
+    max-width: 111rem;
+  }
+
+  .page-text--text-block-long {
+    max-width: 84rem;
+  }
+
+  .page-text--text-block {
+    max-width: 84rem;
+    margin-bottom: 6.9rem;
+  }
+
   .header--about,
   .header--contacts,
   .header--portfolio,
@@ -6201,8 +6591,17 @@ fieldset {
     margin-bottom: 3rem;
   }
 
+  .section__title--contractors,
+  .section__title--black-market {
+    margin-bottom: 4.3rem;
+  }
+
   .design__text {
     width: 60rem;
+  }
+
+  .design__text:not(:last-child) {
+    margin-bottom: 5rem;
   }
 
   .content__inner {
@@ -6232,6 +6631,10 @@ fieldset {
 
   .content__text {
     width: 58.4rem;
+  }
+
+  .content__text:not(:last-child) {
+    margin-bottom: 5rem;
   }
 
   .work-scheme {
@@ -6277,6 +6680,10 @@ fieldset {
 
   .price {
     padding: 9.8rem 0 8.8rem 0;
+  }
+
+  .price__bottom--seo {
+    margin: 0 auto 11.2rem auto;
   }
 
   .price__top {
@@ -6360,6 +6767,10 @@ fieldset {
 
   .tariff__table-wrap--work-types {
     margin-bottom: 9.3rem;
+  }
+
+  .tariff__table-wrap--seo {
+    margin-bottom: 8.9rem;
   }
 
   .site-order {
@@ -6695,6 +7106,65 @@ fieldset {
       background-repeat: no-repeat;
     }
 }
+
+  .page-text--text-block {
+    max-width: 83rem;
+    margin-bottom: 6.9rem;
+  }
+
+  .design--contractors {
+    margin-bottom: 10.8em;
+  }
+
+  .design--contractors .section__title--contractors {
+    max-width: 75.1rem;
+  }
+
+  .design--contractors .design__inner {
+    min-height: 58.8rem;
+    background: url(../img/mask-white-lg@1x.png);
+    background-position: 97% 100%;
+    background-size: 42%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@1x.webp) 1x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@1x.webp);
+      background-position: 97% 100%;
+      background-size: 42%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content--black-market {
+    padding-bottom: 10.8rem;
+  }
+
+  .content--black-market .section__title--black-market {
+    max-width: 75.1rem;
+  }
+
+  .content__inner--black-market {
+    min-height: 55rem;
+    background: url(../img/mask-black-lg@1x.png);
+    background-position: 0% 100%;
+    background-size: 56.8rem 48.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@1x.webp) 1x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@1x.webp);
+      background-position: 0% 100%;
+      background-size: 56.8rem 48.9rem;
+      background-repeat: no-repeat;
+    }
+}
+
+  .text-block--long {
+    margin-bottom: 12rem;
+  }
 
   .ball--first {
     right: -7.4rem;
@@ -7143,6 +7613,38 @@ fieldset {
       background: url(../img/smartphone_in_hand-lg@2x.webp);
       background-position: 97% 100%;
       background-size: 42%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .design--contractors .design__inner {
+    background: url(../img/mask-white-lg@2x.png);
+    background-position: 97% 100%;
+    background-size: 42%;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-white-lg@2x.webp) 2x)) {
+    .design--contractors .design__inner {
+      background: url(../img/mask-white-lg@2x.webp);
+      background-position: 97% 100%;
+      background-size: 42%;
+      background-repeat: no-repeat;
+    }
+}
+
+  .content__inner--black-market {
+    background: url(../img/mask-black-lg@2x.png);
+    background-position: 0% 100%;
+    background-size: 56.8rem 48.9rem;
+    background-repeat: no-repeat;
+  }
+
+@supports (background: -webkit-image-set(url(../img/mask-black-lg@2x.webp) 2x)) {
+    .content__inner--black-market {
+      background: url(../img/mask-black-lg@2x.webp);
+      background-position: 0% 100%;
+      background-size: 56.8rem 48.9rem;
       background-repeat: no-repeat;
     }
 }
