@@ -2214,10 +2214,8 @@ fieldset {
 }
 
 .studio-services .webdevelopment__wrap .webdevelopment-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  margin: 0 -1rem;
+  -moz-column-count: 1;
+  column-count: 1;
 }
 
 .studio-services .webdevelopment__wrap .webdevelopment__item {
@@ -4083,11 +4081,6 @@ fieldset {
     min-height: 30rem;
   }
 
-  .studio-services .webdevelopment__wrap .webdevelopment-list {
-    flex-direction: row;
-    justify-content: center;
-  }
-
   .studio-services .studio-services__item {
     position: relative;
     min-height: 25rem;
@@ -4812,8 +4805,8 @@ fieldset {
 
 @media (min-width: 600px) {
   .studio-services .webdevelopment__wrap .webdevelopment-list {
-    justify-content: flex-start;
-    margin: 0;
+    -moz-column-count: 3;
+    column-count: 3;
   }
 
   .studio-services .webdevelopment__wrap .webdevelopment__item:not(:last-child) {
@@ -6086,6 +6079,10 @@ fieldset {
     border-radius: 50%;
     background: radial-gradient(72.29% 72.29% at 21.69% 27.71%, #FFFFFF 0%, rgba(255, 255, 255, 0) 54.26%), radial-gradient(71.08% 71.08% at 32.53% 18.07%, #FBFFFF 0%, #E0E6EA 69.62%, #C8D0D5 100%);
     box-shadow: 0 10rem 13rem rgba(172, 172, 172, 0.07), 0 4.17776rem 5.43109rem rgba(172, 172, 172, 0.0503198), 0 2.23363rem 2.90372rem rgba(172, 172, 172, 0.0417275), 0 1.25216rem 1.6278rem rgba(172, 172, 172, 0.035), 0 0.66501rem 0.86451rem rgba(172, 172, 172, 0.0282725), 0 0.27673rem 0.35974rem rgba(172, 172, 172, 0.0196802);
+  }
+
+  .studio-services .webdevelopment__wrap .webdevelopment {
+    min-height: 30rem;
   }
 
   .studio-services .studio-services-list::after {
@@ -7441,11 +7438,8 @@ fieldset {
   }
 
   .studio-services .webdevelopment__wrap .webdevelopment {
+    min-height: 35.6rem;
     padding: 3rem 2rem 2rem 3rem;
-  }
-
-  .studio-services .webdevelopment__wrap .webdevelopment-list {
-    margin: 0 16.8rem 9.9rem 0;
   }
 
   .studio-services .webdevelopment__wrap .webdevelopment__item:not(:last-child) {
@@ -8434,10 +8428,6 @@ fieldset {
   .studio-services .webdevelopment__wrap .webdevelopment__title,
   .studio-services .webdevelopment__wrap .services__item-title {
     margin-bottom: 2.4rem;
-  }
-
-  .studio-services .webdevelopment__wrap .webdevelopment-list {
-    margin: 0 16.8rem 9.9rem 0;
   }
 
   .studio-services .studio-services-list::after {
