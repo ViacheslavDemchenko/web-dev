@@ -124,50 +124,99 @@
     }
   });
 })();
-// ;(function() {
-//     const btnsCall = document.querySelectorAll('.btn--call');
-//     const btnApplication = document.querySelector('.btn--application');
-//     const btnBrief = document.querySelector('.btn--brief');
-//     const body = document.getElementsByTagName('body')[0];
-//     const html = body.parentNode;
-//     const overlay = document.querySelector('.overlay');
-//     const modal = document.querySelector('.modal');
-//     const modalThanks = document.querySelector('.modal--thanks');
-//     const modalClose = document.querySelector('.modal__close');
-//     const modalTitle = document.querySelector('.form__title');
-//     const modalSubtitle = document.querySelector('.form__subtitle');
-//     function modalShow() {
-//         overlay.classList.add('overlay--active');
-//         modal.classList.add('modal--active');
-//         body.classList.add('no-scroll');
-//         html.classList.add('html-overflow');
-//     }
-//     function modalHide() {
-//         overlay.classList.remove('overlay--active');
-//         modal.classList.remove('modal--active');
-//         body.classList.remove('no-scroll');
-//         html.classList.remove('html-overflow');
-//     }
-//     btnsCall.forEach(btn => {
-//         btn.addEventListener('click', () => {
-//             modalTitle.textContent = 'Перезвонить вам?';
-//             modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
-//             modalShow();
-//         });
-//     });
-//     modalClose.addEventListener('click', modalHide);
-//     btnApplication.addEventListener('click', () => {
-//         modalTitle.textContent = 'Отправьте заявку';
-//         modalSubtitle.textContent = 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время';
-//         modalShow();
-//     });
-//     btnBrief.addEventListener('click', () => {
-//         modalTitle.textContent = 'Отправьте заявку';
-//         modalSubtitle.textContent = 'Оставьте свои контактные данные и мы пришлём вам бриф в ближайшее время';
-//         modalShow();
-//     });
-// })();
 "use strict";
+
+;
+
+(function () {
+  var body = document.getElementsByTagName('body')[0];
+  var html = body.parentNode;
+  var wrap = document.querySelector('.wrap-feedback');
+  var modal = '';
+  var div = document.createElement('div');
+  div.classList.add('current-modal');
+  var options = [{
+    modal_call_btn: 'btn--call',
+    modal_call_title: 'Перезвонить вам?',
+    modal_call_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
+    modal_form_id: 'form-call',
+    phone_input_id: 'modal__input-phone'
+  }, {
+    modal_brief_btn: 'btn--brief',
+    modal_brief_title: 'Отправьте заявку',
+    modal_brief_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
+    modal_form_id: 'form-brief',
+    phone_input_id: 'modal__input-phone'
+  }];
+  document.addEventListener('click', function (e) {
+    if (e.target.classList.contains(options[0].modal_call_btn)) {
+      modalShow(options[0].modal_form_id, options[0].modal_call_title, options[0].modal_call_subtitle, options[0].phone_input_id);
+    }
+
+    if (e.target.classList.contains(options[1].modal_brief_btn)) {
+      modalShow(options[1].modal_form_id, options[1].modal_brief_title, options[1].modal_brief_subtitle, options[1].phone_input_id);
+    }
+
+    if (e.target.classList.contains('modal__close')) {
+      modalHide();
+    }
+  });
+
+  function modalShow(formID, modalTitle, modalSubtitle, phoneInputID) {
+    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
+    div.innerHTML = modal;
+    wrap.appendChild(div);
+    body.classList.add('no-scroll');
+    html.classList.add('html-overflow');
+    inputMask(document.getElementById(phoneInputID));
+  }
+
+  function modalHide() {
+    modal = '';
+    wrap.removeChild(div);
+    body.classList.remove('no-scroll');
+    html.classList.remove('html-overflow');
+  }
+
+  function inputMask(input) {
+    function setMask(event) {
+      var pressedKey;
+      event.keyCode && pressedKey === event.keyCode;
+      input.setSelectionRange(input.value.length, input.value.length);
+      var maskType = '+7 (___) ___-__-__',
+          i = 0,
+          replaceValue = maskType.replace(/\D/g, ''),
+          prevValue = this.value.replace(/\D/g, ''),
+          currentValue = maskType.replace(/[_\d]/g, function (a) {
+        return i < prevValue.length ? prevValue.charAt(i++) || replaceValue.charAt(i) : a;
+      });
+      i = currentValue.indexOf('_');
+
+      if (i != -1) {
+        i < 5 && (i = 3);
+        currentValue = currentValue.slice(0, i);
+      }
+
+      var reg = maskType.substr(0, this.value.length).replace(/_+/g, function (a) {
+        return '\\d{1,' + a.length + '}';
+      }).replace(/[+()]/g, '\\$&');
+      reg = new RegExp('^' + reg + '$');
+
+      if (!reg.test(this.value) || this.value.length < 5 || pressedKey > 47 && pressedKey < 58) {
+        this.value = currentValue;
+      } else if (event.type === 'blur' && this.value.length < 5) {
+        this.value = '';
+      }
+
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+
+    input.addEventListener('input', setMask, false);
+    input.addEventListener('focus', setMask, false);
+    input.addEventListener('blur', setMask, false);
+    input.addEventListener('keydown', setMask, false);
+  }
+})();
 // ;(function() {
 // //Задаем инпут
 // const input = document.getElementById('modal__input-phone');

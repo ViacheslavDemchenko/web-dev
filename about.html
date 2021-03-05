@@ -17,6 +17,7 @@
     <link rel="apple-touch-icon" href="#!">
   </head>
   <body>
+    <div class="wrap-feedback"></div>
     <div class="container-fluid container-fluid--stretched">
       <div class="header header--about">
         <div class="ball ball--first"></div>
@@ -80,44 +81,35 @@
         <section class="directions">
           <h2 class="section__title section__title--directions">Подробнее о направлениях:</h2>
           <div class="directions-cards-wrap">
-            <ul class="directions-cards"> 
-              <li class="directions__card"> 
+            <div class="directions-cards"> <a class="directions__card" href="webdevelopment.html"> 
                 <h3 class="card__title card__title--white">Создание сайтов</h3>
                 <p class="card__text card__text--white">Корпоративные, промо проекты, лэндинги. Создание сайтов наWordpress.</p>
                 <div class="card__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/directions-screen@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/directions-screen@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/directions-screen@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/directions-screen@2x.png 2x" alt="" width="339" height="280">
                   </picture>
-                </div>
-              </li>
-              <li class="directions__card"> 
+                </div></a><a class="directions__card" href="seo-promotion.html"> 
                 <h3 class="card__title">Продвижение</h3>
                 <p class="card__text">Seo пролвижение в поисковых системах Яндекс и Google. Оптимизация сайта только белыми методами.</p>
                 <div class="card__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/directions-circlecheck@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/directions-circlecheck@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/directions-circlecheck@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/directions-circlecheck@2x.png 2x" alt="" width="345" height="280">
                   </picture>
-                </div>
-              </li>
-              <li class="directions__card"> 
+                </div></a><a class="directions__card" href="web-design.html"> 
                 <h3 class="card__title card__title--white">Фирменный дизайн</h3>
                 <p class="card__text card__text--white">Индивидуальный, авторский дизайн для вашего сайта.</p>
                 <div class="card__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/directions-diamond@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/directions-diamond@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/directions-diamond@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/directions-diamond@2x.png 2x" alt="" width="345" height="280">
                   </picture>
-                </div>
-              </li>
-              <li class="directions__card"> 
+                </div></a><a class="directions__card" href="support.html"> 
                 <h3 class="card__title">Поддержка</h3>
                 <p class="card__text">Полный спектр услуг, в рамках комплексной поддержки сайтов. Поддержка сайтов на WordPress.</p>
                 <div class="card__img">
                   <picture>
                     <source type="image/webp" media="(min-width: 1440px)" srcset="./wp-content/themes/twentytwenty-child/img/directions-checkmark@1x.webp 1x, ./wp-content/themes/twentytwenty-child/img/directions-checkmark@2x.webp 2x"><img src="./wp-content/themes/twentytwenty-child/img/directions-checkmark@1x.png" srcset="./wp-content/themes/twentytwenty-child/img/directions-checkmark@2x.png 2x" alt="" width="345" height="280">
                   </picture>
-                </div>
-              </li>
-            </ul>
+                </div></a></div>
           </div>
         </section>
       </div>
@@ -153,6 +145,13 @@
           </div>
         </div>
       </footer>
+      <div class="modal modal--thanks">
+        <div class="modal__close"></div>
+        <div class="modal--thanks-content">
+          <div class="form__title form__title--thanks">Спасибо за заявку!</div>
+          <div class="form__subtitle form__subtitle--thanks">Мы свяжемся с вами в самое ближайшее время, в рабочие часы</div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
