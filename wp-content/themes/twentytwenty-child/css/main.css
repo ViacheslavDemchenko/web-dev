@@ -987,6 +987,7 @@ label {
 
 .btn {
   position: relative;
+  z-index: 1;
   padding: 1.4rem 2.9rem;
   text-align: center;
   font-family: "GothamProRegular";
@@ -1025,6 +1026,7 @@ label {
 }
 
 .btn::after {
+  z-index: -1;
   transform: translate(-0.5rem, -7rem) scale(0.1);
   height: 20rem;
   background: linear-gradient(269.13deg, #E4A228 1.1%, #F8BD52 95.45%);
@@ -2299,12 +2301,13 @@ fieldset {
 }
 
 .studio-services .webdevelopment__wrap .webdevelopment-list {
-  -moz-column-count: 1;
-  column-count: 1;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
 }
 
 .studio-services .webdevelopment__wrap .webdevelopment__item {
-  margin: 0 .5rem;
+  width: 100%;
 }
 
 .studio-services .webdevelopment__wrap .webdevelopment__item:not(:last-child) {
@@ -4721,10 +4724,6 @@ fieldset {
     padding: 2.3rem 2.8rem 3rem 2.8rem;
   }
 
-  .studio-services .webdevelopment__wrap .webdevelopment-list {
-    flex-direction: row;
-  }
-
   .studio-services .studio-services__item {
     margin: 0 1rem 0 0;
   }
@@ -4910,12 +4909,21 @@ fieldset {
 
 @media (min-width: 600px) {
   .studio-services .webdevelopment__wrap .webdevelopment-list {
-    -moz-column-count: 3;
-    column-count: 3;
+    flex-direction: row;
+  }
+
+  .studio-services .webdevelopment__wrap .webdevelopment__item {
+    width: calc(100% / 2);
   }
 
   .studio-services .webdevelopment__wrap .webdevelopment__item:not(:last-child) {
     margin-bottom: 0;
+  }
+}
+
+@media (min-width: 700px) {
+  .studio-services .webdevelopment__wrap .webdevelopment__item {
+    width: calc(100% / 3);
   }
 }
 
@@ -5330,11 +5338,6 @@ fieldset {
 
   .contact-form__inner .form-contact .inputs-wrap--form-contact {
     max-width: 80rem;
-  }
-
-  .studio-services .webdevelopment__wrap .webdevelopment-list {
-    -moz-column-count: 3;
-    column-count: 3;
   }
 
   .studio-services .studio-services-list {
