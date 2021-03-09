@@ -1,67 +1,3 @@
-// ;(function() {
-//     // window.onload = () => {
-//         let lastScrollTop = window.pageYOffset;
-//         const ballFirst = document.querySelector('.ball--fourth');
-//         let ballFirstPos = window.getComputedStyle(ballFirst).left;
-//         let start = false;
-//         let width = window.innerWidth;
-//             width = window.innerWidth - 143; 
-//             window.addEventListener('scroll', () => { 
-//                 let st = window.pageYOffset || document.documentElement.scrollTop; 
-//                 if (st > lastScrollTop) {
-//                     // console.log('Вниз');
-//                     if (start) {
-//                         // console.log('Видно');
-//                         ballFirstPos = parseInt(ballFirstPos) + 25;
-//                         if (ballFirstPos < width && ballFirstPos > 385) {
-//                             ballFirst.style.left = ballFirstPos + 'px';
-//                         } 
-//                     } 
-//                 } else {
-//                     // console.log('Вверх');
-//                     if (start) {
-//                         // console.log('Видно');
-//                         ballFirstPos = parseInt(ballFirstPos) - 30;
-//                         if (ballFirstPos > 385 && ballFirstPos < width) {
-//                             ballFirst.style.left = ballFirstPos + 'px'; 
-//                         } 
-//                     }
-//                 }
-//                 lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-//             }, false);
-//         let observer = new IntersectionObserver(function (entries) {
-//             entries.forEach(function (entry) {
-//                 if (entry.isIntersecting === true) {
-//                     // console.log('Видно');
-//                     start = true;
-//                 } else if (entry.isIntersecting === false) {
-//                     // console.log('Не видно');
-//                 }
-//             });
-//         });
-//         observer.observe(ballFirst);
-//     // }
-// })();
-"use strict";
-// ;(function() {
-//     const inputPhone = document.getElementById('modal__input-phone');
-//     const inputName = document.getElementById('modal__input-name');
-//     const feedback = document.querySelector('.feedback');
-//     // const form = document.getElementById('form-call');
-//     // const formSubmit = document.getElementById('form-call__submit');
-//     inputPhone.addEventListener('input', validatePhone);
-//     function validatePhone() {
-//         const regEx = /^\+7\ \(?\d{3}\)?\ [-]?\d{3}[-]?\d{2}[-]?\d{2}$/;
-//         if(!regEx.test(inputPhone.value)) {
-//             feedback.classList.add('feedback--invalid');
-//             return false;
-//         } else {
-//             feedback.classList.remove('feedback--invalid');
-//             return true;
-//         }
-//     }
-// })();
-"use strict";
 "use strict";
 
 ;
@@ -77,8 +13,7 @@
   function mobileMenuHide() {
     hamburger.classList.remove('active');
     header.classList.remove('header--open');
-    menu.classList.remove('header-top--open'); // body.removeChild(menu);
-
+    menu.classList.remove('header-top--open');
     body.classList.remove('no-scroll');
   }
 
@@ -163,7 +98,7 @@
   });
 
   function modalShow(formID, modalTitle, modalSubtitle, phoneInputID) {
-    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
+    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\" target=\"_blank\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
     div.innerHTML = modal;
     wrap.appendChild(div);
     body.classList.add('no-scroll');
@@ -217,99 +152,6 @@
     input.addEventListener('keydown', setMask, false);
   }
 })();
-// ;(function() {
-// //Задаем инпут
-// const input = document.getElementById('modal__input-phone');
-// //Функция маски инпута
-//     function setMask(event) {
-// //Задаем в переменную нажатую клавишу
-//         let pressedKey;
-// //Условие, проверяющее нажатую клавишу
-//         event.keyCode && (pressedKey === event.keyCode);
-// //Задаем в переменную позицию в инпуте, с которой будет доступен ввод цифр
-//         // let numberPos = this.selectionStart;
-// //Устанавливаем возможность ввода цифр только с последней позиции  
-//         input.setSelectionRange(input.value.length, input.value.length);      
-// //Задаем внешний вид маски инпута
-//         let maskType = '+7 (___) ___-__-__',
-//             i = 0,
-// //Проверка и замена value инпута по буквенно
-//             replaceValue = maskType.replace(/\D/g, ''),
-//             prevValue = this.value.replace(/\D/g, ''),
-//             currentValue = maskType.replace(/[_\d]/g, (a) => {
-//                 return i < prevValue.length ? prevValue.charAt(i++) || replaceValue.charAt(i) : a;
-//             });
-// //Защита от стирания первых двух цифр (+7)            
-//         i = currentValue.indexOf('_');
-//         if (i != -1) {
-//             i < 5 && (i = 3);
-//             currentValue = currentValue.slice(0, i);
-//         }
-// //Регулярное выражение для проверки value инпута        
-//         let reg = maskType.substr(0, this.value.length).replace(/_+/g,
-//             function(a) {
-//                 return '\\d{1,' + a.length + '}';
-//             }).replace(/[+()]/g, '\\$&');
-//         reg = new RegExp('^' + reg + '$');
-// //Проверка содержимого инпута на регулярное выражение, длинну и нажимаемые клавиши
-//         if (!reg.test(this.value) || this.value.length < 5 || pressedKey > 47 && pressedKey < 58) {
-//             this.value = currentValue;
-//         } else if (event.type === 'blur' && this.value.length < 5) {
-//             this.value = '';
-//         }
-// // Устанавливаем курсор в конец строки в инпуте, если при нажатии кнопки он стоит не в конце
-//         input.setSelectionRange(input.value.length, input.value.length);
-//     }
-// //Запуск функции setMask через обработчик событий
-// input.addEventListener('input', setMask, false);
-// input.addEventListener('focus', setMask, false);
-// input.addEventListener('blur', setMask, false);
-// input.addEventListener('keydown', setMask, false);
-// })();
-"use strict";
-// ;(function() {
-//     const range = document.getElementById('range-slider');
-//     const cardsList = document.querySelector('.cards-list');
-//     let screenWidth = window.innerWidth;
-//     range.addEventListener('input', rangeChange);
-//     function rangeChange() {
-//         cardsList.style.transform = `translateX(${-range.value}rem)`;
-//     }
-//     function screenWidthCalc(elem) {
-//         let item;
-//         if (screenWidth < 414) {
-//             elem.setAttribute('max', 64);
-//             item = elem.max;
-//         } else if (screenWidth >= 414 && screenWidth < 560) {
-//             elem.setAttribute('max', 85);
-//             item = elem.max;
-//         } else if (screenWidth >= 560 && screenWidth < 768) {
-//             elem.setAttribute('max', 72);
-//             item = elem.max;
-//         } else if (screenWidth >= 768 && screenWidth < 1024) {
-//             elem.setAttribute('max', 152);
-//             item = elem.max;
-//         } else if (screenWidth >= 1024 && screenWidth < 1200) {
-//             elem.setAttribute('max', 126);
-//             item = elem.max;
-//         } else if (screenWidth >= 1200 && screenWidth < 1440) {
-//             elem.setAttribute('max', 111);
-//             item = elem.max;
-//         } else if (screenWidth >= 1440 && screenWidth < 1920) {
-//             elem.setAttribute('max', 83);
-//             item = elem.max;
-//         } else if (screenWidth >= 1920) {
-//             elem.setAttribute('max', 60);
-//             item = elem.max;
-//         }
-//     }
-//     screenWidthCalc(range);
-//     window.addEventListener('resize', () => {
-//         screenWidth = window.innerWidth;
-//         screenWidthCalc(range);
-//     });
-// })();
-"use strict";
 "use strict";
 
 ;
@@ -330,7 +172,6 @@
               slidesPerView: 1,
               loopedSlides: 1,
               initialSlide: -1,
-              // loopAdditionalSlides: 2,
               loop: true,
               scrollbar: {
                 el: '.swiper-scrollbar',
@@ -341,7 +182,6 @@
               slidesPerView: 2,
               loopedSlides: 1,
               initialSlide: -1,
-              // loopAdditionalSlides: 2,
               loop: true,
               scrollbar: {
                 el: '.swiper-scrollbar',
