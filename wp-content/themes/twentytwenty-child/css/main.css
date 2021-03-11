@@ -1273,15 +1273,20 @@ input:checked + label::after {
 
 .design__inner {
   min-height: 42.5rem;
-  background: url(../img/paper-mockup-sm@1x.png);
-  background-size: 41.4rem 42.1rem;
-  background-position: 48% 17rem;
-  background-repeat: no-repeat;
 }
 
 @supports (background: -webkit-image-set(url(../img/paper-mockup-sm@1x.webp) 1x)) {
   .design__inner {
     background: url(../img/paper-mockup-sm@1x.webp);
+    background-size: 41.4rem 42.1rem;
+    background-position: 48% 17rem;
+    background-repeat: no-repeat;
+  }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-sm@1x.webp) 1x)) {
+  .design__inner {
+    background: url(../img/paper-mockup-sm@1x.png);
     background-size: 41.4rem 42.1rem;
     background-position: 48% 17rem;
     background-repeat: no-repeat;
@@ -3724,16 +3729,18 @@ fieldset {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 0), (min-resolution: 192dpi) and (min-width: 0) {
-  .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png);
-    background-size: 41.4rem 42.1rem;
-    background-position: 48% 17rem;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-sm@2x.webp) 2x)) {
     .design__inner {
       background: url(../img/paper-mockup-sm@2x.webp);
+      background-size: 41.4rem 42.1rem;
+      background-position: 48% 17rem;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-sm@2x.webp) 2x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-sm@2x.png);
       background-size: 41.4rem 42.1rem;
       background-position: 48% 17rem;
       background-repeat: no-repeat;
@@ -4110,16 +4117,18 @@ fieldset {
     height: 59.6rem;
   }
 
-  .design__inner {
-    background: url(../img/paper-mockup-sm@1x.png);
-    background-size: 41.4rem 42.1rem;
-    background-position: 48% 17.5rem;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-sm@1x.webp) 1x)) {
     .design__inner {
       background: url(../img/paper-mockup-sm@1x.webp);
+      background-size: 41.4rem 42.1rem;
+      background-position: 48% 17.5rem;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-sm@1x.webp) 1x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-sm@1x.png);
       background-size: 41.4rem 42.1rem;
       background-position: 48% 17.5rem;
       background-repeat: no-repeat;
@@ -4523,16 +4532,18 @@ fieldset {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 414px), (min-resolution: 192dpi) and (min-width: 414px) {
-  .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png);
-    background-size: 41.4rem 42.1rem;
-    background-position: 48% 17.5rem;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-sm@2x.webp) 2x)) {
     .design__inner {
       background: url(../img/paper-mockup-sm@2x.webp);
+      background-size: 41.4rem 42.1rem;
+      background-position: 48% 17.5rem;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-sm@2x.webp) 2x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-sm@2x.png);
       background-size: 41.4rem 42.1rem;
       background-position: 48% 17.5rem;
       background-repeat: no-repeat;
@@ -5097,16 +5108,18 @@ fieldset {
     height: 63.9rem;
   }
 
-  .design__inner {
-    background: url(../img/paper-mockup-md@1x.png);
-    background-size: 34rem 31.9rem;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-md@1x.webp) 1x)) {
     .design__inner {
       background: url(../img/paper-mockup-md@1x.webp);
+      background-size: 34rem 31.9rem;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-md@1x.webp) 1x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-md@1x.png);
       background-size: 34rem 31.9rem;
       background-position: 100% 100%;
       background-repeat: no-repeat;
@@ -5737,16 +5750,18 @@ fieldset {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), (min-resolution: 192dpi) and (min-width: 768px) {
-  .design__inner {
-    background: url(../img/paper-mockup-md@2x.png);
-    background-size: 34rem 31.9rem;
-    background-position: 100% 100%;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-md@2x.webp) 2x)) {
     .design__inner {
       background: url(../img/paper-mockup-md@2x.webp);
+      background-size: 34rem 31.9rem;
+      background-position: 100% 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-md@2x.webp) 2x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-md@2x.png);
       background-size: 34rem 31.9rem;
       background-position: 100% 100%;
       background-repeat: no-repeat;
@@ -5934,15 +5949,20 @@ fieldset {
 
   .design__inner {
     min-height: 43rem;
-    background: url(../img/paper-mockup-lg@1x.png);
-    background-size: 54.5rem 42.9rem;
-    background-position: right 100%;
-    background-repeat: no-repeat;
   }
 
 @supports (background: -webkit-image-set(url(../img/paper-mockup-lg@1x.webp) 1x)) {
     .design__inner {
       background: url(../img/paper-mockup-lg@1x.webp);
+      background-size: 54.5rem 42.9rem;
+      background-position: right 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-lg@1x.webp) 1x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-lg@1x.png);
       background-size: 54.5rem 42.9rem;
       background-position: right 100%;
       background-repeat: no-repeat;
@@ -6387,16 +6407,18 @@ fieldset {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px), (min-resolution: 192dpi) and (min-width: 1024px) {
-  .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png);
-    background-size: 54.5rem 42.9rem;
-    background-position: right 100%;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-lg@2x.webp) 2x)) {
     .design__inner {
       background: url(../img/paper-mockup-lg@2x.webp);
+      background-size: 54.5rem 42.9rem;
+      background-position: right 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-lg@2x.webp) 2x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-lg@2x.png);
       background-size: 54.5rem 42.9rem;
       background-position: right 100%;
       background-repeat: no-repeat;
@@ -7079,15 +7101,20 @@ fieldset {
 
   .design__inner {
     min-height: 55rem;
-    background: url(../img/paper-mockup-lg@1x.png);
-    background-size: 69.9rem 55rem;
-    background-position: right 100%;
-    background-repeat: no-repeat;
   }
 
 @supports (background: -webkit-image-set(url(../img/paper-mockup-lg@1x.webp) 1x)) {
     .design__inner {
       background: url(../img/paper-mockup-lg@1x.webp);
+      background-size: 69.9rem 55rem;
+      background-position: right 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-lg@1x.webp) 1x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-lg@1x.png);
       background-size: 69.9rem 55rem;
       background-position: right 100%;
       background-repeat: no-repeat;
@@ -8158,16 +8185,18 @@ fieldset {
 }
 
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px) {
-  .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png);
-    background-size: 69.9rem 55rem;
-    background-position: right 100%;
-    background-repeat: no-repeat;
-  }
-
 @supports (background: -webkit-image-set(url(../img/paper-mockup-lg@2x.webp) 2x)) {
     .design__inner {
       background: url(../img/paper-mockup-lg@2x.webp);
+      background-size: 69.9rem 55rem;
+      background-position: right 100%;
+      background-repeat: no-repeat;
+    }
+}
+
+@supports not (background: -webkit-image-set(url(../img/paper-mockup-lg@2x.webp) 2x)) {
+    .design__inner {
+      background: url(../img/paper-mockup-lg@2x.png);
       background-size: 69.9rem 55rem;
       background-position: right 100%;
       background-repeat: no-repeat;

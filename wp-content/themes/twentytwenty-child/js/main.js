@@ -3,6 +3,84 @@
 ;
 
 (function () {
+  window.onload = function () {
+    var lastScrollTop = window.pageYOffset;
+    var ballFirst = document.querySelector('.ball--fourth');
+    var ballFirstPos = window.getComputedStyle(ballFirst).left;
+    var start = false;
+    var width = window.innerWidth - parseInt(getComputedStyle(ballFirst).width);
+    console.log(width);
+    window.addEventListener('scroll', function () {
+      var st = window.pageYOffset || document.documentElement.scrollTop;
+
+      if (st > lastScrollTop && start) {
+        // console.log('Вниз');
+        ballFirstPos = parseInt(ballFirstPos) + 10;
+
+        if (ballFirstPos < width && ballFirstPos >= 180) {
+          ballFirst.style.left = ballFirstPos + 'px';
+          console.log(ballFirstPos);
+        }
+      }
+
+      if (st < lastScrollTop && start) {
+        // console.log('Вверх');
+        ballFirstPos = parseInt(ballFirstPos) - 10;
+
+        if (ballFirstPos >= 180 && ballFirstPos < width) {
+          ballFirst.style.left = ballFirstPos + 'px';
+          console.log(ballFirstPos);
+        }
+      }
+
+      lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+    }, false);
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting === true) {
+          // console.log('Видно');
+          start = true;
+        } else if (entry.isIntersecting === false) {// console.log('Не видно');
+        }
+      });
+    });
+    observer.observe(ballFirst);
+  };
+})(); //     let animation;
+//     window.addEventListener('scroll', () => { 
+//         let st = window.pageYOffset || document.documentElement.scrollTop; 
+//         if (st > lastScrollTop) {
+//             console.log('Вниз');
+//             if (start) {
+//                 console.log('Видно');
+//                 ballFirstPos = parseInt(ballFirstPos) + 20;
+//                 if (ballFirstPos < width && ballFirstPos > 180) {
+//                     animation = anime({
+//                         targets: '.ball--fourth',
+//                         translateX: ballFirstPos + 'px'
+//                     });
+//                 } 
+//             } 
+//         } else if (st < lastScrollTop) {
+//             console.log('Вверх');
+//             if (start) {
+//                 console.log('Видно');
+//                 ballFirstPos = parseInt(ballFirstPos) - 20;
+//                 if (ballFirstPos > 180 && ballFirstPos < width) {
+//                     animation = anime({
+//                         targets: '.ball--fourth',
+//                         translateX: ballFirstPos + 'px' 
+//                     });
+//                 } 
+//             }
+//         }
+//         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+//     }, false);
+"use strict";
+
+;
+
+(function () {
   var hamburger = document.getElementById('menu__button');
   var body = document.getElementsByTagName('body')[0];
   var menuLinks = document.querySelectorAll('.nav__link');
