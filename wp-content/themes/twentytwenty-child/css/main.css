@@ -1308,17 +1308,7 @@ input:checked + label::after {
   background: radial-gradient(52.83% 206.26% at 65.38% 47.17%, #FEE69D 0%, #FADF8C 100%);
 }
 
-.design__inner {
-  min-height: 42.5rem;
-  background-image: url(../img/paper-mockup-sm@1x.webp);
-  background-image: -webkit-image-set(url(../img/paper-mockup-sm@1x.png) 1x);
-  background-image: image-set(url(../img/paper-mockup-sm@1x.png) 1x);
-  background-size: 41.4rem 42.1rem;
-  background-position: 48% 17rem;
-  background-repeat: no-repeat;
-}
-
-.design__inner .design__right {
+.design__right {
   width: 100%;
 }
 
@@ -4114,6 +4104,28 @@ fieldset {
 }
 }
 
+@media (min-width: 0) {
+  .webp .design__inner {
+    min-height: 42.5rem;
+    background: url(../img/paper-mockup-sm@1x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    min-height: 42.5rem;
+    background: url(../img/paper-mockup-sm@1x.png) 48% 17rem/41.4rem 42.1rem no-repeat;
+  }
+}
+
+@media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (-webkit-min-device-pixel-ratio: 2), (min-width: 0) and (min-resolution: 192dpi) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-sm@2x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-sm@2x.png) 48% 17rem/41.4rem 42.1rem no-repeat;
+  }
+}
+
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 0), (min-resolution: 192dpi) and (min-width: 0) {
   .content__inner {
     background: url(../img/smartphone_in_hand-sm@2x.png);
@@ -6295,7 +6307,7 @@ fieldset {
     line-height: 2.4rem;
   }
 
-  .design__inner .design__right {
+  .design__right {
     width: calc(100% / 12 * 6);
   }
 
