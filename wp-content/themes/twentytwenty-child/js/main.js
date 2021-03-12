@@ -201,7 +201,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         '768': 680,
         '1024': 920,
         '1440': 1300,
-        '1920': 1850
+        '1920': 1550
       };
       var ballSpeedData = {
         '320': 5,
@@ -217,7 +217,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         var st = window.pageYOffset || document.documentElement.scrollTop;
 
         if (st > lastScrollTop && start) {
-          ballPosition = ballPosition + ballMoveSpeed; // console.log(ballPosition);
+          ballPosition = ballPosition + ballMoveSpeed;
+          console.log(ballPosition);
 
           if (ballPosition >= ballLeftMovePoint && ballPosition <= ballMoveWidth) {
             ballFirst.style.left = ballPosition + 'px';
@@ -225,7 +226,8 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
         }
 
         if (st < lastScrollTop && start) {
-          ballPosition = ballPosition - ballMoveSpeed; // console.log(ballPosition);
+          ballPosition = ballPosition - ballMoveSpeed;
+          console.log(ballPosition);
 
           if (ballPosition >= ballLeftMovePoint && ballPosition <= ballMoveWidth) {
             ballFirst.style.left = ballPosition + 'px';
