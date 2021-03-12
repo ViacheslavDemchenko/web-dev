@@ -317,6 +317,18 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 ;
 
 (function () {
+  window.addEventListener('click', function (e) {
+    if (e.target.parentNode.classList.contains('modal--thanks--active')) {
+      e.target.parentNode.classList.remove('modal--thanks--active');
+      document.querySelector('.overlay').classList.remove('overlay--active');
+    }
+  });
+})();
+"use strict";
+
+;
+
+(function () {
   var body = document.getElementsByTagName('body')[0];
   var html = body.parentNode;
   var wrap = document.querySelector('.wrap-feedback');

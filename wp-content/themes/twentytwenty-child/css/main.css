@@ -1016,7 +1016,7 @@ label {
   content: "";
   top: 0;
   left: 0;
-  width: 105%;
+  width: 110%;
   border-radius: .3rem;
 }
 
@@ -3706,7 +3706,8 @@ fieldset {
   align-items: center;
 }
 
-.modal__close {
+.modal__close,
+.modal__close-thanks {
   position: absolute;
   right: 2.5rem;
   top: 1rem;
@@ -3719,7 +3720,9 @@ fieldset {
 }
 
 .modal__close::after,
-.modal__close::before {
+.modal__close::before,
+.modal__close-thanks::after,
+.modal__close-thanks::before {
   position: absolute;
   left: 1.5rem;
   content: ' ';
@@ -3728,17 +3731,20 @@ fieldset {
   background: rgba(130, 130, 130, 0.5);
 }
 
-.modal__close::after {
+.modal__close::after,
+.modal__close-thanks::after {
   -webkit-transform: rotate(-45deg);
   transform: rotate(-45deg);
 }
 
-.modal__close::before {
+.modal__close::before,
+.modal__close-thanks::before {
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
 }
 
-.modal__close:hover {
+.modal__close:hover,
+.modal__close-thanks:hover {
   opacity: 1;
 }
 
@@ -7879,7 +7885,9 @@ fieldset {
   }
 
   .modal__close::after,
-  .modal__close::before {
+  .modal__close::before,
+  .modal__close-thanks::after,
+  .modal__close-thanks::before {
     height: 3.3rem;
     width: .4rem;
   }
@@ -8334,7 +8342,8 @@ fieldset {
     padding: 8.4rem 1rem 27.7rem 1rem;
   }
 
-  .modal__close {
+  .modal__close,
+  .modal__close-thanks {
     right: 2.5rem;
     top: 2.5rem;
     width: 4rem;
