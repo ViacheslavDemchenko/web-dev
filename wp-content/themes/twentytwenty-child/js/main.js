@@ -150,116 +150,107 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 
   e.Modernizr = Modernizr;
 }(window, document);
-// ;(function() {
-//     window.onload = () => {
-//         let lastScrollTop = window.pageYOffset;
-//         const ballFirst = document.querySelector('.ball--fourth');
-//         let ballFirstPos = window.getComputedStyle(ballFirst).left;
-//         let start = false;
-//         let width = window.innerWidth - parseInt(getComputedStyle(ballFirst).width); 
-//         console.log(width);
-//             window.addEventListener('scroll', () => { 
-//                 let st = window.pageYOffset || document.documentElement.scrollTop; 
-//                 if (st > lastScrollTop && start) {
-//                     // console.log('Вниз');
-//                     ballFirstPos = parseInt(ballFirstPos) + 10;
-//                     if (ballFirstPos < width && ballFirstPos >= 180) {
-//                         ballFirst.style.left = ballFirstPos + 'px';
-//                         console.log(ballFirstPos);
-//                     } 
-//                 }
-//                 if (st < lastScrollTop && start) {
-//                     // console.log('Вверх');
-//                     ballFirstPos = parseInt(ballFirstPos) - 10;
-//                     if (ballFirstPos >= 180 && ballFirstPos < width) {
-//                         ballFirst.style.left = ballFirstPos + 'px';
-//                         console.log(ballFirstPos); 
-//                     } 
-//                 }
-//                 lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-//             }, false);
-//         let observer = new IntersectionObserver(function (entries) {
-//             entries.forEach(function (entry) {
-//                 if (entry.isIntersecting === true) {
-//                     // console.log('Видно');
-//                     start = true;
-//                 } else if (entry.isIntersecting === false) {
-//                     // console.log('Не видно');
-//                 }
-//             });
-//         });
-//         observer.observe(ballFirst);
-//     }
-// })();
-//     let animation;
-//     window.addEventListener('scroll', () => { 
-//         let st = window.pageYOffset || document.documentElement.scrollTop; 
-//         if (st > lastScrollTop) {
-//             console.log('Вниз');
-//             if (start) {
-//                 console.log('Видно');
-//                 ballFirstPos = parseInt(ballFirstPos) + 20;
-//                 if (ballFirstPos < width && ballFirstPos > 180) {
-//                     animation = anime({
-//                         targets: '.ball--fourth',
-//                         translateX: ballFirstPos + 'px'
-//                     });
-//                 } 
-//             } 
-//         } else if (st < lastScrollTop) {
-//             console.log('Вверх');
-//             if (start) {
-//                 console.log('Видно');
-//                 ballFirstPos = parseInt(ballFirstPos) - 20;
-//                 if (ballFirstPos > 180 && ballFirstPos < width) {
-//                     animation = anime({
-//                         targets: '.ball--fourth',
-//                         translateX: ballFirstPos + 'px' 
-//                     });
-//                 } 
-//             }
-//         }
-//         lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
-//     }, false);
 "use strict";
-// ;(function() {
-//     // Проверяем, можно ли использовать Webp формат
-//     function canUseWebp() {
-//         // Создаем элемент canvas
-//         let elem = document.createElement('canvas');
-//         // Приводим элемент к булеву типу
-//         if (!!(elem.getContext && elem.getContext('2d'))) {
-//             // Создаем изображение в формате webp, возвращаем индекс искомого элемента и сразу же проверяем его
-//             return elem.toDataURL('image/webp').indexOf('data:image/webp') == 0;
-//         }
-//         // Иначе Webp не используем
-//         return false;
-//     }
-//     window.onload = function () {
-//         // Получаем все элементы с дата-атрибутом data-bg
-//         let images = document.querySelectorAll('[data-bg]');
-//         // Проходимся по каждому
-//         for (let i = 0; i < images.length; i++) {
-//             // Получаем значение каждого дата-атрибута
-//             let image = images[i].getAttribute('data-bg');
-//             // Каждому найденному элементу задаем свойство background-image с изображение формата jpg
-//             images[i].style.backgroundImage = 'url(' + image + ')';
-//         }
-//         // Проверяем, является ли браузер посетителя сайта Firefox и получаем его версию
-//         let isitFirefox = window.navigator.userAgent.match(/Firefox\/([0-9]+)\./);
-//         let firefoxVer = isitFirefox ? parseInt(isitFirefox[1]) : 0;
-//         // Если есть поддержка Webp или браузер Firefox версии больше или равно 65
-//         if (canUseWebp() || firefoxVer >= 65) {
-//             // Делаем все то же самое что и для jpg, но уже для изображений формата Webp
-//             let imagesWebp = document.querySelectorAll('[data-bg-webp]');
-//             for (let i = 0; i < imagesWebp.length; i++) {
-//                 let imageWebp = imagesWebp[i].getAttribute('data-bg-webp');
-//                 imagesWebp[i].style.backgroundImage = 'url(' + imageWebp + ')';
-//             }
-//         }
-//     };
-// })();
-"use strict";
+
+;
+
+(function () {
+  window.onload = function () {
+    if (document.querySelector('.ball--fourth')) {
+      var ballLeftPointSet = function ballLeftPointSet(obj, screenWidth) {
+        for (var key in obj) {
+          if (screenWidth >= +key) {
+            ballLeftMovePoint = obj[key];
+          }
+        }
+      };
+
+      var moveBallRange = function moveBallRange(obj, screenWidth) {
+        for (var key in obj) {
+          if (screenWidth >= +key) {
+            ballMoveWidth = obj[key];
+          }
+        }
+      };
+
+      var ballSpeed = function ballSpeed(obj, screenWidth) {
+        for (var key in obj) {
+          if (screenWidth >= +key) {
+            ballMoveSpeed = obj[key];
+          }
+        }
+      };
+
+      var ballFirst = document.querySelector('.ball--fourth');
+      var lastScrollTop = window.pageYOffset;
+      var ballPosition = parseInt(window.getComputedStyle(ballFirst).left);
+      var start = false;
+      var ballLeftMovePoint;
+      var ballMoveWidth;
+      var ballMoveSpeed;
+      var currentScreenWidth = window.innerWidth;
+      var ballPositions = {
+        '0': 5,
+        '414': 41,
+        '768': 30,
+        '1440': 180
+      };
+      var moveBallWidth = {
+        '320': 260,
+        '414': 350,
+        '768': 680,
+        '1024': 920,
+        '1440': 1300,
+        '1920': 1850
+      };
+      var ballSpeedData = {
+        '320': 5,
+        '414': 10,
+        '768': 15,
+        '1024': 20,
+        '1440': 25
+      };
+      ballLeftPointSet(ballPositions, currentScreenWidth);
+      moveBallRange(moveBallWidth, currentScreenWidth);
+      ballSpeed(ballSpeedData, currentScreenWidth);
+      window.addEventListener('scroll', function () {
+        var st = window.pageYOffset || document.documentElement.scrollTop;
+
+        if (st > lastScrollTop && start) {
+          ballPosition = ballPosition + ballMoveSpeed; // console.log(ballPosition);
+
+          if (ballPosition >= ballLeftMovePoint && ballPosition <= ballMoveWidth) {
+            ballFirst.style.left = ballPosition + 'px';
+          }
+        }
+
+        if (st < lastScrollTop && start) {
+          ballPosition = ballPosition - ballMoveSpeed; // console.log(ballPosition);
+
+          if (ballPosition >= ballLeftMovePoint && ballPosition <= ballMoveWidth) {
+            ballFirst.style.left = ballPosition + 'px';
+          }
+        }
+
+        lastScrollTop = st <= 0 ? 0 : st; // For Mobile or negative scrolling
+      }, false);
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting === true) {
+            start = true;
+          } else if (entry.isIntersecting === false) {
+            start = false;
+          }
+        });
+      });
+      observer.observe(ballFirst); // window.addEventListener('resize', () => {
+      //     ballLeftPointSet(ballPositions, currentScreenWidth);
+      //     moveBallRange(moveBallWidth, currentScreenWidth);
+      //     ballSpeed(ballSpeedData, currentScreenWidth);
+      // });
+    }
+  };
+})();
 "use strict";
 
 ;

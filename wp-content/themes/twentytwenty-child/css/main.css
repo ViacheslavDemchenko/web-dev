@@ -19,6 +19,7 @@ html,
 body {
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
   font-family: 'Arial', 'Tahoma', sans-serif;
   font-weight: 400;
   font-style: normal;
@@ -31,23 +32,6 @@ body {
 .container-fluid {
   position: relative;
   width: 100%;
-  background-image: url(../img/header-bg-xs@1x.jpg);
-  background-repeat: no-repeat;
-  background-position: top left;
-  background-size: 100% 113.9rem;
-}
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-xs@1x.webp) 1x)) {
-  .container-fluid {
-    background-image: url(../img/header-bg-xs@1x.webp);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 113.9rem;
-  }
-}
-
-.container-fluid--stretched {
-  background-size: 100% 100% !important;
 }
 
 .container {
@@ -1224,7 +1208,7 @@ input:checked + label::after {
 }
 
 .main-title {
-  max-width: 40rem;
+  max-width: 29rem;
   text-align: center;
   margin: 0 auto 4.8rem auto;
 }
@@ -1280,10 +1264,13 @@ input:checked + label::after {
 }
 
 .header--about,
-.header--portfolio,
 .header--reviews,
 .header--services {
   margin-bottom: 4rem;
+}
+
+.header--portfolio {
+  padding-bottom: 4rem;
 }
 
 .header--contacts {
@@ -1372,7 +1359,16 @@ input:checked + label::after {
   background: #F8F8F8;
 }
 
-.work-scheme::after {
+.webp .work-scheme::after {
+  position: absolute;
+  content: "";
+  top: -24.4rem;
+  right: 0;
+  width: 73rem;
+  height: 74.4rem;
+}
+
+.no-webp .work-scheme::after {
   position: absolute;
   content: "";
   top: -24.4rem;
@@ -3693,6 +3689,10 @@ fieldset {
   background-repeat: no-repeat;
 }
 
+.modal--thanks--active {
+  display: block;
+}
+
 .modal--thanks-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3843,25 +3843,17 @@ fieldset {
   display: block;
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 0), screen and (min-resolution: 192dpi) and (min-width: 0) {
-  .container-fluid {
-    background-image: url(../img/header-bg-xs@1x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 113.9rem;
+@media (min-width: 0) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-xs@1x.webp) top left/100% 113.9rem no-repeat;
+    mix-blend-mode: soft-light;
   }
 
-@supports (background-image: -webkit-image-set(url(../img/header-bg-xs@2x.webp) 2x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-xs@2x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 113.9rem;
-    }
-}
-}
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-xs@1x.jpg) top left/100% 113.9rem no-repeat;
+    mix-blend-mode: soft-light;
+  }
 
-@media (min-width: 0) {
   .webp .design__inner {
     min-height: 42.5rem;
     background: url(../img/paper-mockup-sm@1x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
@@ -4024,6 +4016,14 @@ fieldset {
 }
 
 @media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (-webkit-min-device-pixel-ratio: 2), (min-width: 0) and (min-resolution: 192dpi) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-xs@2x.webp) top left/100% 113.9rem no-repeat;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-xs@2x.jpg) top left/100% 113.9rem no-repeat;
+  }
+
   .webp .design__inner {
     background: url(../img/paper-mockup-sm@2x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
   }
@@ -4258,6 +4258,10 @@ fieldset {
     bottom: 2.4rem;
     right: -1.4rem;
     text-align: left;
+  }
+
+  .main-title {
+    max-width: 40rem;
   }
 
   .page-text--header {
@@ -4911,47 +4915,15 @@ fieldset {
   }
 }
 
-@media screen and (min-width: 768px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-sm@1x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 102.4rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-sm@1x.webp) 1x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-sm@1x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 102.4rem;
-    }
-}
-
-  input:checked + label::after {
-    top: .2rem;
-  }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), screen and (min-resolution: 192dpi) and (min-width: 768px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-sm@2x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 102.4rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-sm@2x.webp) 2x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-sm@2x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 102.4rem;
-    }
-}
-}
-
 @media (min-width: 768px) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-sm@1x.webp) top left/100% 102.4rem no-repeat;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-sm@1x.jpg) top left/100% 102.4rem no-repeat;
+  }
+
   .main-title {
     font-size: 4.8rem;
     line-height: 5.8rem;
@@ -5031,7 +5003,7 @@ fieldset {
   }
 
   .main-title {
-    max-width: 100%;
+    max-width: 63rem;
     margin-bottom: 4.6rem;
   }
 
@@ -5704,6 +5676,14 @@ fieldset {
 }
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-sm@2x.webp) top left/100% 102.4rem no-repeat;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-sm@2x.jpg) top left/100% 102.4rem no-repeat;
+  }
+
   .webp .design__inner {
     background: url(../img/paper-mockup-md@2x.webp) 100% 100%/34rem 31.9rem no-repeat;
   }
@@ -5766,6 +5746,12 @@ fieldset {
   }
 }
 
+@media screen and (min-width: 768px) {
+  input:checked + label::after {
+    top: .2rem;
+  }
+}
+
 @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), (min-resolution: 192dpi) and (min-width: 768px) {
   .design--weapon .design__inner {
     background: url(../img/laptop-gear-lg@2x.png);
@@ -5784,43 +5770,15 @@ fieldset {
 }
 }
 
-@media screen and (min-width: 1024px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-md@1x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 102.4rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-md@1x.webp) 1x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-md@1x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 102.4rem;
-    }
-}
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px), screen and (min-resolution: 192dpi) and (min-width: 1024px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-md@2x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 102.4rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-md@2x.webp) 2x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-md@2x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 102.4rem;
-    }
-}
-}
-
 @media (min-width: 1024px) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-md@1x.webp) top left/100% 102.4rem no-repeat;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-md@1x.jpg) top left/100% 102.4rem no-repeat;
+  }
+
   .about-cards .about__card .card__title,
   .directions-cards .directions__card .card__title,
   .webdevelopment__title,
@@ -6277,6 +6235,14 @@ fieldset {
 }
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-md@2x.webp) top left/100% 102.4rem no-repeat;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-md@2x.jpg) top left/100% 102.4rem no-repeat;
+  }
+
   .webp .design__inner {
     background: url(../img/paper-mockup-lg@2x.webp) right 100%/54.5rem 42.9rem no-repeat;
   }
@@ -6676,56 +6642,15 @@ fieldset {
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-lg@1x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 115.7rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-lg@1x.webp) 1x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-lg@1x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 115.7rem;
-    }
-}
-
-  input[type="checkbox"] + label::before {
-    top: -.5rem;
-    width: 2rem;
-    height: 2rem;
-  }
-
-  input:checked + label::after {
-    top: .3rem;
-    left: .8rem;
-    width: .6rem;
-    height: 1.2rem;
-  }
-}
-
-@media screen and (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), screen and (min-resolution: 192dpi) and (min-width: 1440px) {
-  .container-fluid {
-    background-image: url(../img/header-bg-lg@2x.jpg);
-    background-repeat: no-repeat;
-    background-position: top left;
-    background-size: 100% 115.7rem;
-  }
-
-@supports (background-image: -webkit-image-set(url(../img/header-bg-lg@2x.webp) 2x)) {
-    .container-fluid {
-      background-image: url(../img/header-bg-lg@2x.webp);
-      background-repeat: no-repeat;
-      background-position: top left;
-      background-size: 100% 115.7rem;
-    }
-}
-}
-
 @media (min-width: 1440px) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-lg@1x.webp) top left/100% 115.7rem no-repeat, #F8F8F8;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-lg@1x.jpg) top left/100% 115.7rem no-repeat, #F8F8F8;
+  }
+
   .main-title {
     font-size: 6.4rem;
     line-height: 7.7rem;
@@ -6890,6 +6815,7 @@ fieldset {
   }
 
   .main-title {
+    min-width: 100rem;
     margin: 0 auto -2rem auto;
     padding: 0 8rem;
   }
@@ -6921,10 +6847,13 @@ fieldset {
   }
 
   .header--about,
-  .header--portfolio,
   .header--reviews,
   .header--services {
     margin-bottom: 7.4rem;
+  }
+
+  .header--portfolio {
+    padding-bottom: 7.4rem;
   }
 
   .header--contacts {
@@ -7006,7 +6935,12 @@ fieldset {
     background-size: contain;
   }
 
-  .work-scheme::after {
+  .webp .work-scheme::after {
+    background: url(../img/gear-big@1x.webp) 100% 75%/50%;
+    background-repeat: no-repeat;
+  }
+
+  .no-webp .work-scheme::after {
     background: url(../img/gear-big@1x.png) 100% 75%/50%;
     background-repeat: no-repeat;
   }
@@ -7966,6 +7900,14 @@ fieldset {
 }
 
 @media (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1440px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1440px) and (min-resolution: 192dpi) {
+  .webp .container-fluid {
+    background: url(../img/header-bg-lg@2x.webp) top left/100% 115.7rem no-repeat, #F8F8F8;
+  }
+
+  .no-webp .container-fluid {
+    background: url(../img/header-bg-lg@2x.jpg) top left/100% 115.7rem no-repeat, #F8F8F8;
+  }
+
   .webp .design__inner {
     background: url(../img/paper-mockup-lg@2x.webp) right 100%/69.9rem 55rem no-repeat;
   }
@@ -7982,7 +7924,12 @@ fieldset {
     background: url(../img/smartphone_in_hand-lg@2x.png) 0% 100%/56.8rem 48.9rem no-repeat;
   }
 
-  .work-scheme::after {
+  .webp .work-scheme::after {
+    background: url(../img/gear-big@2x.webp) 100% 75%/50%;
+    background-repeat: no-repeat;
+  }
+
+  .no-webp .work-scheme::after {
     background: url(../img/gear-big@2x.png) 100% 75%/50%;
     background-repeat: no-repeat;
   }
@@ -8094,6 +8041,21 @@ fieldset {
   .modal--thanks {
     background: url(../img/thanks-icon-lg@2x.png) 50% 14rem/25rem 25rem, url(../img/icons/sphere-1.svg) 34rem 33rem/61%, url(../img/icons/sphere-1.svg) -16.5rem 29rem/100%, url(../img/icons/sphere-2.svg) 5% 0%/43%, #fff;
     background-repeat: no-repeat;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  input[type="checkbox"] + label::before {
+    top: -.5rem;
+    width: 2rem;
+    height: 2rem;
+  }
+
+  input:checked + label::after {
+    top: .3rem;
+    left: .8rem;
+    width: .6rem;
+    height: 1.2rem;
   }
 }
 
