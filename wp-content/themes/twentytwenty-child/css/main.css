@@ -805,6 +805,26 @@ template {
   text-decoration-skip-ink: none;
 }
 
+.form__input-message {
+  font-family: "GothamProRegular";
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1.4rem;
+  line-height: 2rem;
+  letter-spacing: 0.05em;
+  border: 0.1rem solid #E0E0E0;
+  color: #828282;
+}
+
+.form__input-message:hover {
+  border: 0.1rem solid #E0E0E0;
+}
+
+.form__input-message:focus {
+  border: 0.1rem solid #4F4F4F;
+  color: #4F4F4F;
+}
+
 input:not([type="checkbox"]),
 input:not([type="file"]) {
   font-family: "GothamProRegular";
@@ -1114,9 +1134,16 @@ input[type="file"] {
 }
 
 input:not([type="checkbox"]),
-input:not([type="file"]) {
-  padding: 1.8rem 1rem;
+input:not([type="file"]),
+textarea {
+  width: 100%;
+  max-width: 31rem;
+  padding: 1.5rem 1rem;
   text-align: center;
+}
+
+textarea {
+  text-align: left;
 }
 
 input[type="submit"] {
@@ -3674,12 +3701,22 @@ fieldset {
   -webkit-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   width: 28rem;
-  padding: 4rem 1rem 3rem 1rem;
-  background: url(../img/icons/sphere-1.svg) -8rem 36rem/96%, url(../img/icons/sphere-1.svg) 18.3rem 39rem/48%, url(../img/icons/sphere-2.svg) -26% 0%/75%, #fff;
+  padding: 1rem 1rem 2rem 1rem;
+  background: url(../img/icons/sphere-1.svg) -8rem 52rem/96%, url(../img/icons/sphere-1.svg) 18.3rem 56rem/48%, url(../img/icons/sphere-2.svg) -26% 0%/75%, #fff;
   background-repeat: no-repeat !important;
   -webkit-box-shadow: 0 10rem 8rem rgba(128, 128, 128, 0.07), 0 4.17776rem 3.34221rem rgba(128, 128, 128, 0.0503198), 0 2.23363rem 1.7869rem rgba(128, 128, 128, 0.0417275), 0 1.25216rem 1.00172rem rgba(128, 128, 128, 0.035), 0 0.66501rem 0.53201rem rgba(128, 128, 128, 0.0282725), 0 0.27673rem 0.22138rem rgba(128, 128, 128, 0.0196802);
   box-shadow: 0 10rem 8rem rgba(128, 128, 128, 0.07), 0 4.17776rem 3.34221rem rgba(128, 128, 128, 0.0503198), 0 2.23363rem 1.7869rem rgba(128, 128, 128, 0.0417275), 0 1.25216rem 1.00172rem rgba(128, 128, 128, 0.035), 0 0.66501rem 0.53201rem rgba(128, 128, 128, 0.0282725), 0 0.27673rem 0.22138rem rgba(128, 128, 128, 0.0196802);
   border-radius: 1rem;
+}
+
+.modal--open {
+  -webkit-animation: modal-open .5s ease-in-out;
+  animation: modal-open .5s ease-in-out;
+}
+
+.modal--close {
+  -webkit-animation: modal-close .5s ease-in-out;
+  animation: modal-close .5s ease-in-out;
 }
 
 .modal--thanks {
@@ -3784,17 +3821,17 @@ fieldset {
   align-items: center;
 }
 
-.form-call .form__input-name,
-.form-call .form__input-phone,
-.form-call .form-call__submit {
-  width: 26rem;
+.form-call .form__input-message {
+  height: 15rem;
 }
 
-.form-call .form__input-name {
+.form-call .form__input-name,
+.form-call .form__input-phone,
+.form-call .form__input-email {
   margin-bottom: 1rem;
 }
 
-.form-call .form__input-phone {
+.form-call .form__input-message {
   margin-bottom: 1.5rem;
 }
 
@@ -3834,6 +3871,54 @@ fieldset {
   display: block;
 }
 
+@-webkit-keyframes modal-open {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@keyframes modal-open {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  100% {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes modal-close {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+@keyframes modal-close {
+  0% {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
 .overlay {
   position: absolute;
   z-index: 9000;
@@ -3841,12 +3926,14 @@ fieldset {
   bottom: 0;
   left: 0;
   right: 0;
-  display: none;
-  background: rgba(255, 255, 255, 0.6);
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
 }
 
 .overlay--active {
-  display: block;
+  -webkit-animation: modal-open .5s ease-in-out;
+  animation: modal-open .5s ease-in-out;
 }
 
 @media (min-width: 0) {
@@ -4637,7 +4724,7 @@ fieldset {
 
   .modal {
     width: 38rem;
-    background: url(../img/icons/sphere-1.svg) -11rem 31rem/100%, url(../img/icons/sphere-1.svg) 21.6rem 35rem/60%, url(../img/icons/sphere-2.svg) -47% 0%/78%, #fff;
+    background: url(../img/icons/sphere-1.svg) -11rem 48rem/100%, url(../img/icons/sphere-1.svg) 21.6rem 53rem/60%, url(../img/icons/sphere-2.svg) -47% 0%/78%, #fff;
     background-repeat: no-repeat;
   }
 
@@ -4999,11 +5086,6 @@ fieldset {
     margin-bottom: 0;
   }
 
-  input:not([type="checkbox"]),
-  input:not([type="file"]) {
-    max-width: 31rem;
-  }
-
   input[type="checkbox"] {
     margin-top: 0;
   }
@@ -5047,10 +5129,12 @@ fieldset {
   }
 
   .webp .design__inner {
+    padding-bottom: 5rem;
     background: url(../img/paper-mockup-md@1x.webp) 100% 100%/34rem 31.9rem no-repeat;
   }
 
   .no-webp .design__inner {
+    padding-bottom: 5rem;
     background: url(../img/paper-mockup-md@1x.png) 100% 100%/34rem 31.9rem no-repeat;
   }
 
@@ -5082,10 +5166,12 @@ fieldset {
   }
 
   .webp .content__inner {
+    padding-bottom: 5rem;
     background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
   }
 
   .no-webp .content__inner {
+    padding-bottom: 5rem;
     background: url(../img/smartphone_in_hand-lg@1x.png) 97% 100%/49.7rem 42.7rem no-repeat;
   }
 
@@ -5648,8 +5734,8 @@ fieldset {
   }
 
   .modal {
-    width: 60rem;
-    background: url(../img/icons/sphere-1.svg) -17rem 30rem/100%, url(../img/icons/sphere-1.svg) 34.5rem 35rem/60%, url(../img/icons/sphere-2.svg) -13% 0%/55%, #fff;
+    width: 50rem;
+    background: url(../img/icons/sphere-1.svg) -17rem 47rem/100%, url(../img/icons/sphere-1.svg) 28.5rem 53rem/60%, url(../img/icons/sphere-2.svg) -13% 0%/55%, #fff;
     background-repeat: no-repeat;
   }
 
@@ -6766,6 +6852,11 @@ fieldset {
     line-height: 3.1rem;
   }
 
+  .form__input-message {
+    font-size: 1.8rem;
+    line-height: 2.9rem;
+  }
+
   input:not([type="checkbox"]),
   input:not([type="file"]) {
     font-size: 1.8rem;
@@ -6773,8 +6864,8 @@ fieldset {
   }
 
   label {
-    font-size: 1.4rem;
-    line-height: 2.2rem;
+    font-size: 1.2rem;
+    line-height: 2rem;
   }
 
   .about-cards .about__card .card__title,
@@ -6812,8 +6903,9 @@ fieldset {
   }
 
   input:not([type="checkbox"]),
-  input:not([type="file"]) {
-    padding: 2.2rem 1rem;
+  input:not([type="file"]),
+  textarea {
+    padding: 1.5rem 1rem;
   }
 
   .header--main {
@@ -6881,11 +6973,13 @@ fieldset {
 
   .webp .design__inner {
     min-height: 55rem;
+    padding-bottom: 10rem;
     background: url(../img/paper-mockup-lg@1x.webp) right 100%/69.9rem 55rem no-repeat;
   }
 
   .no-webp .design__inner {
     min-height: 55rem;
+    padding-bottom: 10rem;
     background: url(../img/paper-mockup-lg@1x.png) right 100%/69.9rem 55rem no-repeat;
   }
 
@@ -6910,11 +7004,13 @@ fieldset {
 
   .webp .content__inner {
     min-height: 55rem;
+    padding-bottom: 10rem;
     background: url(../img/smartphone_in_hand-lg@1x.webp) 0% 100%/56.8rem 48.9rem no-repeat;
   }
 
   .no-webp .content__inner {
     min-height: 55rem;
+    padding-bottom: 10rem;
     background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/56.8rem 48.9rem no-repeat;
   }
 
@@ -7874,7 +7970,7 @@ fieldset {
   }
 
   .modal {
-    background: url(../img/icons/sphere-1.svg) -16rem 37rem/100%, url(../img/icons/sphere-1.svg) 34.5rem 42rem/60%, url(../img/icons/sphere-2.svg) -13% 0%/55%, #fff;
+    background: url(../img/icons/sphere-1.svg) -16rem 55rem/100%, url(../img/icons/sphere-1.svg) 28.5rem 60rem/60%, url(../img/icons/sphere-2.svg) -13% 0%/55%, #fff;
     background-repeat: no-repeat;
   }
 
@@ -7892,13 +7988,7 @@ fieldset {
     width: .4rem;
   }
 
-  .form-call .form__input-name,
-  .form-call .form__input-phone,
-  .form-call .form-call__submit {
-    width: 31rem;
-  }
-
-  .form-call .form__input-phone {
+  .form-call .form__input-message {
     margin-bottom: 2.7rem;
   }
 
@@ -8060,7 +8150,7 @@ fieldset {
   }
 
   input:checked + label::after {
-    top: .3rem;
+    top: 1.4rem;
     left: .8rem;
     width: .6rem;
     height: 1.2rem;
@@ -8131,6 +8221,11 @@ fieldset {
 }
 
 @media (min-width: 1920px) {
+  label {
+    font-size: 1.4rem;
+    line-height: 2.2rem;
+  }
+
   .btn--services {
     bottom: 4.4rem;
     right: -1.9rem;
@@ -8325,9 +8420,9 @@ fieldset {
   }
 
   .modal {
-    width: 90rem;
-    padding: 8.4rem 1rem 9.1rem 1rem;
-    background: url(../img/icons/sphere-1.svg) 51rem 56rem/61%, url(../img/icons/sphere-1.svg) -26.5rem 50rem/100%, url(../img/icons/sphere-2.svg) 5% 0%/43%, #fff;
+    width: 60rem;
+    padding: 1rem 1rem 2rem 1rem;
+    background: url(../img/icons/sphere-1.svg) 34rem 56rem/61%, url(../img/icons/sphere-1.svg) -26.5rem 50rem/100%, url(../img/icons/sphere-2.svg) 5% 0%/43%, #fff;
     background-repeat: no-repeat;
   }
 
@@ -8344,23 +8439,29 @@ fieldset {
 
   .modal__close,
   .modal__close-thanks {
-    right: 2.5rem;
-    top: 2.5rem;
+    right: 1rem;
+    top: 1.2rem;
     width: 4rem;
     height: 4.2rem;
   }
 
   .form__title {
-    margin-bottom: 3.4rem;
-    font-size: 6.4rem;
-    line-height: 7.7rem;
+    margin-bottom: 2rem;
+    font-size: 4rem;
+    line-height: 4.7rem;
   }
 
   .form__subtitle {
-    max-width: 57.4rem;
-    margin-bottom: 3rem;
-    font-size: 2.4rem;
-    line-height: 3.8rem;
+    max-width: 40rem;
+    margin-bottom: 2rem;
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+}
+
+@media screen and (min-width: 1920px) {
+  input:checked + label::after {
+    top: .3rem;
   }
 }
 

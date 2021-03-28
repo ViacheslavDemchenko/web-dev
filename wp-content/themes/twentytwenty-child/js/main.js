@@ -339,7 +339,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   div.classList.add('current-modal');
   var options = [{
     modal_call_btn: 'btn--call',
-    modal_call_title: 'Перезвонить вам?',
+    modal_call_title: 'Обратная связь',
     modal_call_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
     modal_form_id: 'form-call',
     phone_input_id: 'modal__input-phone'
@@ -360,16 +360,22 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     }
 
     if (e.target.classList.contains('modal__close')) {
-      modalHide();
+      document.querySelector('.modal').classList.add('modal--close');
+      document.querySelector('.modal').classList.remove('modal--open');
+      setTimeout(function () {
+        modalHide();
+      }, 400);
     }
   });
 
   function modalShow(formID, modalTitle, modalSubtitle, phoneInputID) {
-    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\" target=\"_blank\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
+    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <input class=\"form__input-email\" type=\"text\" id=\"modal__input-email\" name=\"user-email\" placeholder=\"\u0412\u0430\u0448 email\">\n                        <textarea class=\"form__input-message\" id=\"modal__message\" placeholder=\"\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0438\"></textarea>\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\" target=\"_blank\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
     div.innerHTML = modal;
     wrap.appendChild(div);
     body.classList.add('no-scroll');
     html.classList.add('html-overflow');
+    document.querySelector('.modal').classList.remove('modal--close');
+    document.querySelector('.modal').classList.add('modal--open');
     inputMask(document.getElementById(phoneInputID));
   }
 
@@ -418,6 +424,33 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     input.addEventListener('blur', setMask, false);
     input.addEventListener('keydown', setMask, false);
   }
+
+  window.addEventListener('click', function (e) {
+    if (e.target.classList.contains('modal__close')) {
+      document.querySelector('.modal').classList.add('modal--close');
+      document.querySelector('.modal').classList.remove('modal--open');
+      setTimeout(function () {
+        modalHide();
+      }, 400);
+    }
+
+    if (e.target.closest('.modal') && !e.target.closest('.modal__close')) {
+      e.stopPropagation();
+    } else if (e.target.closest('.overlay')) {
+      document.querySelector('.modal').classList.add('modal--close');
+      document.querySelector('.modal').classList.remove('modal--open');
+      setTimeout(function () {
+        modalHide();
+      }, 400);
+    }
+  });
+  window.addEventListener('keydown', function (e) {
+    if (e.code === 'Escape') {
+      setTimeout(function () {
+        modalHide();
+      }, 400);
+    }
+  });
 })();
 "use strict";
 
