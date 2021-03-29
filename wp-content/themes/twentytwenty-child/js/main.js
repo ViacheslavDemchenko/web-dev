@@ -343,21 +343,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     modal_call_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
     modal_form_id: 'form-call',
     phone_input_id: 'modal__input-phone'
-  }, {
-    modal_brief_btn: 'btn--brief',
-    modal_brief_title: 'Отправьте заявку',
-    modal_brief_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
-    modal_form_id: 'form-brief',
-    phone_input_id: 'modal__input-phone'
-  }];
+  } // {
+  //     modal_brief_btn: 'btn--brief',
+  //     modal_brief_title: 'Отправьте заявку',
+  //     modal_brief_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
+  //     modal_form_id: 'form-brief',
+  //     phone_input_id: 'modal__input-phone'
+  // },
+  ];
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains(options[0].modal_call_btn)) {
       modalShow(options[0].modal_form_id, options[0].modal_call_title, options[0].modal_call_subtitle, options[0].phone_input_id);
-    }
+    } // if(e.target.classList.contains(options[1].modal_brief_btn)) {
+    //     modalShow(options[1].modal_form_id, options[1].modal_brief_title, options[1].modal_brief_subtitle, options[1].phone_input_id);
+    // }
 
-    if (e.target.classList.contains(options[1].modal_brief_btn)) {
-      modalShow(options[1].modal_form_id, options[1].modal_brief_title, options[1].modal_brief_subtitle, options[1].phone_input_id);
-    }
 
     if (e.target.classList.contains('modal__close')) {
       document.querySelector('.modal').classList.add('modal--close');
