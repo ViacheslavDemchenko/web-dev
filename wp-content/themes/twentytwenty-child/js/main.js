@@ -357,15 +357,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     } // if(e.target.classList.contains(options[1].modal_brief_btn)) {
     //     modalShow(options[1].modal_form_id, options[1].modal_brief_title, options[1].modal_brief_subtitle, options[1].phone_input_id);
     // }
+    // if(e.target.classList.contains('modal__close')) {
+    //     document.querySelector('.modal').classList.add('modal--close');
+    //     document.querySelector('.modal').classList.remove('modal--open');
+    //     setTimeout(() => {
+    //         modalHide();
+    //     }, 400);
+    // }
 
-
-    if (e.target.classList.contains('modal__close')) {
-      document.querySelector('.modal').classList.add('modal--close');
-      document.querySelector('.modal').classList.remove('modal--open');
-      setTimeout(function () {
-        modalHide();
-      }, 400);
-    }
   });
 
   function modalShow(formID, modalTitle, modalSubtitle, phoneInputID) {
@@ -426,14 +425,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   window.addEventListener('click', function (e) {
-    if (e.target.classList.contains('modal__close')) {
-      document.querySelector('.modal').classList.add('modal--close');
-      document.querySelector('.modal').classList.remove('modal--open');
-      setTimeout(function () {
-        modalHide();
-      }, 400);
-    }
-
+    // if (e.target.classList.contains('modal__close')) {
+    //     document.querySelector('.modal').classList.add('modal--close');
+    //     document.querySelector('.modal').classList.remove('modal--open');
+    //     setTimeout(() => {
+    //         modalHide();
+    //     }, 400);
+    // }
     if (e.target.closest('.modal') && !e.target.closest('.modal__close')) {
       e.stopPropagation();
     } else if (e.target.closest('.overlay')) {
