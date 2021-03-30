@@ -499,6 +499,42 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     return valid;
   }
 
+  function formSend() {
+    var btnSend = document.querySelector('.btn-send');
+
+    if (!validName() || !validPhone() || !validMail() || !validMessage()) {
+      btnSend.disabled = true;
+    } else {
+      setTimeout(function () {
+        modalThanks();
+      }, 1000);
+    }
+  }
+
+  var thanksModal = document.querySelector('.modal--thanks');
+  var overlay = document.createElement('div'); // Открытие модалки благодарности
+
+  function modalThanksOpen() {
+    overlay.classList.add('overlay--thanks', 'overlay--thanks--active');
+    thanksModal.classList.add('modal--thanks-active');
+    wrap.appendChild(overlay);
+    body.classList.add('no-scroll');
+    html.classList.add('html-overflow');
+  } // Закрытие модалки благодарности
+
+
+  function modalThanksClose() {
+    overlay.classList.remove('overlay--thanks', 'overlay--thanks--active');
+    thanksModal.classList.remove('modal--thanks-active');
+
+    if (document.querySelector('overlay--thanks')) {
+      wrap.removeChild(overlay);
+    }
+
+    body.classList.remove('no-scroll');
+    html.classList.remove('html-overflow');
+  }
+
   window.addEventListener('click', function (e) {
     if (e.target.closest('.modal') && !e.target.closest('.modal__close')) {
       e.stopPropagation();
@@ -512,19 +548,35 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   });
   window.addEventListener('keydown', function (e) {
     if (e.code === 'Escape') {
+      if (document.querySelector('.modal--thanks')) {
+        setTimeout(function () {
+          modalThanksClose();
+        }, 400);
+      }
+
+      if (document.querySelector('.modal')) {
+        setTimeout(function () {
+          modalHide();
+        }, 400);
+      }
+    }
+  });
+  window.addEventListener('click', function (e) {
+    if (e.target.closest('.modal--thanks') && !e.target.closest('.modal__close-thanks')) {
+      e.stopPropagation();
+    } else if (e.target.closest('.overlay--thanks')) {
+      document.querySelector('.modal--thanks').classList.add('modal--close');
+      document.querySelector('.modal--thanks').classList.remove('modal--open');
       setTimeout(function () {
-        modalHide();
+        modalThanksClose();
       }, 400);
     }
   });
-
-  function formSend() {
-    var btnSend = document.querySelector('.btn-send');
-
-    if (!validName() || !validPhone() || !validMail() || !validMessage()) {
-      btnSend.disabled = true;
-    }
-  }
+  document.querySelector('.modal__close-thanks').addEventListener('click', function () {
+    setTimeout(function () {
+      modalThanksClose();
+    }, 400);
+  });
 })();
 "use strict";
 
