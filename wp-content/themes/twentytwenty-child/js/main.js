@@ -263,11 +263,13 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var menuLinks = document.querySelectorAll('.nav__link');
   var menu = document.querySelector('.header-top');
   var header = document.querySelector('.header');
-  var screenWidth = window.screen.availWidth;
+  var socialList = document.querySelector('.social-list');
+  var screenWidth = screen.width;
 
   function mobileMenuHide() {
     hamburger.classList.remove('active');
     header.classList.remove('header--open');
+    socialList.classList.remove('social-list--mobile');
     menu.classList.remove('header-top--open');
     body.classList.remove('no-scroll');
   }
@@ -275,6 +277,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   function mobileMenuShow() {
     hamburger.classList.add('active');
     header.classList.add('header--open');
+    socialList.classList.add('social-list--mobile');
     body.appendChild(menu);
     body.classList.add('no-scroll');
     setTimeout(function () {
@@ -307,7 +310,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   }
 
   window.addEventListener('resize', function () {
-    screenWidth = window.screen.availWidth;
+    screenWidth = screen.width;
 
     if (screenWidth >= 1200) {
       mobileMenuHide();
@@ -343,32 +346,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     modal_call_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
     modal_form_id: 'form-call',
     phone_input_id: 'modal__input-phone'
-  } // {
-  //     modal_brief_btn: 'btn--brief',
-  //     modal_brief_title: 'Отправьте заявку',
-  //     modal_brief_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
-  //     modal_form_id: 'form-brief',
-  //     phone_input_id: 'modal__input-phone'
-  // },
-  ];
+  }];
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains(options[0].modal_call_btn)) {
       modalShow(options[0].modal_form_id, options[0].modal_call_title, options[0].modal_call_subtitle, options[0].phone_input_id);
-    } // if(e.target.classList.contains(options[1].modal_brief_btn)) {
-    //     modalShow(options[1].modal_form_id, options[1].modal_brief_title, options[1].modal_brief_subtitle, options[1].phone_input_id);
-    // }
-    // if(e.target.classList.contains('modal__close')) {
-    //     document.querySelector('.modal').classList.add('modal--close');
-    //     document.querySelector('.modal').classList.remove('modal--open');
-    //     setTimeout(() => {
-    //         modalHide();
-    //     }, 400);
-    // }
-
+    }
   });
 
   function modalShow(formID, modalTitle, modalSubtitle, phoneInputID) {
-    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <input class=\"form__input-email\" type=\"email\" id=\"modal__input-email\" name=\"user-email\" placeholder=\"\u0412\u0430\u0448 email\">\n                        <textarea class=\"form__input-message\" id=\"modal__message\" placeholder=\"\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0438\"></textarea>\n                        <div class=\"feedback\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u043D\u043E\u043C\u0435\u0440 \u0442\u0435\u043B\u0435\u0444\u043E\u043D\u0430</div>\n                        <input class=\"btn form-call__submit\" type=\"submit\" id=\"form-call__submit\" value=\"\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443\">\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\" target=\"_blank\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
+    modal += "\n            <div class=\"overlay overlay--active\">\n                <div class=\"modal\">\n                    <div class=\"modal__close\"></div>\n                        <form class=\"form-call\" id=\"".concat(formID, "\" method=\"post\" action=\"#\">\n                        <div class=\"form__title\">").concat(modalTitle, "</div>\n                        <div class=\"form__subtitle\">").concat(modalSubtitle, "</div>\n                        <input class=\"form__input-name\" type=\"text\" id=\"modal__input-name\" name=\"user-name\" placeholder=\"\u0412\u0430\u0448\u0435 \u0438\u043C\u044F\">\n                        <span class=\"name-warning-message\">\u0417\u0430\u043F\u043E\u043B\u043D\u0438\u0442\u0435 \u043F\u043E\u043B\u0435!</span>\n                        <input class=\"form__input-phone\" type=\"text\" id=\"").concat(phoneInputID, "\" name=\"user-phone\" placeholder=\"+7 (___) ___-__-__\">\n                        <span class=\"phone-warning-message\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u0442\u0435\u043B\u0435\u0444\u043E\u043D!</span>\n                        <input class=\"form__input-email\" type=\"email\" name=\"user-email\" placeholder=\"\u0412\u0430\u0448 email\">\n                        <span class=\"email-warning-message\">\u0412\u0432\u0435\u0434\u0438\u0442\u0435 \u043F\u0440\u0430\u0432\u0438\u043B\u044C\u043D\u044B\u0439 \u0430\u0434\u0440\u0435\u0441 \u044D\u043B\u0435\u043A\u0442\u0440\u043E\u043D\u043D\u043E\u0439 \u043F\u043E\u0447\u0442\u044B!</span>\n                        <textarea class=\"form__input-message\" id=\"modal__message\" placeholder=\"\u041A\u043E\u043C\u043C\u0435\u043D\u0442\u0430\u0440\u0438\u0438\"></textarea>\n                        <span class=\"comment-warning-message\">\u041E\u0441\u0442\u0430\u0432\u044C\u0442\u0435 \u0441\u043E\u043E\u0431\u0449\u0435\u043D\u0438\u0435!</span>\n                        <button class=\"btn btn-send\" type=\"submit\" id=\"form-call__submit\">\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u0437\u0430\u044F\u0432\u043A\u0443</button>\n                        <div class=\"form__policy\">\n                            <input class=\"form__checkbox\" type=\"checkbox\" id=\"modal__checkbox\" checked>\n                            <label class=\"form__policy-text\" for=\"modal__checkbox\">\u0412\u044B \u0441\u043E\u0433\u043B\u0430\u0448\u0430\u0435\u0442\u0435\u0441\u044C \u0441 &#160;<a class=\"form__policy-link\" href=\"#!\" target=\"_blank\">\u0443\u0441\u043B\u043E\u0432\u0438\u044F\u043C\u0438 \u043E\u0431\u0440\u0430\u0431\u043E\u0442\u043A\u0438 \u043F\u0435\u0440\u0441\u043E\u043D\u0430\u043B\u044C\u043D\u044B\u0445 \u0434\u0430\u043D\u043D\u044B\u0445</a></label>\n                        </div>\n                    </form>\n                </div>\n            </div>\n        ");
     div.innerHTML = modal;
     wrap.appendChild(div);
     body.classList.add('no-scroll');
@@ -376,6 +362,21 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     document.querySelector('.modal').classList.remove('modal--close');
     document.querySelector('.modal').classList.add('modal--open');
     inputMask(document.getElementById(phoneInputID));
+    document.querySelector('.form__input-name').addEventListener('input', function () {
+      validName();
+    });
+    document.querySelector('.form__input-phone').addEventListener('input', function () {
+      validPhone();
+    });
+    document.querySelector('.form__input-email').addEventListener('input', function () {
+      validMail();
+    });
+    document.querySelector('.form__input-message').addEventListener('input', function () {
+      validMessage();
+    });
+    document.querySelector('.btn-send').addEventListener('click', function () {
+      formSend();
+    });
   }
 
   function modalHide() {
@@ -424,14 +425,81 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     input.addEventListener('keydown', setMask, false);
   }
 
+  function validName() {
+    var output = document.querySelector('.name-warning-message');
+    var name = document.querySelector('.form__input-name').value;
+    var valid;
+
+    if (name == '') {
+      output.classList.add('email-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = true;
+      valid = false;
+    } else {
+      output.classList.remove('email-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = false;
+      valid = true;
+    }
+
+    return valid;
+  }
+
+  function validMail() {
+    var regExp = /^[\w-\.]+@[\w-]+\.[a-z]{2,4}$/i;
+    var output = document.querySelector('.email-warning-message');
+    var mail = document.querySelector('.form__input-email').value;
+    var valid = regExp.test(mail);
+
+    if (!valid || mail == '') {
+      output.classList.add('email-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = true;
+    } else {
+      output.classList.remove('email-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = false;
+    }
+
+    return valid;
+  }
+
+  function validPhone() {
+    var regExp = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
+    var output = document.querySelector('.phone-warning-message');
+    var phone = document.querySelector('.form__input-phone').value;
+    var valid = regExp.test(phone);
+
+    if (!valid || phone == '') {
+      output.classList.add('phone-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = true;
+    } else {
+      output.classList.remove('phone-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = false;
+    }
+
+    return valid;
+  }
+
+  function validMessage() {
+    var output = document.querySelector('.comment-warning-message');
+    var message = document.querySelector('.form__input-message').value;
+    var valid;
+
+    if (message == '') {
+      output.classList.add('comment-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = true;
+      valid = false;
+      console.log(message);
+      console.log(valid);
+    } else {
+      output.classList.remove('comment-warning-message--invalid');
+      document.querySelector('.btn-send').disabled = false;
+      valid = true;
+      console.log(message);
+      console.log(valid);
+    }
+
+    return valid;
+  }
+
   window.addEventListener('click', function (e) {
-    // if (e.target.classList.contains('modal__close')) {
-    //     document.querySelector('.modal').classList.add('modal--close');
-    //     document.querySelector('.modal').classList.remove('modal--open');
-    //     setTimeout(() => {
-    //         modalHide();
-    //     }, 400);
-    // }
     if (e.target.closest('.modal') && !e.target.closest('.modal__close')) {
       e.stopPropagation();
     } else if (e.target.closest('.overlay')) {
@@ -449,6 +517,14 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
       }, 400);
     }
   });
+
+  function formSend() {
+    var btnSend = document.querySelector('.btn-send');
+
+    if (!validName() || !validPhone() || !validMail() || !validMessage()) {
+      btnSend.disabled = true;
+    }
+  }
 })();
 "use strict";
 
