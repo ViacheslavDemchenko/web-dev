@@ -52,6 +52,11 @@ body {
   overflow: hidden;
 }
 
+.html-overflow {
+  overflow-y: hidden;
+  padding-right: 2.45rem;
+}
+
 /* Box-sizing-model */
 
 *,

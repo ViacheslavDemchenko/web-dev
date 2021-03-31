@@ -361,7 +361,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     div.innerHTML = modal;
     wrap.appendChild(div);
     body.classList.add('no-scroll');
-    html.classList.add('no-scroll');
+    html.classList.add('html-overflow');
     document.querySelector('.modal').classList.remove('modal--close');
     document.querySelector('.modal').classList.add('modal--open');
     inputMask(document.getElementById(phoneInputID));
