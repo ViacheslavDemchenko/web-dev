@@ -52,10 +52,6 @@ body {
   overflow: hidden;
 }
 
-.html-overflow {
-  overflow-y: scroll;
-}
-
 /* Box-sizing-model */
 
 *,
@@ -1343,7 +1339,15 @@ input:checked + label::after {
 .design {
   position: relative;
   width: 100%;
+  overflow: hidden;
   background: radial-gradient(52.83% 206.26% at 65.38% 47.17%, #FEE69D 0%, #FADF8C 100%);
+}
+
+.design__img {
+  -webkit-transform: translateY(13rem);
+  transform: translateY(13rem);
+  width: 30.5rem;
+  height: 31rem;
 }
 
 .design__right {
@@ -2660,7 +2664,6 @@ fieldset {
   -webkit-transform: translateX(-100%);
   transform: translateX(-100%);
   height: 100vh;
-  max-height: 46.5rem;
   overflow-x: hidden;
   overflow-y: auto;
   padding-top: 4rem;
@@ -4062,16 +4065,6 @@ fieldset {
     mix-blend-mode: soft-light;
   }
 
-  .webp .design__inner {
-    min-height: 42.5rem;
-    background: url(../img/paper-mockup-sm@1x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    min-height: 42.5rem;
-    background: url(../img/paper-mockup-sm@1x.png) 48% 17rem/41.4rem 42.1rem no-repeat;
-  }
-
   .webp .content__inner {
     position: relative;
     min-height: 55rem;
@@ -4230,14 +4223,6 @@ fieldset {
 
   .no-webp .container-fluid {
     background: url(../img/header-bg-xs@2x.jpg) top left/100% 113.9rem no-repeat;
-  }
-
-  .webp .design__inner {
-    background: url(../img/paper-mockup-sm@2x.webp) 48% 17rem/41.4rem 42.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png) 48% 17rem/41.4rem 42.1rem no-repeat;
   }
 
   .webp .content__inner {
@@ -4496,12 +4481,11 @@ fieldset {
     height: 59.6rem;
   }
 
-  .webp .design__inner {
-    background: url(../img/paper-mockup-sm@1x.webp) 48% 17.5rem/41.4rem 42.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-sm@1x.png) 48% 17.5rem/41.4rem 42.1rem no-repeat;
+  .design__img {
+    -webkit-transform: translateY(17rem);
+    transform: translateY(17rem);
+    width: 41.4rem;
+    height: 42.1rem;
   }
 
   .content__text {
@@ -4856,14 +4840,6 @@ fieldset {
 }
 
 @media (min-width: 414px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 414px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 414px) and (min-resolution: 192dpi) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-sm@2x.webp) 48% 17.5rem/41.4rem 42.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-sm@2x.png) 48% 17.5rem/41.4rem 42.1rem no-repeat;
-  }
-
   .webp .devices-img {
     background: url(../img/devices-md@2x.webp) center/68.4rem 38.2rem no-repeat;
   }
@@ -4940,6 +4916,34 @@ fieldset {
   }
 }
 
+@media (min-width: 500px) {
+  .design__img {
+    display: none;
+  }
+
+  .webp .design__inner {
+    min-height: 42.5rem;
+    padding-bottom: 5rem;
+    background: url(../img/paper-mockup-md@1x.webp) 106% 100%/22rem 20rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    min-height: 42.5rem;
+    padding-bottom: 5rem;
+    background: url(../img/paper-mockup-md@1x.png) 106% 100%/22rem 20rem no-repeat;
+  }
+}
+
+@media (min-width: 500px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 500px) and (min-resolution: 192dpi) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.webp) 106% 100%/22rem 20rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.png) 106% 100%/22rem 20rem no-repeat;
+  }
+}
+
 @media (min-width: 554px) {
   .studio-services .webdevelopment__wrap .webdevelopment {
     min-height: 25rem;
@@ -4965,6 +4969,14 @@ fieldset {
 
   .header--promotion {
     height: 54rem;
+  }
+
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@1x.webp) 106% 100%/32rem 29rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@1x.png) 106% 100%/32rem 29rem no-repeat;
   }
 
   .webp .content__inner {
@@ -5042,6 +5054,14 @@ fieldset {
 }
 
 @media (min-width: 560px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 560px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 560px) and (min-resolution: 192dpi) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.webp) 106% 100%/32rem 29rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.png) 106% 100%/32rem 29rem no-repeat;
+  }
+
   .webp .content__inner {
     background: url(../img/smartphone_in_hand-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
   }
@@ -5119,8 +5139,28 @@ fieldset {
 }
 
 @media (min-width: 700px) {
+  .webp .design__inner {
+    padding-bottom: 5rem;
+    background: url(../img/paper-mockup-md@1x.webp) 100% 100%/34rem 31.9rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    padding-bottom: 5rem;
+    background: url(../img/paper-mockup-md@1x.png) 100% 100%/34rem 31.9rem no-repeat;
+  }
+
   .studio-services .webdevelopment__wrap .webdevelopment__item {
     width: calc(100% / 3);
+  }
+}
+
+@media (min-width: 700px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 700px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 700px) and (min-resolution: 192dpi) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.webp) 100% 100%/34rem 31.9rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.png) 100% 100%/34rem 31.9rem no-repeat;
   }
 }
 
@@ -5246,16 +5286,6 @@ fieldset {
 
   .header--promotion {
     height: 63.9rem;
-  }
-
-  .webp .design__inner {
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.webp) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.png) 100% 100%/34rem 31.9rem no-repeat;
   }
 
   .design__left {
@@ -5918,14 +5948,6 @@ fieldset {
     background: url(../img/header-bg-sm@2x.jpg) top left/100% 102.4rem no-repeat;
   }
 
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.webp) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
   .webp .content__inner {
     background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
   }
@@ -6004,6 +6026,26 @@ fieldset {
 }
 }
 
+@media (min-width: 900px) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@1x.webp) 100% 100%/41.4rem 38.1rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@1x.png) 100% 100%/41.4rem 38.1rem no-repeat;
+  }
+}
+
+@media (min-width: 900px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 900px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 900px) and (min-resolution: 192dpi) {
+  .webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.webp) 100% 100%/41.4rem 38.1rem no-repeat;
+  }
+
+  .no-webp .design__inner {
+    background: url(../img/paper-mockup-md@2x.png) 100% 100%/41.4rem 38.1rem no-repeat;
+  }
+}
+
 @media (min-width: 970px) {
   .btn--call-footer {
     margin: 0;
@@ -6043,7 +6085,7 @@ fieldset {
 
   .webp .design__inner {
     min-height: 43rem;
-    background: url(../img/paper-mockup-lg@1x.webp) right 100%/54.5rem 42.9rem no-repeat;
+    background: url(../img/paper-mockup-lg@1x.png) right 100%/54.5rem 42.9rem no-repeat;
   }
 
   .no-webp .design__inner {
@@ -6502,7 +6544,7 @@ fieldset {
   }
 
   .webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.webp) right 100%/54.5rem 42.9rem no-repeat;
+    background: url(../img/paper-mockup-lg@2x.png) right 100%/54.5rem 42.9rem no-repeat;
   }
 
   .no-webp .design__inner {
@@ -7157,7 +7199,7 @@ fieldset {
   .webp .design__inner {
     min-height: 55rem;
     padding-bottom: 10rem;
-    background: url(../img/paper-mockup-lg@1x.webp) right 100%/69.9rem 55rem no-repeat;
+    background: url(../img/paper-mockup-lg@1x.png) right 100%/69.9rem 55rem no-repeat;
   }
 
   .no-webp .design__inner {
@@ -8197,7 +8239,7 @@ fieldset {
   }
 
   .webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.webp) right 100%/69.9rem 55rem no-repeat;
+    background: url(../img/paper-mockup-lg@2x.png) right 100%/69.9rem 55rem no-repeat;
   }
 
   .no-webp .design__inner {

@@ -264,6 +264,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
   var menu = document.querySelector('.header-top');
   var header = document.querySelector('.header');
   var socialList = document.querySelector('.social-list');
+  var html = body.parentNode;
   var screenWidth = screen.width;
 
   function mobileMenuHide() {
@@ -272,6 +273,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     socialList.classList.remove('social-list--mobile');
     menu.classList.remove('header-top--open');
     body.classList.remove('no-scroll');
+    html.classList.remove('no-scroll');
   }
 
   function mobileMenuShow() {
@@ -280,6 +282,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     socialList.classList.add('social-list--mobile');
     body.appendChild(menu);
     body.classList.add('no-scroll');
+    html.classList.add('no-scroll');
     setTimeout(function () {
       menu.classList.add('header-top--open');
     }, 500);
@@ -358,7 +361,7 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     div.innerHTML = modal;
     wrap.appendChild(div);
     body.classList.add('no-scroll');
-    html.classList.add('html-overflow');
+    html.classList.add('no-scroll');
     document.querySelector('.modal').classList.remove('modal--close');
     document.querySelector('.modal').classList.add('modal--open');
     inputMask(document.getElementById(phoneInputID));
