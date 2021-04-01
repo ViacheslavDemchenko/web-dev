@@ -1348,15 +1348,23 @@ input:checked + label::after {
   background: radial-gradient(52.83% 206.26% at 65.38% 47.17%, #FEE69D 0%, #FADF8C 100%);
 }
 
-.design__img {
-  -webkit-transform: translateY(13rem);
-  transform: translateY(13rem);
-  width: 30.5rem;
-  height: 31rem;
+.design__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .design__right {
-  width: 100%;
+  -webkit-transform: translateY(14rem);
+  transform: translateY(14rem);
+  width: 30.5rem;
+  height: 31rem;
+  max-width: 100%;
+  margin-left: auto;
 }
 
 .design__left {
@@ -1384,15 +1392,30 @@ input:checked + label::after {
 
 .content {
   width: 100%;
+  overflow: hidden;
   background: radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
 }
 
-.content__left,
-.content__right {
-  width: 100%;
+.content__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
 }
 
 .content__right {
+  -webkit-transform: translateY(5rem);
+  transform: translateY(5rem);
+  width: 30.5rem;
+  height: 31rem;
+  max-width: 100%;
+  margin-left: auto;
+}
+
+.content__left {
   -webkit-box-ordinal-group: 0;
   -ms-flex-order: -1;
   order: -1;
@@ -2583,6 +2606,14 @@ fieldset {
   max-width: 30.5rem;
 }
 
+.author-market__img {
+  -webkit-transform: translateY(5rem);
+  transform: translateY(5rem);
+  width: 30.5rem;
+  height: 31rem;
+  margin-left: auto;
+}
+
 .design--contractors {
   margin-bottom: 4rem;
 }
@@ -2591,8 +2622,24 @@ fieldset {
   max-width: 30.5rem;
 }
 
+.contractors-market__img {
+  -webkit-transform: translateY(3rem);
+  transform: translateY(3rem);
+  width: 30.5rem;
+  height: 31rem;
+  margin: 0 auto;
+}
+
 .content--black-market .section__title--black-market {
   max-width: 21.4rem;
+}
+
+.black-market__img {
+  -webkit-transform: translateY(3rem);
+  transform: translateY(3rem);
+  width: 30.5rem;
+  height: 31rem;
+  margin: 0 auto;
 }
 
 .text-block--long {
@@ -2603,22 +2650,12 @@ fieldset {
   max-width: 30.5rem;
 }
 
-.design--weapon .design__inner {
-  position: relative;
-  min-height: 55rem;
-  background: url(../img/laptop-gear-sm@1x.png);
-  background-position: calc(50% - 0rem) calc(100% + 8rem);
-  background-size: 36.5rem 31.1rem;
-  background-repeat: no-repeat;
-}
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@1x.webp) 1x)) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-sm@1x.webp);
-    background-position: calc(50% - 0rem) calc(100% + 8rem);
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
-  }
+.weapon-market__img {
+  -webkit-transform: translateY(8rem);
+  transform: translateY(8rem);
+  width: 36.5rem;
+  height: 31.1rem;
+  margin: 0 auto;
 }
 
 .content--team-work {
@@ -2817,6 +2854,22 @@ fieldset {
   border-radius: .5rem;
 }
 
+.social-list li {
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+}
+
+.social-list li:hover {
+  -webkit-transition: -webkit-transform .3s linear;
+  transition: -webkit-transform .3s linear;
+  transition: transform .3s linear;
+  transition: transform .3s linear, -webkit-transform .3s linear;
+  -webkit-transform: scale(1.2);
+  transform: scale(1.2);
+}
+
 .social-list--mobile {
   width: calc(100% / 12 * 4);
   max-width: 11rem;
@@ -2904,7 +2957,7 @@ fieldset {
 
 .ball--fourth {
   left: .5rem;
-  top: -2.8rem;
+  bottom: -1rem;
   width: 5rem;
   height: 5rem;
 }
@@ -4061,25 +4114,13 @@ fieldset {
 
 @media (min-width: 0) {
   .webp .container-fluid {
-    background: url(../img/header-bg-xs@1x.webp) top left/100% 113.9rem no-repeat;
+    background: url(../img/header-bg-xs@1x.webp) top left/100% 113.9rem no-repeat, #F8F8F8;
     mix-blend-mode: soft-light;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-xs@1x.jpg) top left/100% 113.9rem no-repeat;
+    background: url(../img/header-bg-xs@1x.jpg) top left/100% 113.9rem no-repeat, #F8F8F8;
     mix-blend-mode: soft-light;
-  }
-
-  .webp .content__inner {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/smartphone_in_hand-sm@1x.png) 67% 100%/30.9rem 28.6rem no-repeat;
   }
 
   .webp .quiz__top-img {
@@ -4092,42 +4133,6 @@ fieldset {
     width: 25.8rem;
     height: 21.9rem;
     background: url(../img/quiz-girl-sm@1x.png) 50% 0/25.8rem 21.9rem no-repeat, url(../img/icons/sphere-1.svg) -8.7rem 8.6rem/30rem 30rem no-repeat;
-  }
-
-  .webp .design__inner--author {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .design__inner--author {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .webp .design__inner--contractors {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/mask-white-sm@1x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .design__inner--contractors {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/mask-white-sm@1x.png) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .webp .content__inner--black-market {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/mask-black-sm@1x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .content__inner--black-market {
-    position: relative;
-    min-height: 55rem;
-    background: url(../img/mask-black-sm@1x.png) 67% 100%/30.9rem 28.6rem no-repeat;
   }
 
   .webp .content__inner--team-work {
@@ -4223,19 +4228,11 @@ fieldset {
 
 @media (min-width: 0) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 0) and (-webkit-min-device-pixel-ratio: 2), (min-width: 0) and (min-resolution: 192dpi) {
   .webp .container-fluid {
-    background: url(../img/header-bg-xs@2x.webp) top left/100% 113.9rem no-repeat;
+    background: url(../img/header-bg-xs@2x.webp) top left/100% 113.9rem no-repeat, #F8F8F8;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-xs@2x.jpg) top left/100% 113.9rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@2x.png) 67% 100%/30.9rem 28.6rem no-repeat;
+    background: url(../img/header-bg-xs@2x.jpg) top left/100% 113.9rem no-repeat, #F8F8F8;
   }
 
   .webp .quiz__top-img {
@@ -4244,30 +4241,6 @@ fieldset {
 
   .no-webp .quiz__top-img {
     background: url(../img/quiz-girl-sm@2x.png) 50% 0/25.8rem 21.9rem no-repeat, url(../img/icons/sphere-1.svg) -8.7rem 8.6rem/30rem 30rem no-repeat;
-  }
-
-  .webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@2x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@2x.png) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@2x.webp) 67% 100%/30.9rem 28.6rem no-repeat;
-  }
-
-  .no-webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@2x.png) 67% 100%/30.9rem 28.6rem no-repeat;
   }
 
   .webp .content__inner--team-work {
@@ -4349,24 +4322,6 @@ fieldset {
   .no-webp .order-site__card:nth-of-type(3) {
     background: url(../img/screen-sm@2x.webp) 50% 26%/21.3rem 15.7rem no-repeat, radial-gradient(50% 284.34% at 28.33% 50%, #9DBCEA 0%, #8DAEDE 100%);
   }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 0), (min-resolution: 192dpi) and (min-width: 0) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-sm@2x.png);
-    background-position: calc(50% - 0rem) calc(100% + 8rem);
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
-  }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@2x.webp) 2x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-sm@2x.webp);
-      background-position: calc(50% - 0rem) calc(100% + 8rem);
-      background-size: 36.5rem 31.1rem;
-      background-repeat: no-repeat;
-    }
-}
 }
 
 @media (min-width: 414px) {
@@ -4486,15 +4441,18 @@ fieldset {
     height: 59.6rem;
   }
 
-  .design__img {
-    -webkit-transform: translateY(17rem);
-    transform: translateY(17rem);
+  .design__right {
+    -webkit-transform: translate(0rem, 18rem);
+    transform: translate(0rem, 18rem);
     width: 41.4rem;
     height: 42.1rem;
   }
 
-  .content__text {
-    width: 32.5rem;
+  .content__right {
+    -webkit-transform: translate(0rem, 7rem);
+    transform: translate(0rem, 7rem);
+    width: 41.4rem;
+    height: 42.1rem;
   }
 
   .work-scheme__content {
@@ -4567,16 +4525,44 @@ fieldset {
     max-width: 36.5rem;
   }
 
+  .author-market__img {
+    -webkit-transform: translateY(6.6rem);
+    transform: translateY(6.6rem);
+    width: 41.4rem;
+    height: 42.1rem;
+  }
+
   .design--contractors .section__title--contractors {
     max-width: 36.5rem;
+  }
+
+  .contractors-market__img {
+    -webkit-transform: translateY(2.2rem);
+    transform: translateY(2.2rem);
+    width: 41.4rem;
+    height: 42.1rem;
   }
 
   .content--black-market .section__title--black-market {
     max-width: 36.5rem;
   }
 
+  .black-market__img {
+    -webkit-transform: translateY(2.2rem);
+    transform: translateY(2.2rem);
+    width: 41.4rem;
+    height: 42.1rem;
+  }
+
   .design--weapon .section__title--weapon {
     max-width: 36.5rem;
+  }
+
+  .weapon-market__img {
+    -webkit-transform: translateY(15rem);
+    transform: translateY(15rem);
+    width: 41.4rem;
+    height: 42.1rem;
   }
 
   .content--team-work .section__title--team-work {
@@ -4596,7 +4582,7 @@ fieldset {
   }
 
   .ball--fourth {
-    top: -3.2rem;
+    bottom: -1rem;
     left: 4.1rem;
     width: 6.2rem;
     height: 6.2rem;
@@ -4922,30 +4908,33 @@ fieldset {
 }
 
 @media (min-width: 500px) {
-  .design__img {
-    display: none;
+  .author-market__img {
+    -webkit-transform: translateY(11.7rem);
+    transform: translateY(11.7rem);
   }
 
-  .webp .design__inner {
-    min-height: 42.5rem;
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.webp) 106% 100%/22rem 20rem no-repeat;
+  .webp .design__inner--author {
+    background: none !important;
   }
 
-  .no-webp .design__inner {
-    min-height: 42.5rem;
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.png) 106% 100%/22rem 20rem no-repeat;
-  }
-}
-
-@media (min-width: 500px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 500px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 500px) and (min-resolution: 192dpi) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.webp) 106% 100%/22rem 20rem no-repeat;
+  .no-webp .design__inner--author {
+    background: none !important;
   }
 
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 106% 100%/22rem 20rem no-repeat;
+  .webp .design__inner--contractors {
+    background: none !important;
+  }
+
+  .no-webp .design__inner--contractors {
+    background: none !important;
+  }
+
+  .webp .design__inner--weapon {
+    background: none !important;
+  }
+
+  .no-webp .design__inner--weapon {
+    background: none !important;
   }
 }
 
@@ -4976,20 +4965,14 @@ fieldset {
     height: 54rem;
   }
 
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@1x.webp) 106% 100%/32rem 29rem no-repeat;
+  .design__right {
+    -webkit-transform: translate(18rem, 13rem);
+    transform: translate(18rem, 13rem);
   }
 
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@1x.png) 106% 100%/32rem 29rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@1x.png) 90% 100%/38.2rem 30.9rem no-repeat;
+  .content__right {
+    -webkit-transform: translate(0rem, 7rem);
+    transform: translate(0rem, 7rem);
   }
 
   .quiz__top-text {
@@ -5009,45 +4992,17 @@ fieldset {
     margin: 0 1rem 0 0;
   }
 
-  .webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
+  .contractors-market__img {
+    margin: 0 0 0 auto;
   }
 
-  .no-webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@1x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
+  .black-market__img {
+    margin: 0 0 0 auto;
   }
 
-  .webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@1x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
+  .weapon-market__img {
+    margin: 0 0 0 auto;
   }
-
-  .no-webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@1x.png) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@1x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@1x.png) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-sm@1x.png);
-    background-position: calc(50% - 0rem) calc(100% + 8rem);
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
-  }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@1x.webp) 1x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-sm@1x.webp);
-      background-position: calc(50% - 0rem) calc(100% + 8rem);
-      background-size: 36.5rem 31.1rem;
-      background-repeat: no-repeat;
-    }
-}
 
   .webp .content__inner--team-work {
     background: url(../img/laptop-girl-sm@1x.webp) calc(50% - 2rem) calc(100% + 8.1rem)/37.6rem 29.6rem no-repeat;
@@ -5059,46 +5014,6 @@ fieldset {
 }
 
 @media (min-width: 560px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 560px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 560px) and (min-resolution: 192dpi) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.webp) 106% 100%/32rem 29rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 106% 100%/32rem 29rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-sm@2x.png) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .design__inner--contractors {
-    background: url(../img/mask-white-sm@2x.png) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@2x.webp) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
-  .no-webp .content__inner--black-market {
-    background: url(../img/mask-black-sm@2x.png) 90% 100%/38.2rem 30.9rem no-repeat;
-  }
-
   .webp .content__inner--team-work {
     background: url(../img/laptop-girl-sm@2x.webp) calc(50% - 2rem) calc(100% + 8.1rem)/37.6rem 29.6rem no-repeat;
   }
@@ -5106,24 +5021,6 @@ fieldset {
   .no-webp .content__inner--team-work {
     background: url(../img/laptop-girl-sm@2x.webp) calc(50% - 2rem) calc(100% + 8.1rem)/37.6rem 29.6rem no-repeat;
   }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 560px), (min-resolution: 192dpi) and (min-width: 560px) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-sm@2x.png);
-    background-position: calc(50% - 0rem) calc(100% + 8rem);
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
-  }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-sm@2x.webp) 2x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-sm@2x.webp);
-      background-position: calc(50% - 0rem) calc(100% + 8rem);
-      background-size: 36.5rem 31.1rem;
-      background-repeat: no-repeat;
-    }
-}
 }
 
 @media (min-width: 600px) {
@@ -5144,38 +5041,18 @@ fieldset {
 }
 
 @media (min-width: 700px) {
-  .webp .design__inner {
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.webp) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    padding-bottom: 5rem;
-    background: url(../img/paper-mockup-md@1x.png) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
   .studio-services .webdevelopment__wrap .webdevelopment__item {
     width: calc(100% / 3);
   }
 }
 
-@media (min-width: 700px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 700px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 700px) and (min-resolution: 192dpi) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.webp) 100% 100%/34rem 31.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 100% 100%/34rem 31.9rem no-repeat;
-  }
-}
-
 @media (min-width: 768px) {
   .webp .container-fluid {
-    background: url(../img/header-bg-sm@1x.webp) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-sm@1x.webp) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-sm@1x.jpg) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-sm@1x.jpg) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .main-title {
@@ -5293,6 +5170,13 @@ fieldset {
     height: 63.9rem;
   }
 
+  .design__right {
+    -webkit-transform: translate(18rem, 6rem);
+    transform: translate(18rem, 6rem);
+    width: 69.9rem;
+    height: 55rem;
+  }
+
   .design__left {
     padding: 4rem 0 0 3.1rem;
   }
@@ -5320,17 +5204,14 @@ fieldset {
     margin-bottom: 3rem;
   }
 
-  .webp .content__inner {
-    padding-bottom: 5rem;
-    background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    padding-bottom: 5rem;
-    background: url(../img/smartphone_in_hand-lg@1x.png) 97% 100%/49.7rem 42.7rem no-repeat;
-  }
-
   .content__right {
+    -webkit-transform: translate(13rem, 6.1rem);
+    transform: translate(13rem, 6.1rem);
+    width: 69.9rem;
+    height: 55rem;
+  }
+
+  .content__left {
     padding: 4rem 0 0 3.1rem;
   }
 
@@ -5339,7 +5220,11 @@ fieldset {
   }
 
   .content__text {
-    width: 41.9rem;
+    width: 31.2rem;
+  }
+
+  .content__text {
+    width: 34.9rem;
   }
 
   .content__text:not(:last-child) {
@@ -5439,6 +5324,16 @@ fieldset {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
+  }
+
+  .contacts__item--footer {
+    width: calc(100% / 12 * 2);
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
 
   .tariff__table-wrap--work-types {
@@ -5556,12 +5451,16 @@ fieldset {
     max-width: 55rem;
   }
 
+  .author-market__img {
+    display: none;
+  }
+
   .webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .no-webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/smartphone_in_hand-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .design--contractors {
@@ -5572,16 +5471,24 @@ fieldset {
     max-width: 55rem;
   }
 
+  .contractors-market__img {
+    display: none;
+  }
+
   .webp .design__inner--contractors {
-    background: url(../img/mask-white-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/mask-white-lg@1x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .no-webp .design__inner--contractors {
-    background: url(../img/mask-white-lg@1x.png) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/mask-white-lg@1x.png) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .content--black-market .section__title--black-market {
     max-width: 55rem;
+  }
+
+  .black-market__img {
+    display: none;
   }
 
   .webp .content__inner--black-market {
@@ -5600,21 +5507,17 @@ fieldset {
     max-width: 55rem;
   }
 
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-lg@1x.png);
-    background-position: calc(100% + 4rem) 132%;
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
+  .webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@1x.webp) 97% 100%/36.5rem 31.1rem no-repeat !important;
   }
 
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@1x.webp);
-      background-position: calc(100% + 4rem) 132%;
-      background-size: 36.5rem 31.1rem;
-      background-repeat: no-repeat;
-    }
-}
+  .no-webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@1x.png) 97% 100%/36.5rem 31.1rem no-repeat;
+  }
+
+  .weapon-market__img {
+    display: none;
+  }
 
   .content--team-work {
     margin-bottom: 6rem;
@@ -5691,12 +5594,11 @@ fieldset {
   }
 
   .email__link--footer {
-    width: calc(100%/12*3);
     margin-bottom: 0;
   }
 
   .ball--fourth {
-    top: -4.8rem;
+    bottom: -1rem;
     left: 3rem;
     width: 8.7rem;
     height: 8.7rem;
@@ -5946,35 +5848,27 @@ fieldset {
 
 @media (min-width: 768px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 768px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 768px) and (min-resolution: 192dpi) {
   .webp .container-fluid {
-    background: url(../img/header-bg-sm@2x.webp) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-sm@2x.webp) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-sm@2x.jpg) top left/100% 102.4rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.png) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/header-bg-sm@2x.jpg) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .no-webp .design__inner--author {
-    background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/smartphone_in_hand-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .webp .design__inner--contractors {
-    background: url(../img/mask-white-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/mask-white-lg@2x.webp) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .no-webp .design__inner--contractors {
-    background: url(../img/mask-white-lg@2x.png) 97% 100%/49.7rem 42.7rem no-repeat;
+    background: url(../img/mask-white-lg@2x.png) 97% 100%/49.7rem 42.7rem no-repeat !important;
   }
 
   .webp .content__inner--black-market {
@@ -5983,6 +5877,14 @@ fieldset {
 
   .no-webp .content__inner--black-market {
     background: url(../img/mask-black-lg@2x.png) calc(100% + 11rem) 100%/49.7rem 42.7rem no-repeat;
+  }
+
+  .webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.webp) 97% 100%/36.5rem 31.1rem no-repeat !important;
+  }
+
+  .no-webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.png) 97% 100%/36.5rem 31.1rem no-repeat;
   }
 
   .webp .content__inner--team-work {
@@ -6013,51 +5915,13 @@ fieldset {
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 768px), (min-resolution: 192dpi) and (min-width: 768px) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-lg@2x.png);
-    background-position: calc(100% + 4rem) 132%;
-    background-size: 36.5rem 31.1rem;
-    background-repeat: no-repeat;
-  }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@2x.webp);
-      background-position: calc(100% + 4rem) 132%;
-      background-size: 36.5rem 31.1rem;
-      background-repeat: no-repeat;
-    }
-}
-}
-
-@media (min-width: 900px) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@1x.webp) 100% 100%/41.4rem 38.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@1x.png) 100% 100%/41.4rem 38.1rem no-repeat;
-  }
-}
-
-@media (min-width: 900px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 900px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 900px) and (min-resolution: 192dpi) {
-  .webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.webp) 100% 100%/41.4rem 38.1rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-md@2x.png) 100% 100%/41.4rem 38.1rem no-repeat;
-  }
-}
-
 @media (min-width: 970px) {
   .btn--call-footer {
     margin: 0;
   }
 
   .social-list--footer {
-    width: calc(100%/12*2);
+    width: calc(100%/12*1);
     -webkit-box-pack: center;
     -ms-flex-pack: center;
     justify-content: center;
@@ -6066,11 +5930,11 @@ fieldset {
 
 @media (min-width: 1024px) {
   .webp .container-fluid {
-    background: url(../img/header-bg-md@1x.webp) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-md@1x.webp) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-md@1x.jpg) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-md@1x.jpg) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .about-cards .about__card .card__title,
@@ -6088,52 +5952,45 @@ fieldset {
     line-height: 2.4rem;
   }
 
-  .webp .design__inner {
-    min-height: 43rem;
-    background: url(../img/paper-mockup-lg@1x.png) right 100%/54.5rem 42.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    min-height: 43rem;
-    background: url(../img/paper-mockup-lg@1x.png) right 100%/54.5rem 42.9rem no-repeat;
+  .design__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 
   .design__right {
-    width: calc(100% / 12 * 6);
+    -webkit-transform: translate(18rem, 12rem);
+    transform: translate(18rem, 12rem);
   }
 
   .design__left {
+    width: 50%;
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
     margin: 0 0 0 auto;
   }
 
-  .webp .content__inner {
-    min-height: 43rem;
-    background: url(../img/smartphone_in_hand-lg@1x.webp) 0% 100%/48.3rem 41.6rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    min-height: 43rem;
-    background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/48.3rem 41.6rem no-repeat;
-  }
-
-  .content__left,
-  .content__right {
-    width: calc(100% / 12 * 6);
+  .content__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
   }
 
   .content__right {
+    -webkit-transform: translate(0, 6.1rem);
+    transform: translate(0, 6.1rem);
+  }
+
+  .content__left {
     -webkit-box-ordinal-group: 1;
     -ms-flex-order: 0;
     order: 0;
-    padding: 4rem 3.1rem 0 0;
+    width: 55%;
+    padding: 4rem 0 0 3.1rem;
     margin: 0 0 0 auto;
-  }
-
-  .content__text {
-    width: 43.9rem;
   }
 
   .tariff .work-stages__inner--work-types::before {
@@ -6436,21 +6293,15 @@ fieldset {
     margin-bottom: 8rem;
   }
 
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-lg@1x.png);
-    background-position: calc(100% + 8rem) calc(100% + 16rem);
-    background-size: 69.4rem 57.8rem;
-    background-repeat: no-repeat;
+  .webp .design__inner--weapon {
+    min-height: 43rem;
+    background: url(../img/laptop-gear-lg@1x.webp) 97% 100%/69.4rem 57.8rem no-repeat;
   }
 
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@1x.webp);
-      background-position: calc(100% + 8rem) calc(100% + 16rem);
-      background-size: 69.4rem 57.8rem;
-      background-repeat: no-repeat;
-    }
-}
+  .no-webp .design__inner--weapon {
+    min-height: 43rem;
+    background: url(../img/laptop-gear-lg@1x.png) 97% 100%/69.4rem 57.8rem no-repeat !important;
+  }
 
   .content--team-work {
     margin-bottom: 8rem;
@@ -6541,27 +6392,11 @@ fieldset {
 
 @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 1.5), (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2), (min-width: 1024px) and (min-resolution: 192dpi) {
   .webp .container-fluid {
-    background: url(../img/header-bg-md@2x.webp) top left/100% 102.4rem no-repeat;
+    background: url(../img/header-bg-md@2x.webp) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .no-webp .container-fluid {
-    background: url(../img/header-bg-md@2x.jpg) top left/100% 102.4rem no-repeat;
-  }
-
-  .webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png) right 100%/54.5rem 42.9rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png) right 100%/54.5rem 42.9rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.webp) 0% 100%/48.3rem 41.6rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.png) 0% 100%/48.3rem 41.6rem no-repeat;
+    background: url(../img/header-bg-md@2x.jpg) top left/100% 102.4rem no-repeat, #F8F8F8;
   }
 
   .webp .design__inner--author {
@@ -6588,6 +6423,14 @@ fieldset {
     background: url(../img/mask-black-lg@2x.png) 0% 100%/48.3rem 41.6rem no-repeat;
   }
 
+  .webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.webp) 97% 100%/69.4rem 57.8rem no-repeat;
+  }
+
+  .no-webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.png) 97% 100%/69.4rem 57.8rem no-repeat !important;
+  }
+
   .webp .content__inner--team-work {
     background: url(../img/laptop-girl-lg@2x.webp) -5rem calc(100% + 12rem)/50.3rem 41.6rem no-repeat;
   }
@@ -6597,22 +6440,11 @@ fieldset {
   }
 }
 
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1024px), (min-resolution: 192dpi) and (min-width: 1024px) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-lg@2x.png);
-    background-position: calc(100% + 8rem) calc(100% + 16rem);
-    background-size: 69.4rem 57.8rem;
-    background-repeat: no-repeat;
+@media (min-width: 1100px) {
+  .design__right {
+    -webkit-transform: translate(0, 0);
+    transform: translate(0, 0);
   }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@2x.webp);
-      background-position: calc(100% + 8rem) calc(100% + 16rem);
-      background-size: 69.4rem 57.8rem;
-      background-repeat: no-repeat;
-    }
-}
 }
 
 @media (min-width: 1200px) {
@@ -6748,6 +6580,7 @@ fieldset {
 
   .logo--desktop-footer {
     margin-right: 3rem;
+    height: 6.1rem;
   }
 
   .nav {
@@ -7201,18 +7034,6 @@ fieldset {
     height: 86.1rem;
   }
 
-  .webp .design__inner {
-    min-height: 55rem;
-    padding-bottom: 10rem;
-    background: url(../img/paper-mockup-lg@1x.png) right 100%/69.9rem 55rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    min-height: 55rem;
-    padding-bottom: 10rem;
-    background: url(../img/paper-mockup-lg@1x.png) right 100%/69.9rem 55rem no-repeat;
-  }
-
   .section__title--design {
     margin-bottom: 3rem;
   }
@@ -7232,19 +7053,7 @@ fieldset {
     margin-bottom: 5rem;
   }
 
-  .webp .content__inner {
-    min-height: 55rem;
-    padding-bottom: 10rem;
-    background: url(../img/smartphone_in_hand-lg@1x.webp) 0% 100%/56.8rem 48.9rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    min-height: 55rem;
-    padding-bottom: 10rem;
-    background: url(../img/smartphone_in_hand-lg@1x.png) 0% 100%/56.8rem 48.9rem no-repeat;
-  }
-
-  .content__right {
+  .content__left {
     padding-top: 9rem;
   }
 
@@ -7253,7 +7062,7 @@ fieldset {
   }
 
   .content__text {
-    width: 58.4rem;
+    width: 60rem;
   }
 
   .content__text:not(:last-child) {
@@ -7791,22 +7600,15 @@ fieldset {
     padding-top: 7.7rem;
   }
 
-  .design--weapon .design__inner {
-    min-height: 55.1rem;
-    background: url(../img/laptop-gear-lg@1x.png);
-    background-position: calc(100% + 6rem) calc(100% + 18rem);
-    background-size: 56%;
-    background-repeat: no-repeat;
+  .webp .design__inner--weapon {
+    min-height: 55rem;
+    background: url(../img/laptop-gear-lg@1x.webp) 97% calc(100% + 6rem)/56% no-repeat;
   }
 
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@1x.webp) 1x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@1x.webp);
-      background-position: calc(100% + 6rem) calc(100% + 18rem);
-      background-size: 56%;
-      background-repeat: no-repeat;
-    }
-}
+  .no-webp .design__inner--weapon {
+    min-height: 55rem;
+    background: url(../img/laptop-gear-lg@1x.png) 97% calc(100% + 6rem)/56% no-repeat !important;
+  }
 
   .content--team-work {
     margin-bottom: 10.8em;
@@ -7886,7 +7688,7 @@ fieldset {
 
   .ball--fourth {
     left: 18rem;
-    top: -7.6rem;
+    bottom: -1rem;
     width: 14.3rem;
     height: 14.3rem;
   }
@@ -8243,22 +8045,6 @@ fieldset {
     background: url(../img/header-bg-lg@2x.jpg) top left/100% 115.7rem no-repeat, #F8F8F8;
   }
 
-  .webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png) right 100%/69.9rem 55rem no-repeat;
-  }
-
-  .no-webp .design__inner {
-    background: url(../img/paper-mockup-lg@2x.png) right 100%/69.9rem 55rem no-repeat;
-  }
-
-  .webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.webp) 0% 100%/56.8rem 48.9rem no-repeat;
-  }
-
-  .no-webp .content__inner {
-    background: url(../img/smartphone_in_hand-lg@2x.png) 0% 100%/56.8rem 48.9rem no-repeat;
-  }
-
   .webp .work-scheme::after {
     background: url(../img/gear-big@2x.webp) 100% 75%/50%;
     background-repeat: no-repeat;
@@ -8299,6 +8085,14 @@ fieldset {
 
   .no-webp .content__inner--black-market {
     background: url(../img/mask-black-lg@2x.png) 0% 100%/56.8rem 48.9rem no-repeat;
+  }
+
+  .webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.webp) 97% calc(100% + 6rem)/56% no-repeat;
+  }
+
+  .no-webp .design__inner--weapon {
+    background: url(../img/laptop-gear-lg@2x.png) 97% calc(100% + 6rem)/56% no-repeat !important;
   }
 
   .webp .content__inner--team-work {
@@ -8392,24 +8186,6 @@ fieldset {
     width: .6rem;
     height: 1.2rem;
   }
-}
-
-@media (-webkit-min-device-pixel-ratio: 2) and (min-width: 1440px), (min-resolution: 192dpi) and (min-width: 1440px) {
-  .design--weapon .design__inner {
-    background: url(../img/laptop-gear-lg@2x.png);
-    background-position: calc(100% + 6rem) calc(100% + 18rem);
-    background-size: 56%;
-    background-repeat: no-repeat;
-  }
-
-@supports (background: -webkit-image-set(url(../img/laptop-gear-lg@2x.webp) 2x)) {
-    .design--weapon .design__inner {
-      background: url(../img/laptop-gear-lg@2x.webp);
-      background-position: calc(100% + 6rem) calc(100% + 18rem);
-      background-size: 56%;
-      background-repeat: no-repeat;
-    }
-}
 }
 
 @media (min-width: 1469px) {
