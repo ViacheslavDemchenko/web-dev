@@ -2817,6 +2817,7 @@ fieldset {
 
 .nav-list {
   position: relative;
+  z-index: 10;
   width: calc(100% / 12 * 12);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2833,6 +2834,7 @@ fieldset {
 }
 
 .nav-list .nav__link {
+  position: relative;
   display: block;
   padding: 1.3rem 1rem;
 }
@@ -2849,6 +2851,7 @@ fieldset {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
+  margin-left: 4rem;
 }
 
 .social-list li a img,
@@ -2877,7 +2880,7 @@ fieldset {
 .social-list--mobile {
   width: calc(100% / 12 * 4);
   max-width: 11rem;
-  margin-bottom: 2rem;
+  margin: 0 0 2rem 0;
 }
 
 .social-list--contacts {
@@ -2927,6 +2930,29 @@ fieldset {
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+}
+
+.sub-menu {
+  position: absolute;
+  z-index: 1;
+  top: 4rem;
+  opacity: 0;
+  visibility: hidden;
+  border-radius: .5rem;
+  -webkit-box-shadow: 0 10rem 8rem rgba(46, 87, 181, 0.07), 0 4.17776rem 3.34221rem rgba(46, 87, 181, 0.0503198), 0 2.23363rem 1.7869rem rgba(46, 87, 181, 0.0417275), 0 1.25216rem 1.00172rem rgba(46, 87, 181, 0.035), 0 0.66501rem 0.53201rem rgba(46, 87, 181, 0.0282725), 0 0.27673rem 0.22138rem rgba(46, 87, 181, 0.0196802);
+  box-shadow: 0 10rem 8rem rgba(46, 87, 181, 0.07), 0 4.17776rem 3.34221rem rgba(46, 87, 181, 0.0503198), 0 2.23363rem 1.7869rem rgba(46, 87, 181, 0.0417275), 0 1.25216rem 1.00172rem rgba(46, 87, 181, 0.035), 0 0.66501rem 0.53201rem rgba(46, 87, 181, 0.0282725), 0 0.27673rem 0.22138rem rgba(46, 87, 181, 0.0196802);
+  background: #F8F8F8;
+  -webkit-transition: opacity .3s linear;
+  transition: opacity .3s linear;
+}
+
+.nav-list li:hover > .sub-menu,
+.nav-list li:focus-within > .sub-menu,
+.nav-list li .sub-menu:hover {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translateY(0%);
+  transform: translateY(0%);
 }
 
 .phone {
@@ -3025,6 +3051,7 @@ fieldset {
 
 .header-center {
   position: relative;
+  z-index: -1;
 }
 
 .header-center-inner {
@@ -6617,7 +6644,7 @@ fieldset {
     -webkit-box-pack: justify;
     -ms-flex-pack: justify;
     justify-content: space-between;
-    margin: 0 2rem 0 0;
+    margin: 0;
     padding-top: 0;
   }
 
