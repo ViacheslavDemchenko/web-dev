@@ -258,6 +258,54 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
 ;
 
 (function () {
+  function inputMask(input) {
+    function setMask(event) {
+      var pressedKey;
+      event.keyCode && pressedKey === event.keyCode;
+      input.setSelectionRange(input.value.length, input.value.length);
+      var maskType = '+7 (___) ___-__-__',
+          i = 0,
+          replaceValue = maskType.replace(/\D/g, ''),
+          prevValue = this.value.replace(/\D/g, ''),
+          currentValue = maskType.replace(/[_\d]/g, function (a) {
+        return i < prevValue.length ? prevValue.charAt(i++) || replaceValue.charAt(i) : a;
+      });
+      i = currentValue.indexOf('_');
+
+      if (i != -1) {
+        i < 5 && (i = 3);
+        currentValue = currentValue.slice(0, i);
+      }
+
+      var reg = maskType.substr(0, this.value.length).replace(/_+/g, function (a) {
+        return '\\d{1,' + a.length + '}';
+      }).replace(/[+()]/g, '\\$&');
+      reg = new RegExp('^' + reg + '$');
+
+      if (!reg.test(this.value) || this.value.length < 5 || pressedKey > 47 && pressedKey < 58) {
+        this.value = currentValue;
+      } else if (event.type === 'blur' && this.value.length < 5) {
+        this.value = '';
+      }
+
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
+
+    input.addEventListener('input', setMask, false);
+    input.addEventListener('focus', setMask, false);
+    input.addEventListener('blur', setMask, false);
+    input.addEventListener('keydown', setMask, false);
+  }
+
+  if (document.querySelector('.quiz__form-phone')) {
+    inputMask(document.querySelector('.quiz__form-phone'));
+  }
+})();
+"use strict";
+
+;
+
+(function () {
   var hamburger = document.getElementById('menu__button');
   var body = document.getElementsByTagName('body')[0];
   var menuLinks = document.querySelectorAll('.nav__link');
@@ -349,9 +397,15 @@ function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "functi
     modal_call_subtitle: 'Оставьте свои контактные данные и мы свяжемся с вами в ближайшее время',
     modal_form_id: 'form-call',
     phone_input_id: 'modal__input-phone'
+  }, {
+    modal_brief_btn: 'btn--application'
   }];
   document.addEventListener('click', function (e) {
     if (e.target.classList.contains(options[0].modal_call_btn)) {
+      modalShow(options[0].modal_form_id, options[0].modal_call_title, options[0].modal_call_subtitle, options[0].phone_input_id);
+    }
+
+    if (e.target.classList.contains(options[1].modal_brief_btn)) {
       modalShow(options[0].modal_form_id, options[0].modal_call_title, options[0].modal_call_subtitle, options[0].phone_input_id);
     }
   });
